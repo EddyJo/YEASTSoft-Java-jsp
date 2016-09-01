@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE context>
+<Context>
+<WatchedResource>WEB-INF/web.xml</WatchedResource>
+<Resource 
+    name="jdbc/MariaDB" 
+    auth="Container"
+    type="javax.sql.DataSource" 
+    driverClassName="org.mariadb.jdbc.Driver"
+    url="jdbc:mariadb://127.0.0.1:3306/sample"
+    username="user" password="user123" 
+    maxTotal="20" maxIdle="10" maxWaitMillis="-1"/>
+
+<Resource 
+    name="jdbc/Oracle" 
+    auth="Container"
+    type="javax.sql.DataSource" 
+    driverClassName="oracle.jdbc.driver.OracleDriver"
+    url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+    username="hr" password="hr" 
+    maxTotal="20" maxIdle="10" maxWaitMillis="-1"/>
+
+<Resource 
+    name="jdbc/hsqlDB" 
+    auth="Container"
+    type="javax.sql.DataSource" 
+    driverClassName="org.hsqldb.jdbcDriver"
+    url="jdbc:hsqldb:mem:emp"
+    username="sa" password="" 
+    maxTotal="20" maxIdle="10" maxWaitMillis="-1"/>
+
+</Context>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE taglib>
+<taglib>
+	<tlib-version>2.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>My Tag Library</short-name>
+	<uri>http://www.abc.com/taglib</uri>
+	<tag>
+		<name>paging</name>
+		<tag-class>kr.co.dongbu.board.tags.PagingHandler</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>total</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>now</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

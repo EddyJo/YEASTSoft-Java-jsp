@@ -1,0 +1,15 @@
+<!DOCTYPE etl><!-- SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd"-->
+<etl>
+	<properties><!-- Load external properties -->
+		<include href="database.properties" />
+	</properties>
+	<connection driver="$jdbc.driverClassName" 
+		url="$jdbc.url" user="$jdbc.username"
+		password="$jdbc.password" />
+	<script>
+		<include href="emp_dept_hsqldb.sql" />
+		<include href="board_hsqldb.sql" />
+		<include href="member_hsqldb.sql" />
+		-- And/or directly insert SQL statements here
+	</script>
+</etl>
