@@ -33,42 +33,42 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href='<c:url value="/"/>' class="dropdown-toggle"><fmt:message key="DASHBOARD"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle">(메뉴1)<fmt:message key="DASHBOARD"/></a>
                     <!-- ul class="dropdown-menu">
                         <li><a href='<c:url value="/"/>'><fmt:message key="menu_dashboard"/></a></li>
                     </ul-->
                 </li>
                 <li class="dropdown">
-                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="BOARD"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown">(메뉴2)<fmt:message key="BOARD"/></a>
                     <ul class="dropdown-menu">
                     	<!-- li><a href="<c:url value='/board'/>"><fmt:message key="BOARD_DATATABLES_LIST"/></a-->
-                        <li><a href="<c:url value='/board/list.do'/>"><fmt:message key="BOARD_LIST"/></a>
-                        <li><a href="<c:url value='/board/write.do'/>"><fmt:message key="WRITE_NEW_ARTICLE"/></a>
+                        <li><a href="<c:url value='/board/list.do'/>">(메뉴2-1)<fmt:message key="BOARD_LIST"/></a>
+                        <li><a href="<c:url value='/board/write.do'/>">(메뉴2-2)<fmt:message key="WRITE_NEW_ARTICLE"/></a>
                     </ul>
                 </li>
                 <li class="dropdown">
                 	<fmt:setBundle basename="i18n/news" var="news"/>
-                    <a href='<c:url value="/news/list.do"/>' class="dropdown-toggle"><fmt:message bundle="${news}" key="NEWS_LIST"/></a>
+                    <a href='<c:url value="/news/list.do"/>' class="dropdown-toggle">(메뉴3)<fmt:message bundle="${news}" key="NEWS_LIST"/></a>
                 </li>
                 <li class="dropdown">
-                    <a href='#' class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="EMP_TEST"/></a>
+                    <a href='#' class="dropdown-toggle" data-toggle="dropdown">(메뉴4)<fmt:message key="EMP_TEST"/></a>
                     <ul class="dropdown-menu">
-                        <li><a href='<c:url value="/emp/list.do"/>'><fmt:message key="EMP_LIST"/></a></li>
-                        <li><a href='<c:url value="/emp/list.do?list=json"/>'><fmt:message key="EMP_JSON_LIST"/></a></li>
-                        <li><a href='<c:url value="/emp/salaryChart.do"/>'>Salary Chart</a></li>
+                        <li><a href='<c:url value="/emp/list.do"/>'>(메뉴4-1)<fmt:message key="EMP_LIST"/></a></li>
+                        <li><a href='<c:url value="/emp/list.do?list=json"/>'>(메뉴4-2)<fmt:message key="EMP_JSON_LIST"/></a></li>
+                        <li><a href='<c:url value="/emp/salaryChart.do"/>'>(메뉴4-3)Salary Chart</a></li>
     					<li role="separator" class="divider"></li>
- 						<li><a href='<c:url value="/emp?insert"/>'><fmt:message key="NEW_EMPLOYMENT"/></a></li>
+ 						<li><a href='<c:url value="/emp?insert"/>'>(메뉴4-4)<fmt:message key="NEW_EMPLOYMENT"/></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="MEMBER"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown">(메뉴5)<fmt:message key="MEMBER"/></a>
                     <ul class="dropdown-menu">
-                    	<li><a href="<c:url value='/member/login.do'/>"><fmt:message key="MY_INFO"/></a>
-                        <li><a href="<c:url value='/member/update.do'/>"><fmt:message key="UPDATE_USER_INFO"/></a>
-                        <li><a href="<c:url value='/member/delete.do'/>"><fmt:message key="EXIT_MEMBER"/></a>
-                        <li><a href="<c:url value='/member/logout.do'/>"><fmt:message key="SIGN_OUT"/></a>
+                    	<li><a href="<c:url value='/member/login.do'/>">(메뉴5-1)<fmt:message key="MY_INFO"/></a>
+                        <li><a href="<c:url value='/member/update.do'/>">(메뉴5-2)<fmt:message key="UPDATE_USER_INFO"/></a>
+                        <li><a href="<c:url value='/member/delete.do'/>">(메뉴5-3)<fmt:message key="EXIT_MEMBER"/></a>
+                        <li><a href="<c:url value='/member/logout.do'/>">(메뉴5-4)<fmt:message key="SIGN_OUT"/></a>
                         <li role="separator" class="divider"></li>
-                        <li><a href="<c:url value='/member/insert.do'/>"><fmt:message key="JOIN_MEMBER"/></a>
+                        <li><a href="<c:url value='/member/insert.do'/>">(메뉴5-5)<fmt:message key="JOIN_MEMBER"/></a>
                     </ul>
                 </li>
 
@@ -91,7 +91,7 @@
                 </li>
                <li><div>
                <c:if test="${empty userid}">
-               <br><a href="<c:url value='/member/login.do'/>" class="btn btn-danger"><fmt:message key="SIGN_IN"/></a>
+               <br><a href="<c:url value='/member/login.do'/>" class="btn btn-danger">(로그인)<fmt:message key="SIGN_IN"/></a>
                </c:if>
                <c:if test="${!empty userid}">
                <br><a href="<c:url value='/forward.do?url=/member/login.jsp'/>" class="btn btn-danger"><fmt:message key="MY_INFO"/></a>

@@ -1,6 +1,7 @@
 package kr.co.javaspecialist.match.model;
 
 public class MathchService {
+	//좋음, 나쁨, 중립
 	public String sayResult(String mname, String fname) {
 		return mname +"& "+ fname + "의 궁합은 ~입니다." ;
 		//궁합이 맞는지, 궁합도가 맞는지 알려줌...
