@@ -12,19 +12,19 @@
 	<div class="pg-opt">
         <div class="row">
             <div class="col-md-6 pc">
-                <h2><fmt:message key="HOME"/></h2>
+                <h2><fmt:message key="HOME"/>(홈)</h2>
             </div>
             <div class="col-md-6">
                 <ol class="breadcrumb">
-                    <li><fmt:message key="DASHBOARD"/></li>
-                    <li class="active"><fmt:message key="HOME"/></li>
+                    <li>(설명1)<fmt:message key="DASHBOARD"/></li>
+                    <li class="active">(설명2)<fmt:message key="HOME"/></li>
                 </ol>
             </div>
         </div>
     </div>
 
 	<div class="content">
-	<h3><fmt:message key="WELCOME_MESSAGE"/></h3>
+	<h3><fmt:message key="WELCOME_MESSAGE"/><h5>(여기서 message들은 i18n밑에 프로퍼티파일에서 변경한다.)</h5></h3>
 
 	<div class="row">
 		<div class="col-sm-6 col-md-4">
