@@ -9,14 +9,13 @@ import kr.co.javaspecialist.review.model.SearchReviewService;
 public class SearchReviewController implements CommandHandler {
 
 	@Override
-	public String process(HttpServletRequest request,
-			HttpServletResponse response) {
-		String userId = request.getParameter("userID");
+	public String process(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter("userId");
 		SearchReviewService service = new SearchReviewService();
 		String result = service.searchReview(userId);
 		request.setAttribute("result", result);
 		
-		return "searchReview.jsp";
+		return "/searchreview/searchreview.jsp";
 	}
 
 }
