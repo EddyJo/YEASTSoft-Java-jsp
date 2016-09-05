@@ -15,5 +15,5 @@ VALUES ('1', 'DCH', '타이레놀', '커피', '2016/09/04');
 INSERT INTO MEMBER (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES ('2', 'HYJ', '아스피린', '사과', '2016/09/05');
 
-
+--test
 commit;
