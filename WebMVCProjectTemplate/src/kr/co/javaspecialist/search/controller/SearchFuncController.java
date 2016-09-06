@@ -36,8 +36,8 @@ public class SearchFuncController extends SearchController {
 		//searchlog에 담긴 데이터를 DB에 입력하기 - ISearchLogDAO 타입의 SearchLogDAO 객체에 넣기
 		dao.insertLog(searchlog);
 		
-				
-		return "검색키워드로 궁합도를 분석하는 컨트롤러를 실행시키게 구현";
+		//"검색키워드로 궁합도를 분석하는 컨트롤러를 실행시키게 구현";
+		return response.sendRedirect("redirect:/analysis/controller/AnalysisController.java"); 
 		
 	}
 	
