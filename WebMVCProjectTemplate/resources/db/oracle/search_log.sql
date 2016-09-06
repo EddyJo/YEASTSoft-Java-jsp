@@ -1,7 +1,7 @@
 --DROP TABLE MEMBER CASCADE CONSTRAINTS;
 
 CREATE TABLE search_log(
-		SERIAL_NUM                        		NUMBER(4) 	NOT NULL,
+		SERIAL_NUM                        		NUMBER(4)    	NOT NULL,
 		USERID                          		VARCHAR2(15)	NOT NULL,
 		MED_KEY    	                    		VARCHAR2(20)	NOT NULL,
 		FOOD_KEY                         		VARCHAR2(20)	NOT NULL,

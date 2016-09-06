@@ -5,8 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import kr.co.javaspecialist.common.db.DBConn;
+import kr.co.javaspecialist.medicine.model.MedInfoVO;
 
 
 
@@ -38,7 +40,31 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 			DBConn.closeConnection(con);
 		}
 	}
+	
+	public Collection<FoodInfoVO> selectFoodList(String foodname) {
+		Connection con = null;
+		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
 
+		String sql = "select food_name, ";
+		try {
+			con= DBConn.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				FoodInfoVO board = new FoodInfoVO();
+				board.setFoodName(rs.getString("food_name"));
+				board.setGoodDisease(rs.getString("goodDisease"));
+				board.setBadDisease(rs.getString("badDisease"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("BoardDAO.selectArticleList : " + e.getMessage());
+		} finally {
+			DBConn.closeConnection(con);
+		}
+		return list;
+	}
+	
 	@Override
 	public FoodInfoVO select_FoodInfo(String foodName) {
 		// TODO Auto-generated method stub
@@ -64,22 +90,22 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 		return null;
 	}
 
-	@Override
-	public ArrayList<FoodInfoVO> selectAll_FoodInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void update(FoodInfoVO FoodInfo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public int delete(FoodInfoVO FoodInfo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+//	@Override
+//	public ArrayList<FoodInfoVO> selectAll_FoodInfo() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public void update(FoodInfoVO FoodInfo) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	@Override
+//	public int delete(FoodInfoVO FoodInfo) {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
 
 }
