@@ -16,13 +16,25 @@ public class MedInfoDAO implements IMedInfoDAO {
 	//새로운 약품정보 약품DB에 추가하는 메서드
 	public void insertMedInfo(MedInfoVO medinfo) {
 		Connection con= null;
-		String sql ="insert into med_info values (?, ?)";
+		String sql2 ="insert into med_info values (? ,?, ?)";
+		String sql1 = "select nvl(max(serial_num),0) from med_info";
 		try{
-			con= DBConn.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, medinfo.getMedName());
-			pstmt.setString(2, medinfo.getDisease());
-			pstmt.executeUpdate();			
+			con = DBConn.getConnection();
+			//1. 쿼리 작성
+			int serial_num = 0;
+			//2. statement 객체 생성 
+			PreparedStatement stmt = con.prepareStatement(sql1);
+			ResultSet rs = stmt.executeQuery();
+			rs.next();
+			serial_num = rs.getInt(1)+1;
+			//3. 쿼리 파라미터 설정
+			stmt = con.prepareStatement(sql2);
+			stmt.setInt(1, serial_num);
+			stmt.setString(2, medinfo.getMedName());
+			stmt.setString(3, medinfo.getDisease());
+			//4. 쿼리 실행, executeQuery 또는 executeUpdate
+			stmt.executeUpdate();
+						
 		}catch(SQLException e){
 			e.printStackTrace();
 			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());

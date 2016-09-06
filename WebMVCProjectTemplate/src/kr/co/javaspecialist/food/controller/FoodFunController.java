@@ -3,6 +3,7 @@ package kr.co.javaspecialist.food.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.javaspecialist.food.model.FoodInfoVO;
 import kr.co.javaspecialist.food.model.FoodService;
 
 public class FoodFunController extends FoodController {
@@ -24,11 +25,11 @@ public class FoodFunController extends FoodController {
 				request.setAttribute("result", result);
 							
 				//foodInfoVO 타입의 객체 생성 - 데이터 저장하기 위한 틀 만들기(구현 전)
-				//foodInfoVO foodInfo = new foodInfoVO();
-				//foodInfo.setFoodName(foodName);
-				//foodInfo.setGoodDisease(goodDisease);
-				//foodInfo.setBadDisease(badDisease);
-				//dao.insertFoodInfo(foodInfo);
+				FoodInfoVO foodInfo = new FoodInfoVO();
+				foodInfo.setFoodName(foodName);
+				foodInfo.setGoodDisease(goodDisease);
+				foodInfo.setBadDisease(badDisease);
+				dao.insertFoodInfo(foodInfo);
 
 				return "/food/insertFoodInfo.jsp";
 			}catch(Exception e){

@@ -24,11 +24,11 @@ public class MedicineFunController extends MedicineController {
 				request.setAttribute("result", result);
 							
 				//MedInfoVO 타입의 객체 생성 - 데이터 저장하기 위한 틀 만들기(구현 전)
-				//MedInfoVO medinfo = new MedInfoVO();
-				//medinfo.setMedName(medname);
-				//medinfo.setDisease(disease);
+				MedInfoVO medinfo = new MedInfoVO();
+				medinfo.setMedName(medname);
+				medinfo.setDisease(disease);
 				
-				//dao.insertMedInfo(medinfo);
+				dao.insertMedInfo(medinfo);
 
 				return "/medicine/insertmedinfo.jsp";
 			}catch(Exception e){

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public interface IFoodInfoDAO {
-		void insert_FoodInfo(FoodInfoVO FoodInfo);
+		void insertFoodInfo(FoodInfoVO FoodInfo);
 		Collection<FoodInfoVO> selectFoodList(String foodname);
-		FoodInfoVO select_FoodInfo(String foodName);
+		FoodInfoVO selectFoodInfo(String foodName);
 //		ArrayList<FoodInfoVO> selectAll_FoodInfo();
 //		void update(FoodInfoVO FoodInfo);
 //		int delete(FoodInfoVO FoodInfo);	

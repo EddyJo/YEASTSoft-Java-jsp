@@ -15,19 +15,22 @@ import kr.co.javaspecialist.medicine.model.MedInfoVO;
 public class FoodInfoDAO implements IFoodInfoDAO {
 	
 	@Override
-	public void insert_FoodInfo(FoodInfoVO FoodInfo) {
+	public void insertFoodInfo(FoodInfoVO FoodInfo) {
 		// TODO Auto-generated method stub
 		Connection con = null;
+		String sql1 = "select nvl(max(serial_num),0) from food_info";
 		try {
 			con = DBConn.getConnection();
 			//1. 쿼리 작성
 			int serial_num = 0;
-			String sql = "insert into FoodInfo values (?, ?, ?, ?)";
+			String sql2 = "insert into FoodInfo values (?, ?, ?, ?)";
 			//2. statement 객체 생성 
-			PreparedStatement stmt = con.prepareStatement(sql);
+			PreparedStatement stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery();
+			rs.next();
 			serial_num = rs.getInt(1)+1;
 			//3. 쿼리 파라미터 설정
+			stmt = con.prepareStatement(sql2);
 			stmt.setInt(1, serial_num);
 			stmt.setString(2, FoodInfo.getFoodName());
 			stmt.setString(3,FoodInfo.getGoodDisease());
@@ -67,7 +70,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	}
 	
 	@Override
-	public FoodInfoVO select_FoodInfo(String foodName) {
+	public FoodInfoVO selectFoodInfo(String foodName) {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		try {

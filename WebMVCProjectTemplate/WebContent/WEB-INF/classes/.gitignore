@@ -1,10 +1,2 @@
-/command.properties
 /db/
-/i18n/
 /kr/
-<<<<<<< HEAD
-/db/
-=======
-/log4j.properties
-/food/
->>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp
