@@ -2,7 +2,7 @@ package kr.co.javaspecialist.search.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import kr.co.javaspecialist.search.model.SearchLogVO;
 
@@ -13,8 +13,8 @@ public class SearchFuncController extends SearchController {
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		String method = request.getMethod();
 		String view = "/";
-
-
+		HttpSession session = ((HttpServletRequest)request).getSession();
+		
 		if(method.equalsIgnoreCase("get")){
 			view = "/search/form.jsp";
 		}else if(method.equalsIgnoreCase("post")){
@@ -22,7 +22,7 @@ public class SearchFuncController extends SearchController {
 			try{
 				//int serial = Integer.parseInt(request.getParameter("serialNum"));
 				//int serialNum = serial;
-				String userId =  request.getParameter("userId");
+				String userId = (String)session.getAttribute("userId");
 				String medKey =  request.getParameter("medKey");
 				String foodKey =  request.getParameter("foodKey");
 				//String searchDate =  request.getParameter("searchDate");
