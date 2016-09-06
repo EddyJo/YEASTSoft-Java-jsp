@@ -17,7 +17,7 @@ public class AnalysisController implements CommandHandler {
 		String result = service.analysis(med_name, food_name);
 		request.setAttribute("result", result);
 		
-		return "view.jsp";
+		return "/view.jsp";
 	}
 
 }

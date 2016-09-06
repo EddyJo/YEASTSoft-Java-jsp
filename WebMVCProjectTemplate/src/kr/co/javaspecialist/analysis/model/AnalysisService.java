@@ -23,13 +23,16 @@ package kr.co.javaspecialist.analysis.model;
  		FoodInfoDAO food = new FoodInfoDAO();
  		Collection<FoodInfoVO> foodList = food.selectFoodList(food_name);
  		String result = "결과 = ";
- 		
- 		for(i=0; i<medList.size(); i++) {
- 			result = result + medList.toString() + ", ";
+ 		System.out.println(foodList);
+ 		for(MedInfoVO medicine : medList) {
+ 			result = result + medicine.toString() + ", ";
  		}
- 		for(i=0; i<foodList.size(); i++) {
- 			result = result + foodList.toString() + ", ";
+ 		for(FoodInfoVO foods : foodList) {
+ 			System.out.println("작동");
+ 			System.out.println(foods);
+ 			result = result + foods.toString() + ", ";
  		}
+ 		System.out.println(result);
  		return result;
  	}
  

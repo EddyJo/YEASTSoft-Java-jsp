@@ -47,10 +47,11 @@ public class MedInfoDAO implements IMedInfoDAO {
 			Connection con = null;
 			ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
 
-			String sql = "select med_name, disease";
+			String sql = "select med_name, disease from med_info where med_name = ?";
 			try {
 				con= DBConn.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, med_name);
 				ResultSet rs = pstmt.executeQuery();
 				while(rs.next()) {
 					MedInfoVO medinfo = new MedInfoVO();
@@ -60,7 +61,7 @@ public class MedInfoDAO implements IMedInfoDAO {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				throw new RuntimeException("BoardDAO.selectArticleList : " + e.getMessage());
+				throw new RuntimeException("medInfoDAO.selectArticleList : " + e.getMessage());
 			} finally {
 				DBConn.closeConnection(con);
 			}

@@ -48,21 +48,24 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
 
-		String sql = "select food_name, ";
+		String sql = "select food_name, good_disease, bad_disease from food_info where food_name = ? ";
 		try {
 			con= DBConn.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, foodname);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				FoodInfoVO foodinfo = new FoodInfoVO();
 				foodinfo.setFoodName(rs.getString("food_name"));
-				foodinfo.setGoodDisease(rs.getString("goodDisease"));
-				foodinfo.setBadDisease(rs.getString("badDisease"));
+				foodinfo.setGoodDisease(rs.getString("good_disease"));
+				foodinfo.setBadDisease(rs.getString("bad_disease"));
+				System.out.println("첵첵");
+				System.out.println(foodinfo.toString());
 				list.add(foodinfo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new RuntimeException("BoardDAO.selectArticleList : " + e.getMessage());
+			throw new RuntimeException("foodInfoDAO.selectArticleList : " + e.getMessage());
 		} finally {
 			DBConn.closeConnection(con);
 		}

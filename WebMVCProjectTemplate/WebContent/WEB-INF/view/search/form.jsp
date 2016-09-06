@@ -16,14 +16,14 @@
 			<div class="form-group">
 				<label for="inputFoodName" class="col-sm-2 control-label">식품명</label>
 				<div class="col-sm-10">
-					<input type="text" class="searchname" id="fname"
+					<input type="text" class="searchname" name="foodKey"
 						placeholder="식품명을 입력하세요">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputMedName" class="col-sm-2 control-label">약품명</label>
 				<div class="col-sm-10">
-					<input type="text" class="searchname" id="mname"
+					<input type="text" class="searchname" name="medKey"
 						placeholder="약품명을 입력하세요">
 				</div>
 			</div>
