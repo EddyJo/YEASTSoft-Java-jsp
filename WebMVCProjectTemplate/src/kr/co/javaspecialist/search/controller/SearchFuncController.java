@@ -22,7 +22,7 @@ public class SearchFuncController extends SearchController {
 			try{
 				//int serial = Integer.parseInt(request.getParameter("serialNum"));
 				//int serialNum = serial;
-				String userId = (String)session.getAttribute("userId");
+				String userId = (String)session.getAttribute("userid");
 				String medKey =  request.getParameter("medKey");
 				String foodKey =  request.getParameter("foodKey");
 				//String searchDate =  request.getParameter("searchDate");
