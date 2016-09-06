@@ -3,8 +3,8 @@ DROP TABLE search_log;
 CREATE TABLE search_log(
 		SERIAL_NUM                        		NUMBER(4)    	PRIMARY KEY,
 		USERID                          		VARCHAR2(15)	NOT NULL,
-		MED_KEY    	                    		VARCHAR2(20)	NOT NULL,
-		FOOD_KEY                         		VARCHAR2(20)	NOT NULL,
+		MED_KEY    	                    		VARCHAR2(50)	NOT NULL,
+		FOOD_KEY                         		VARCHAR2(50)	NOT NULL,
 		SEARCH_DATE                       		VARCHAR2(20)	NOT NULL
 );
 

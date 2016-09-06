@@ -1,8 +1,8 @@
-
+drop Table med_info;
 CREATE TABLE med_info(
 		SERIAL_NUM								NUMBER(4) 		primary key,
-		MED_NAME                        		VARCHAR2(15) 	NOT NULL,
-		DISEASE                          		VARCHAR2(15)	NOT NULL
+		MED_NAME                        		VARCHAR2(50) 	NOT NULL,
+		DISEASE                          		VARCHAR2(50)	NOT NULL
 );
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)

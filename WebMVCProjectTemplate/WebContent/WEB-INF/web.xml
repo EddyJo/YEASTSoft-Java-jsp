@@ -20,6 +20,16 @@
     <listener-class>kr.co.javaspecialist.common.listener.WebDBInitializer</listener-class>
   </listener>
   <filter>
+    <display-name>CharacterEncodingFilter</display-name>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>kr.co.javaspecialist.common.filter.CharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  <filter>
     <filter-name>dandelionFilter</filter-name>
     <filter-class>com.github.dandelion.core.web.DandelionFilter</filter-class>
   </filter>
@@ -56,4 +66,5 @@
     <error-code>500</error-code>
     <location>/WEB-INF/view/error/500.jsp</location>
   </error-page>
+
 </web-app>

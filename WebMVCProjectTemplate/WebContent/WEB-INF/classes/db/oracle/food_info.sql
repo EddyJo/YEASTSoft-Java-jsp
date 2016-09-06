@@ -1,9 +1,9 @@
 DROP TABLE food_info;
 CREATE TABLE food_info(
 		SERIAL_NUM                        		NUMBER(4) 		primary key,
-		FOOD_NAME								VARCHAR2(20) 	NOT NULL,
-		GOOD_DISEASE							VARCHAR2(20) ,
-		BAD_DISEASE								VARCHAR2(20) 	
+		FOOD_NAME								VARCHAR2(50) 	NOT NULL,
+		GOOD_DISEASE							VARCHAR2(50) ,
+		BAD_DISEASE								VARCHAR2(50) 	
 );
 
 INSERT INTO food_info (SERIAL_NUM,FOOD_NAME, GOOD_DISEASE)

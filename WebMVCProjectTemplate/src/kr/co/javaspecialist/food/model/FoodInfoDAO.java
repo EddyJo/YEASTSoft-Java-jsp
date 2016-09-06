@@ -23,7 +23,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 			con = DBConn.getConnection();
 			//1. 쿼리 작성
 			int serial_num = 0;
-			String sql2 = "insert into FoodInfo values (?, ?, ?, ?)";
+			String sql2 = "insert into food_info values (?, ?, ?, ?)";
 			//2. statement 객체 생성 
 			PreparedStatement stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery();

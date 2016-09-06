@@ -73,8 +73,6 @@ public class DispatcherServlet extends HttpServlet {
 	}
 
 	private void processServlet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//인코딩설정
-		request.setCharacterEncoding("UTF-8");
 		
 		//요청 URI를 반환  /WebPrj/hello.do
 		String command = request.getRequestURI();
