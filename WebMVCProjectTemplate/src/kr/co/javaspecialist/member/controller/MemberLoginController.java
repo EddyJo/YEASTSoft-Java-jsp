@@ -31,9 +31,11 @@ public class MemberLoginController extends MemberController {
 				//아이디 있음
 				if(dbPassword.equals(password)) {
 					//비밀번호 일치
+					String manager = "heojk";
 					session.setAttribute("userid", userid);
 					System.out.println(userid);
-					if(userid=="heojk"){
+					if(userid.equals(manager)){
+						System.out.println("1111");
 						return "/manager/manager.jsp";
 					}
 				}else {
@@ -42,6 +44,7 @@ public class MemberLoginController extends MemberController {
 					request.setAttribute("message", "WRONG_PASSWORD");
 				}
 			}
+			System.out.println("22222");
 			view = "/member/login.jsp";
 		}
 		return view;
