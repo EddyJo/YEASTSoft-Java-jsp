@@ -16,7 +16,7 @@ public class SelectUserIdController extends SearchController{
 		
 		Collection<SearchLogVO> logListByUserId = dao.selectUserId(userId);
 		request.setAttribute("logListByUserId", logListByUserId);
-		
+		//s
 		return "/searchlog/idlist.jsp";
 
 	}
