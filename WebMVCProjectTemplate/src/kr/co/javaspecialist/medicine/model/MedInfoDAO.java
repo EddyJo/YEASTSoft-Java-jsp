@@ -61,7 +61,7 @@ public class MedInfoDAO implements IMedInfoDAO {
 //	public void deleteArticle(int bbsno, int replynumber) {}
 
 	@Override
-	public Collection<MedInfoVO> selectArticleList() {
+	public Collection<MedInfoVO> selectMedList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
