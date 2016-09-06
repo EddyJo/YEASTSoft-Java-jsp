@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import kr.co.javaspecialist.food.model.FoodInfoDAO;
+import kr.co.javaspecialist.food.model.FoodInfoVO;
 import kr.co.javaspecialist.medicine.model.MedInfoDAO;
 import kr.co.javaspecialist.medicine.model.MedInfoVO;
 
@@ -18,14 +20,17 @@ public class analysisService {
 		MedInfoDAO med = new MedInfoDAO();
 		Collection<MedInfoVO> medList = med.selectMedList(med_name);
 		
-//		FoodInfoDAO food = new FoodinfoDAO();
-//		Collection<FoodInfoVO> FoodList = food.selectFoodList(food_name);
+		FoodInfoDAO food = new FoodInfoDAO();
+		Collection<FoodInfoVO> foodList = food.selectFoodList(food_name);
+		String result = "결과 = ";
 		
 		for(i=0; i<medList.size(); i++) {
-			medList.toString();
+			result = result + medList.toString() + ", ";
 		}
-		
-		return "analysis.jsp";
+		for(i=0; i<foodList.size(); i++) {
+			result = result + foodList.toString() + ", ";
+		}
+		return result;
 	}
 
 }

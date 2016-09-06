@@ -4,9 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.co.javaspecialist.common.controller.CommandHandler;
+import kr.co.javaspecialist.food.model.FoodInfoDAO;
+import kr.co.javaspecialist.food.model.IFoodInfoDAO;
+import kr.co.javaspecialist.medicine.model.IMedInfoDAO;
+import kr.co.javaspecialist.medicine.model.MedInfoDAO;
 
-abstract class FoodController implements CommandHandler {
-
+public abstract class FoodController implements CommandHandler {
+	IFoodInfoDAO dao = new FoodInfoDAO();
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub

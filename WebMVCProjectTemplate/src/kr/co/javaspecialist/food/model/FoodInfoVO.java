@@ -30,5 +30,12 @@ public class FoodInfoVO {
 		public void setBadDisease(String badDisease) {
 			this.badDisease = badDisease;
 		}
+		
+		@Override
+		public String toString() {
+			return "FoodInfoVO [serialNum=" + serialNum + ", foodName=" + foodName + ", goodDisease=" + goodDisease
+					+ ", badDisease=" + badDisease + "]";
+		}
 	}
 	
+
