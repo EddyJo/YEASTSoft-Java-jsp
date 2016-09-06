@@ -33,25 +33,20 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href='<c:url value="/"/>' class="dropdown-toggle">(메뉴1)<fmt:message key="DASHBOARD"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle">소개(기능 및 조직구성)<fmt:message key="DASHBOARD"/></a>
                     <!-- ul class="dropdown-menu">
                         <li><a href='<c:url value="/"/>'><fmt:message key="menu_dashboard"/></a></li>
                     </ul-->
                 </li>
                 <li class="dropdown">
-                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown">(메뉴2)<fmt:message key="BOARD"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown">검색이력<fmt:message key="BOARD"/></a>
                     <ul class="dropdown-menu">
-                    	<!-- li><a href="<c:url value='/board'/>"><fmt:message key="BOARD_DATATABLES_LIST"/></a-->
-                        <li><a href="<c:url value='/board/list.do'/>">(메뉴2-1)<fmt:message key="BOARD_LIST"/></a>
-                        <li><a href="<c:url value='/board/write.do'/>">(메뉴2-2)<fmt:message key="WRITE_NEW_ARTICLE"/></a>
+                    	<li><a href="<c:url value='/search/idlist.do'/>">나의 검색이력 조회<fmt:message key="BOARD_LIST"/></a>
+                       
                     </ul>
                 </li>
                 <li class="dropdown">
-                	<fmt:setBundle basename="i18n/news" var="news"/>
-                    <a href='<c:url value="/news/list.do"/>' class="dropdown-toggle">(메뉴3)<fmt:message bundle="${news}" key="NEWS_LIST"/></a>
-                </li>
-                <li class="dropdown">
-                    <a href='#' class="dropdown-toggle" data-toggle="dropdown">(메뉴4)<fmt:message key="EMP_TEST"/></a>
+                    <a href='<c:url value="/"/>' class="dropdown-toggle" data-toggle="dropdown">질병 트랜드 및 예측 분석<fmt:message key="BOARD"/></a>
                     <ul class="dropdown-menu">
                         <li><a href='<c:url value="/emp/list.do"/>'>(메뉴4-1)<fmt:message key="EMP_LIST"/></a></li>
                         <li><a href='<c:url value="/emp/list.do?list=json"/>'>(메뉴4-2)<fmt:message key="EMP_JSON_LIST"/></a></li>

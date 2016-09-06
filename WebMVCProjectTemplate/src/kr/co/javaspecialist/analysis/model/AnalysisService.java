@@ -11,7 +11,7 @@ import kr.co.javaspecialist.food.model.FoodInfoVO;
 import kr.co.javaspecialist.medicine.model.MedInfoDAO;
 import kr.co.javaspecialist.medicine.model.MedInfoVO;
 
-public class analysisService {
+public class AnalysisService {
 	public String analysis(String med_name, String food_name){
 		int i=0;
 		//약품DAO, 식품DAO
