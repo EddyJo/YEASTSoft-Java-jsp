@@ -16,7 +16,7 @@ public class SelectAllListController extends SearchController{
 		Collection<SearchLogVO> allList = dao.selectAllList();
 		request.setAttribute("allList", allList);
 
-		return "/searchlog/alllist.jsp";
+		return "/search/alllist.jsp";
 
 	}
 	
