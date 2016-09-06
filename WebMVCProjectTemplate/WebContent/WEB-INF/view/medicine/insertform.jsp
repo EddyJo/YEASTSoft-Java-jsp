@@ -15,6 +15,7 @@
 			<label class="control-label col-sm-2" for="name"></label>
 			<div class="col-sm-2">
 				<h1>>약품 정보 입력<</h1>
+				<br>
 				약품명: <input type="text" name="medname" id="name" class="form-control"><br>
 				질병분류: <input type="text" name="disease" id="name" class="form-control">
 			</div>

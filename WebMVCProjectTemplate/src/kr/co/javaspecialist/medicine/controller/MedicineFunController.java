@@ -22,7 +22,7 @@ public class MedicineFunController extends MedicineController {
 				MedicineService service = new MedicineService();
 				String result = service.saymedi(medname, disease);
 				request.setAttribute("result", result);
-								
+							
 				//MedInfoVO 타입의 객체 생성 - 데이터 저장하기 위한 틀 만들기(구현 전)
 				//MedInfoVO medinfo = new MedInfoVO();
 				//medinfo.setMedName(medname);
