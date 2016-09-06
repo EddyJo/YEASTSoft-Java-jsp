@@ -7,5 +7,6 @@
 </head>
 <body>
 userId에 따라 개인 검색 이력을 출력하는 페이지입니다
+${idlist}
 </body>
 </html>

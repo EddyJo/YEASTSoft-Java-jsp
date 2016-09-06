@@ -7,5 +7,6 @@
 </head>
 <body>
 전체 검색 결과를 출력하는 페이지입니다.
+${alllist}
 </body>
 </html>
