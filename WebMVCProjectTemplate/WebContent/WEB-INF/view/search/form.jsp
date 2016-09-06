@@ -4,11 +4,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
 	<div class="content">
 		<form action="<c:url value='search.do'/>" method="post"
 			class="form-horizontal">
@@ -22,6 +24,7 @@
 			<input type="submit" value="궁합검색">
 		</form>
 	</div>
+<jsp:include page="/WEB-INF/view/include/footer.jsp"/>
 </body>
 </html>
 
