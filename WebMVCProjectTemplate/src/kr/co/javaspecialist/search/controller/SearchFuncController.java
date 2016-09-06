@@ -34,6 +34,7 @@ public class SearchFuncController extends SearchController {
 				searchlog.setUserId(userId);
 				searchlog.setMedKey(medKey);
 				searchlog.setFoodKey(foodKey);
+				System.out.println(userId);
 				//searchlog.setSearchDate(searchDate);
 
 				//searchlog에 담긴 데이터를 DB에 입력하기 - ISearchLogDAO 타입의 SearchLogDAO 객체에 넣기

@@ -31,11 +31,10 @@ public class MemberLoginController extends MemberController {
 				//아이디 있음
 				if(dbPassword.equals(password)) {
 					//비밀번호 일치
+					session.setAttribute("userId", userid);
 					if(userid=="heojk"){
-					session.setAttribute("userid", userid);
-					return "/manager/manager.jsp";
-				}
-					session.setAttribute("userid", userid);
+						return "/manager/manager.jsp";
+					}session.setAttribute("userId", userid);
 				}else {
 					//비밀번호 불일치
 					session.invalidate();
