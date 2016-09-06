@@ -32,6 +32,7 @@ public class MemberLoginController extends MemberController {
 				if(dbPassword.equals(password)) {
 					//비밀번호 일치
 					session.setAttribute("userid", userid);
+					System.out.println(userid);
 					if(userid=="heojk"){
 						return "/manager/manager.jsp";
 					}
