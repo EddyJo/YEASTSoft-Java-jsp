@@ -51,10 +51,11 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				FoodInfoVO board = new FoodInfoVO();
-				board.setFoodName(rs.getString("food_name"));
-				board.setGoodDisease(rs.getString("goodDisease"));
-				board.setBadDisease(rs.getString("badDisease"));
+				FoodInfoVO foodinfo = new FoodInfoVO();
+				foodinfo.setFoodName(rs.getString("food_name"));
+				foodinfo.setGoodDisease(rs.getString("goodDisease"));
+				foodinfo.setBadDisease(rs.getString("badDisease"));
+				list.add(foodinfo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

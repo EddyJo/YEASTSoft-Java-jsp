@@ -41,10 +41,10 @@ public class MedInfoDAO implements IMedInfoDAO {
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery();
 				while(rs.next()) {
-					MedInfoVO board = new MedInfoVO();
-					board.setMedName(rs.getString("med_name"));
-					board.setDisease(rs.getString("disease"));
-					list.add(board);
+					MedInfoVO medinfo = new MedInfoVO();
+					medinfo.setMedName(rs.getString("med_name"));
+					medinfo.setDisease(rs.getString("disease"));
+					list.add(medinfo);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

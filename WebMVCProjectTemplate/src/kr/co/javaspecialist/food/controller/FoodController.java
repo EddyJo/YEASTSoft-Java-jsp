@@ -11,11 +11,6 @@ import kr.co.javaspecialist.medicine.model.MedInfoDAO;
 
 public abstract class FoodController implements CommandHandler {
 	IFoodInfoDAO dao = new FoodInfoDAO();
-	@Override
-	public String process(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		
-		return null;
-	}
+
 
 }
