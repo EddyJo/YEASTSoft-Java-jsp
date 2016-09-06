@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 	<div class="content">
-		<form action="<c:url value='match.do'/>" method="post" class="form-horizontal">
+		<form action="<c:url value='search.do'/>" method="post" class="form-horizontal">
 			<div class="form-group">
 				<label for="inputFoodName" class="col-sm-2 control-label">식품명</label>
 				<div class="col-sm-10">
