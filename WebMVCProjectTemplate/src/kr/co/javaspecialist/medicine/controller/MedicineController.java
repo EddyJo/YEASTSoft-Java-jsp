@@ -7,7 +7,7 @@ import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.medicine.model.IMedInfoDAO;
 import kr.co.javaspecialist.medicine.model.MedInfoDAO;
 
-public class MedicineController implements CommandHandler {
+public abstract class MedicineController implements CommandHandler {
 	IMedInfoDAO dao = new MedInfoDAO();
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
