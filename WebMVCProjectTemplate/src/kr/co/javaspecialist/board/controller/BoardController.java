@@ -6,5 +6,5 @@ import kr.co.javaspecialist.common.controller.CommandHandler;
 
 public abstract class BoardController implements CommandHandler {
 
-	IBoardDAO dao = new BoardDAO();
+	IBoardDAO dao = new BoardDAO(); 
 }

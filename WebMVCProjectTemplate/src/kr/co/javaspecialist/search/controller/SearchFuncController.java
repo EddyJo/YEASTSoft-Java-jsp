@@ -8,7 +8,7 @@ import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.search.model.SearchLogVO;
 
 
-public class SearchFunController extends SearchController {
+public class SearchFuncController extends SearchController {
 
 	String view = "/";
 	
