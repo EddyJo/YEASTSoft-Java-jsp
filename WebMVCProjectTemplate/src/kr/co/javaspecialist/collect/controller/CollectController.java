@@ -3,7 +3,7 @@ package kr.co.javaspecialist.collect.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.javaspecialist.collect.service.CollectService;
+import kr.co.javaspecialist.collect.model.CollectService;
 import kr.co.javaspecialist.common.controller.CommandHandler;
 
 public class CollectController implements CommandHandler {

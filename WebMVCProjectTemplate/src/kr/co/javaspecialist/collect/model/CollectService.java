@@ -1,4 +1,4 @@
-package kr.co.javaspecialist.collect.service;
+package kr.co.javaspecialist.collect.model;
 
 public class CollectService {
 	public String collect(String url, String medi){
