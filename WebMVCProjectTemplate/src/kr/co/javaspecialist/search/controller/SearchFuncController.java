@@ -44,7 +44,7 @@ public class SearchFuncController extends SearchController {
 			}catch(Exception e){
 				request.setAttribute("message", e.getMessage());
 				e.printStackTrace();
-				view = "/error/error.jsp";
+				view = "/board/error.jsp";
 			}
 
 		}
