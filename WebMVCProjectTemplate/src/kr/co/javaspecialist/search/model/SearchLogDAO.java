@@ -9,6 +9,8 @@ import java.util.Collection;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import kr.co.javaspecialist.board.model.BoardVO;
@@ -65,31 +67,29 @@ public class SearchLogDAO implements ISearchLogDAO {
 	public Collection<SearchLogVO>  selectUserId(String userId) {
 		Connection con = null;
 
-		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
-		String sql = "select MED_KEY, FOOD_KEY from ( "
-				+ " select MED_KEY, FOOD_KEY from ( "
-				+ " select MED_KEY, FOOD_KEY from search_log "
-				+ " order by SERIAL_NUM DESC"
-				+ " where userId = ? "
-				; 
-
-
-		SearchLogVO logListByUserId = new SearchLogVO();
+		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
+		
+		String sql = "select med_key, food_key, search_date from search_log where userid=" + userId  ;
+		
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			logListByUserId.setUserId(rs.getString("userid"));
-			logListByUserId.setMedKey(rs.getString("medKey"));
-			logListByUserId.setFoodKey(rs.getString("food_key"));
+			while(rs.next()){
+				SearchLogVO logListByUserId = new SearchLogVO();
+				logListByUserId.setMedKey(rs.getString("medKey"));
+				logListByUserId.setFoodKey(rs.getString("food_key"));
+				idlist.add(logListByUserId);
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("SearchLogVO.selectArticleList : " + e.getMessage());
+			throw new RuntimeException("SearchLogVO.selectUserId : " + e.getMessage());
 		} finally {
 			closeConnection(con);
 		}
 
-		return list;
+		return idlist;
 	}
 
 	@Override
