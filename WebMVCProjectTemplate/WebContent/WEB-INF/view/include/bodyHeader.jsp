@@ -50,13 +50,10 @@
 										<!--<fmt:message key="BOARD_LIST" />-->
 								</a>
 							</ul></li>
-						<li class="dropdown"><a href='<c:url value="/"/>'
+						<li class="dropdown"><a href='<c:url value="/analysis.do"/>'
 							class="dropdown-toggle" data-toggle="dropdown">질병 트랜드 및 예측 분석<fmt:message
 									key="BOARD" /></a>
-							<ul class="dropdown-menu">
-								<li><a href='<c:url value="/emp/list.do"/>'>(메뉴4-1)<fmt:message
-											key="EMP_LIST" /></a></li>
-							</ul></li>
+						</li>
 						<li class="dropdown"><a href='<c:url value="/"/>'
 							class="dropdown-toggle" data-toggle="dropdown">(메뉴5)<fmt:message
 									key="MEMBER" /></a>
