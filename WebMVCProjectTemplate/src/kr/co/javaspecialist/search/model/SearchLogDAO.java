@@ -57,7 +57,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("searchlogDAO.insertLog : " + e.getMessage());
+			throw new RuntimeException("SearchLogDAO.insertLog : " + e.getMessage());
 		} finally {
 			closeConnection(con);
 		}
@@ -69,7 +69,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
 		
-		String sql = "select med_key, food_key, search_date from search_log where USERID= + ?"  ;
+		String sql = "select med_key, food_key, search_date from search_log where userid= + ?"  ;
 		
 		try {
 			con = getConnection();
@@ -80,6 +80,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 				SearchLogVO logListByUserId = new SearchLogVO();
 				logListByUserId.setMedKey(rs.getString("med_Key"));
 				logListByUserId.setFoodKey(rs.getString("food_key"));
+				logListByUserId.setSearchDate(rs.getString("search_date"));
 				idlist.add(logListByUserId);
 			}
 			
@@ -116,7 +117,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new RuntimeException("BoardDAO.selectArticleList : " + e.getMessage());
+			throw new RuntimeException("SearchLogDAO.selectAllList : " + e.getMessage());
 		} finally {
 			closeConnection(con);
 		}
