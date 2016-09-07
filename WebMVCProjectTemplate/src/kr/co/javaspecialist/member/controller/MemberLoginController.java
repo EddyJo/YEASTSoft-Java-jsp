@@ -39,10 +39,11 @@ public class MemberLoginController extends MemberController {
 					//비밀번호 불일치
 					session.invalidate();
 					request.setAttribute("message", "WRONG_PASSWORD");
+					view = "/member/login.jsp";
 				}
 			}
 			System.out.println("22222");
-			view = "/member/login.jsp";
+			
 		}
 		return view;
 	}

@@ -4,17 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:setBundle basename="i18n/header" />
 
-<style>
-div.form-group {
-	margin: 0px;
-	width: 1140px;
-	height: 128px;
-}
 
-.text-placeholder {
-	text-align: center;
-}
-</style>
 <!-- HEADER -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
