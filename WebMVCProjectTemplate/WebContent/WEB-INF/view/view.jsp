@@ -45,15 +45,18 @@
 			
 		<h2 class="featurette-heading">궁합도</h2>
 		<p class="lead">
-			<c:if test="${result}=='50'">
+			<c:if test="${result==50}">
 				<img src="http://cfile212.uf.daum.net/image/265D8B35538DE42D23A09F">
 			</c:if>
-			<c:if test="${result}=='100'">
+			<c:if test="${result==100}">
 				<img
 					src="http://mblogthumb3.phinf.naver.net/20130917_54/beauty_pop_1379424039089fO7UC_PNG/2202001_emot_019.png?type=w2">
 			</c:if>
-			<c:if test="${result}=='0'">
+			<c:if test="${result==10}">
 				<img src="http://cfile4.uf.tistory.com/image/224E463F5443B42A056C0A">
+			</c:if>
+			<c:if test="${result==0}">
+				<h3>일치하는 정보가 없습니다.</h3>
 			</c:if>
 		<h1>${result}</h1>
 	</div>
