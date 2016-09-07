@@ -36,16 +36,18 @@
 								</form>
 							</div>
 						</li>
-						<li class="dropdown"><a href='<c:url value="/"/>'
-							class="dropdown-toggle">소개(기능 및 조직구성)<fmt:message
-									key="DASHBOARD" /></a> <!-- ul class="dropdown-menu">
-                        <li><a href='<c:url value="/"/>'><fmt:message key="menu_dashboard"/></a></li>
+						<li class="dropdown"><a href="<c:url value='/forward.do?url=/menu/intro.jsp'/>"
+							class="dropdown-toggle">소개(기능 및 조직구성)
+							<!--<fmt:message key="DASHBOARD" />-->
+							</a>
                     </ul--></li>
 						<li class="dropdown"><a href='<c:url value="/"/>'
 							class="dropdown-toggle" data-toggle="dropdown">검색이력<fmt:message
 									key="BOARD" /></a>
 							<ul class="dropdown-menu">
-								<li><a href="<c:url value='/search/idlist.do'/>">나의 검색이력 조회<fmt:message key="BOARD_LIST" />
+								<li><a href="<c:url value='/searchId.do'/>">나의
+										검색이력 조회
+										<!--<fmt:message key="BOARD_LIST" />-->
 								</a>
 							</ul></li>
 						<li class="dropdown"><a href='<c:url value="/"/>'
