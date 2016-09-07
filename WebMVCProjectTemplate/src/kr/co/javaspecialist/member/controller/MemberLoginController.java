@@ -34,15 +34,16 @@ public class MemberLoginController extends MemberController {
 					String manager = "admin";
 					session.setAttribute("userid", userid);
 					System.out.println(userid);
-					return "/menu/intro.jsp";
+					return "redirect:/search.do";
 				}else {
 					//비밀번호 불일치
 					session.invalidate();
 					request.setAttribute("message", "WRONG_PASSWORD");
+					view = "/member/login.jsp";
 				}
 			}
 			System.out.println("22222");
-			view = "/member/login.jsp";
+			
 		}
 		return view;
 	}

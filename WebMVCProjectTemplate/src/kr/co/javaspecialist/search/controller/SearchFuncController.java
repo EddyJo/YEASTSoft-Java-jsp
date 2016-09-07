@@ -18,7 +18,7 @@ public class SearchFuncController extends SearchController {
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		
 		if(method.equalsIgnoreCase("get")){
-			view = "/search/form.jsp";
+			view = "/menu/intro.jsp";
 		}else if(method.equalsIgnoreCase("post")){
 			//SearchLog VO 생성을 위한 변수 선언
 			try{
