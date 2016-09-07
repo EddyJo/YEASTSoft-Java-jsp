@@ -7,21 +7,8 @@
 <jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
-<div class="container">
-	<div class="pg-opt">
-        <div class="row">
-            <div class="col-md-6 pc">
-                <h2><fmt:message key="UPDATE_ARTICLE"/></h2>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb">
-                    <li><fmt:message key="BOARD"/></li>
-                    <li class="active"><fmt:message key="UPDATE_ARTICLE"/></li>
-                </ol>
-            </div>
-        </div>
-    </div>
-	<div class="content">
+	
+	<div class="content" style="margin-top=100px;">
 	<form action="<c:url value='/board/update.do'/>" method="post" class="form-horizontal">
 	<div class="form-group">
       <label class="control-label col-sm-2" for="name"><fmt:message key="WRITER"/></label>
@@ -65,7 +52,7 @@
 	</div>
 	</form>
 	</div>
-</div>
+
 <jsp:include page="/WEB-INF/view/include/footer.jsp"/>
 </body>
 </html>

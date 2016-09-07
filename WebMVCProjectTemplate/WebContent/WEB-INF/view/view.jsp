@@ -42,9 +42,7 @@
 	<hr class="featurette-divider">
 
 	<div class="featurette" id="about" >
-		<img class="featurette-image img-circle img-responsive "
-			src="http://placehold.it/200x200" style="position:relative;">
-		
+			
 		<h2 class="featurette-heading">궁합도</h2>
 		<p class="lead">
 			<c:if test="${result==50}">
