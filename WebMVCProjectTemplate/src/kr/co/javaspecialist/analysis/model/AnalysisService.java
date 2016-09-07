@@ -13,7 +13,6 @@ package kr.co.javaspecialist.analysis.model;
  
  public class AnalysisService {
  	public String analysis(String med_name, String food_name){
- 		int i=0;
  		//약품DAO, 식품DAO
  		//toString 으로 출력 
  		//분석 (추후 업데이트)
@@ -22,18 +21,30 @@ package kr.co.javaspecialist.analysis.model;
  		
  		FoodInfoDAO food = new FoodInfoDAO();
  		Collection<FoodInfoVO> foodList = food.selectFoodList(food_name);
- 		String result = "결과 = ";
+ 		String result = "";
+ 		int score = 0;
  		System.out.println(foodList);
  		for(MedInfoVO medicine : medList) {
- 			result = result + medicine.toString() + ", ";
- 		}
- 		for(FoodInfoVO foods : foodList) {
- 			System.out.println("작동");
- 			System.out.println(foods);
- 			result = result + foods.toString() + ", ";
+ 			if(medicine == null){
+ 				result = "아직 DB에 약품이 없거나 존재하지 않는 약품입니다.";
+ 			}else{
+ 				for(FoodInfoVO foodinfo : foodList){
+ 					if(medicine.getDisease().equals(foodinfo.badDisease)){
+ 						score = 0;
+ 						result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 나쁜 관계입니다.";
+ 					}else if(medicine.getDisease().equals(foodinfo.goodDisease)){
+ 						score = 100;
+ 						result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 좋은 관계입니다.";
+ 					}else{
+ 						score = 50;
+ 						result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 아무런 관계가 없습니다.";
+ 					}
+ 						
+ 				}
+ 			}
  		}
  		System.out.println(result);
- 		return result;
+ 		return result + "점수 : " + score;
  	}
  
  }
