@@ -47,7 +47,6 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public Collection<FoodInfoVO> selectFoodList(String foodname) {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
-
 		String sql = "select food_name, good_disease, bad_disease from food_info where food_name = ? ";
 		try {
 			con= DBConn.getConnection();
