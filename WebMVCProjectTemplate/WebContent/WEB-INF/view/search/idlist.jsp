@@ -35,7 +35,7 @@
 
 <div class="content" style="text-align: center; height: 700px;">
 	userId에 따라 개인 검색 이력을 출력하는 페이지입니다
-	${idlist}
+	${logListByUserId}
 </div>
 <jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>

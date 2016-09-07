@@ -36,7 +36,7 @@
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
 
 	
-	<div class="content">
+	<div class="content" style="margin-top: 100px;">
 	<form action="<c:url value='/member/insert.do'/>" method="post" class="form-horizontal">
 	<div class="form-group">
       <label class="control-label col-sm-2" for="userid">Member ID</label>
