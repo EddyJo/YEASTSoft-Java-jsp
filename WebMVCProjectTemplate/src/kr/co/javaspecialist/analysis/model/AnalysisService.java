@@ -43,8 +43,8 @@ package kr.co.javaspecialist.analysis.model;
  				}
  			}
  		}
- 		System.out.println(result);
- 		return result + "점수 : " + score;
+
+ 		return score+"";
  	}
  
  }
