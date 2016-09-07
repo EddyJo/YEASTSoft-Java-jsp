@@ -69,22 +69,23 @@ public class SearchLogDAO implements ISearchLogDAO {
 
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
 		
-		String sql = "select med_key, food_key, search_date from search_log where userid=" + userId  ;
+		String sql = "select med_key, food_key, search_date from search_log where USERID= + ?"  ;
 		
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				SearchLogVO logListByUserId = new SearchLogVO();
-				logListByUserId.setMedKey(rs.getString("medKey"));
+				logListByUserId.setMedKey(rs.getString("med_Key"));
 				logListByUserId.setFoodKey(rs.getString("food_key"));
 				idlist.add(logListByUserId);
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("SearchLogVO.selectUserId : " + e.getMessage());
+			throw new RuntimeException("SearchLogDAO.selectUserId : " + e.getMessage());
 		} finally {
 			closeConnection(con);
 		}
