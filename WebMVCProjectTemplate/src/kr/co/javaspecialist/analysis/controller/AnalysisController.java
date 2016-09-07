@@ -15,7 +15,7 @@ public class AnalysisController implements CommandHandler {
 		String food_name = request.getParameter("food_name");
 
 		AnalysisService service = new AnalysisService();
-		String result = service.analysis(med_name, food_name);
+		int result = service.analysis(med_name, food_name);
 		request.setAttribute("result", result);
 		
 		return "/view.jsp";

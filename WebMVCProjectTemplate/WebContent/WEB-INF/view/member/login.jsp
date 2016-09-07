@@ -26,10 +26,12 @@ if(userid==null) {
 	<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
       <label class="control-label col-sm-2" for="id">Member ID</label><br>
      
-        <input type="text" name="userid" id="id" class="form-control" placeholder="아이디를 입력하세요" ><br>
+        <input type="text" name="userid" id="id" class="form-control"
+        style="width:300px;" placeholder="아이디를 입력하세요" ><br>
      
        <label class="control-label col-sm-2" for="id">Member PW</label><br>
-        <input type="password" name="password" id="pw" class="form-control" placeholder="비밀번호를 입력하세요" >
+        <input type="password" name="password" id="pw" class="form-control" 
+        style="width:300px;" placeholder="비밀번호를 입력하세요" >
     
     </div>
     <br>
