@@ -29,7 +29,12 @@
 				<li><a
 					href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About
 						US</a></li>
-				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
+				<li class="dropdown"><a href='<c:url value="/"/>'
+					class="dropdown-toggle" data-toggle="dropdown">Log History</a>
+					<ul class="dropdown-menu">
+						<li><a href="<c:url value='/searchId.do'/>">user</a>
+						<li><a href="<c:url value='/searchAll.do'/>">all</a>
+					</ul></li>
 				<li><a href='<c:url value="/emp/salaryChart.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>

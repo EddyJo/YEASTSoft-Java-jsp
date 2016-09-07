@@ -20,11 +20,11 @@ public class SearchLogDeleteController extends SearchController {
 				view = "/search/error.jsp";
 			}	
 		}else if(method.equalsIgnoreCase("post")){
-			try{
-				String userid= request.getParameter("userid");
-				SearchlogVO search = seachDao
+			//try{
+			//	String userid= request.getParameter("userid");
+			//	SearchlogVO search = seachDao
 				
-			}
+			//}
 		}
 		
 		return null;

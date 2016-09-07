@@ -36,8 +36,18 @@
 <div class="content" style="text-align: center; height: 700px;">
 
 전체 검색 결과를 출력하는 페이지입니다.
-${alllist}
-
+${allList}
+<table border=1>
+<c:forEach var="alog" items="${allList}">
+<tr>
+<td>${alog.serialNum}</td>
+<td>${alog.userId}</td>
+<td>${alog.medKey}</td>
+<td>${alog.foodKey}</td>
+<td>${alog.searchDate}</td>
+</tr>
+</c:forEach>
+</table>	
 </div>
 <jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>

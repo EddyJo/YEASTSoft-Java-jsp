@@ -70,7 +70,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
 		
-		String sql = "select med_key, food_key, search_date from search_log where userid= + ?"  ;
+		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by SERIAL_NUM DESC"  ;
 		
 		try {
 			con = getConnection();
@@ -100,7 +100,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		Connection con = null;
 		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
 
-		String sql = "select * from search_log order by SERIAL_NUM DESC"; 
+		String sql = "select * from search_log order by SERIAL_NUM"; 
 
 		try {
 			con = getConnection();
