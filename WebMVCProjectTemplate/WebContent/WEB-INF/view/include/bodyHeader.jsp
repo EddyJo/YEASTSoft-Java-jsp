@@ -3,6 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:setBundle basename="i18n/header" />
+<style>
+div.form-group {
+	margin: 0px;
+	width: 1140px;
+	height: 128px;
+}
+
+.text-placeholder {
+	text-align: center;
+}
+</style>
 <!-- HEADER -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -22,12 +33,13 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#about">About US</a></li>
+
+
+				<li><a href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About US</a></li>
 				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
 				<li><a href='<c:url value="/emp/list.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
-					class="dropdown-toggle" data-toggle="dropdown">(메뉴5)<fmt:message
-							key="MEMBER" /></a>
+					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
 					<ul class="dropdown-menu">
 						<li><a href="<c:url value='/member/login.do'/>">(메뉴5-1)<fmt:message
 									key="MY_INFO" /></a>
@@ -42,27 +54,29 @@
 									key="JOIN_MEMBER" /></a>
 					</ul></li>
 
-			</ul>
-			<c:if test="${sessionScope.userid eq 'admin'}">
-				<li class="dropdown"><a href='<c:url value="/"/>'
-					class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
-					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
-						<li><a href="<c:url value='/insertFoodInfo.do'/>">식품 DB추가</a>
-					</ul></li>
-			</c:if>
-			<li>
-					<c:if test="${empty userid}">
-						<br>
-						<a href="<c:url value='/member/login.do'/>" class="btn btn-danger">(로그인)<fmt:message
-								key="SIGN_IN" /></a>
-					</c:if>
-					<c:if test="${!empty userid}">
-						<br>
-						<a href="<c:url value='/forward.do?url=/member/login.jsp'/>"
-							class="btn btn-danger"><fmt:message key="MY_INFO" /></a>
-					</c:if>
-				</li>
+
+				<c:if test="${sessionScope.userid eq 'admin'}">
+					<li class="dropdown"><a href='<c:url value="/"/>'
+						class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
+						<ul class="dropdown-menu">
+							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
+							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품
+									DB추가</a>
+						</ul></li>
+				</c:if>
+				<li><div style="margin-top: 10px;">
+						<c:if test="${empty userid}">
+							
+							<a href="<c:url value='/member/login.do'/>"
+								class="btn btn-danger">(로그인)<fmt:message key="SIGN_IN" /></a>
+						</c:if>
+						<c:if test="${!empty userid}">
+							
+							<a href="<c:url value='/forward.do?url=/member/login.jsp'/>"
+								class="btn btn-danger"><fmt:message key="MY_INFO" /></a>
+						</c:if>
+					</div></li>
+
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

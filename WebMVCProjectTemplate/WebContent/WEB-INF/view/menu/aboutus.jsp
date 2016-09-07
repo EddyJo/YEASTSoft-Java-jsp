@@ -5,15 +5,6 @@
 <fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<style>
-.featurette{
-	margin: 200px 0;
-	height: 370px;
-	text-align: center;
-	position: absloute;
-}
-
-</style>
 <head>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,33 +28,10 @@
 
 </head>
 <body>
-	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-
-	<hr class="featurette-divider">
-
-	<div class="featurette" id="about" >
-		<img class="featurette-image img-circle img-responsive "
-			src="http://placehold.it/200x200" style="position:relative;">
-		
-		<h2 class="featurette-heading">궁합도</h2>
-		<p class="lead">
-			<c:if test="${result}=='50'">
-				<img src="http://cfile212.uf.daum.net/image/265D8B35538DE42D23A09F">
-			</c:if>
-			<c:if test="${result}=='100'">
-				<img
-					src="http://mblogthumb3.phinf.naver.net/20130917_54/beauty_pop_1379424039089fO7UC_PNG/2202001_emot_019.png?type=w2">
-			</c:if>
-			<c:if test="${result}=='0'">
-				<img src="http://cfile4.uf.tistory.com/image/224E463F5443B42A056C0A">
-			</c:if>
-		<h1>${result}</h1>
-	</div>
-	
-	
-	
-	
-	
-	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
+<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
+<div class="content" style="text-align: center; height: 700px;">
+기능 및 팀 소개 
+</div>
+<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 </html>

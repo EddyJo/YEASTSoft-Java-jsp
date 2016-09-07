@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,11 +34,43 @@
 div.form-group {
 	margin: 0px;
 	width: 1140px;
-	height: 128px;
+	height: 100px;
 }
 
-.text-placeholder{
+.text-placeholder {
 	text-align: center;
+}
+
+#footer_wrap {
+	color: #FFFFFF;
+	float: left;
+	background: #003399;
+	width: 100%;
+	height: 150px;
+	text-align: center;
+}
+
+.footer_box {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.footer_box ul {
+	float: left;
+	width: 1000px;
+	margin: 0 auto 20px auto;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.footer_box ul li {
+	padding: 0 10px;
+	text-align: center;
+	display: inline-block;;
+}
+
+.footer_box ul .last {
+	background: none;
 }
 </style>
 
@@ -60,10 +93,52 @@ div.form-group {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#about">About US</a></li>
-				<li><a href="#services">Log History</a></li>
-				<li><a href="#contact">Trend Analysis</a></li>
-				<li><a href="#member">Member Service</a></li>
+
+				<li><a href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About US</a></li>
+				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
+				<li><a href='<c:url value="/emp/list.do"/>'>Trend Analysis</a></li>
+				<li class="dropdown"><a href='<c:url value="/"/>'
+					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
+					<ul class="dropdown-menu">
+						<li><a href="<c:url value='/member/login.do'/>">My Page<fmt:message
+									key="MY_INFO" /></a>
+						<li><a href="<c:url value='/member/update.do'/>">Update
+								Info<fmt:message key="UPDATE_USER_INFO" />
+						</a>
+						<li><a href="<c:url value='/member/delete.do'/>">Exit
+								Member<fmt:message key="EXIT_MEMBER" />
+						</a>
+						<li><a href="<c:url value='/member/logout.do'/>">Sign
+								Out)<fmt:message key="SIGN_OUT" />
+						</a>
+						<li role="separator" class="divider"></li>
+						<li><a href="<c:url value='/member/insert.do'/>">Join
+								Member)<fmt:message key="JOIN_MEMBER" />
+						</a>
+					</ul></li>
+
+
+				<c:if test="${sessionScope.userid eq 'admin'}">
+					<li class="dropdown"><a href='<c:url value="/"/>'
+						class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
+						<ul class="dropdown-menu">
+							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
+							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품
+									DB추가</a>
+						</ul></li>
+				</c:if>
+				<li><div style="margin-top: 10px;">
+						<c:if test="${empty userid}">
+
+							<a href="<c:url value='/member/login.do'/>"
+								class="btn btn-danger"><fmt:message key="SIGN_IN" /></a>
+						</c:if>
+						<c:if test="${!empty userid}">
+
+							<a href="<c:url value='/forward.do?url=/member/login.jsp'/>"
+								class="btn btn-danger"><fmt:message key="MY_INFO" /></a>
+						</c:if>
+					</div></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -81,7 +156,7 @@ div.form-group {
 	</header>
 
 	<!-- Page Content -->
-	<div class="container" align=center style="height:630px;">
+	<div class="container" align=center style="height: 530px;">
 
 		<hr class="featurette-divider">
 
@@ -89,15 +164,14 @@ div.form-group {
 
 
 		<form action="<c:url value='search.do'/>" method="post"
-			class="form-horizontal" style="height:300px;">
+			class="form-horizontal" style="height: 300px;">
 			<div class="form-group">
 
-				<input type="text" class="searchname" name="foodKey" style="width:300px; height:70px;"
-					placeholder="식품명을 입력하세요""><br>
-					<br>
-			    <input type="text" class="searchname" name="medKey" style="width:300px; height:70px;"
-					placeholder="약품명을 입력하세요"><br>
-					<br>
+				<input type="text" class="searchname" name="foodKey"
+					style="width: 300px; height: 70px;" placeholder="식품명을 입력하세요""><br>
+				<br> <input type="text" class="searchname" name="medKey"
+					style="width: 300px; height: 70px;" placeholder="약품명을 입력하세요"><br>
+				<br>
 				<button type="submit" class="btn btn-primary btn-lg active">궁합
 					검색</button>
 
@@ -108,25 +182,7 @@ div.form-group {
 		</form>
 	</div>
 
-	
-	<!-- Footer -->
-	<footer>
-	<div class="row">
-		<div class="col-lg-12">
-			<p>Copyright &copy; Your Website 2014</p>
-		</div>
-	</div>
-	</footer>
-
-	</div>
-	<!-- /.container -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-
+	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
 </html>
