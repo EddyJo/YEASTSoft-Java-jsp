@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -85,17 +86,17 @@ div.form-group {
 		<!-- First Featurette -->
 
 
-		<form action="<c:url value='search.do'/>" method="post"
+		<form action="<c:url value='insertFoodInfo.do'/>" method="post"
 			class="form-horizontal" style="height:300px;">
 			<div class="form-group">
 
-				<input type="text" class="searchname" name="foodKey" style="width:300px; height:70px;"
+				<input type="text" class="searchname" name="foodName" style="width:300px; height:70px;"
 					placeholder="식품명을 입력하세요""><br>
 					<br>
-			    <input type="text" class="searchname" name="GOOD" style="width:300px; height:70px;"
+			    <input type="text" class="searchname" name="goodDisease" style="width:300px; height:70px;"
 					placeholder="GOOD effect"><br>
 					<br>
-				<input type="text" class="searchname" name="BAD" style="width:300px; height:70px;"
+				<input type="text" class="searchname" name="badDisease" style="width:300px; height:70px;"
 					placeholder="BAD effect"><br>
 					<br>
 				<button type="submit" class="btn btn-primary btn-lg active">저장

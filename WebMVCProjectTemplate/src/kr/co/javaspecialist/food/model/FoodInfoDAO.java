@@ -38,7 +38,8 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 			//4. 쿼리 실행, executeQuery 또는 executeUpdate
 			stmt.executeUpdate();
 		}catch(SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			throw new RuntimeException("foodInfoDAO.insertfoodinfo : " + e.getMessage());
 		}finally {
 			DBConn.closeConnection(con);
 		}
@@ -47,7 +48,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public Collection<FoodInfoVO> selectFoodList(String foodname) {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
-		String sql = "select food_name, good_disease, bad_disease from food_info where food_name = ? ";
+		String sql = "select food_name, nvl(good_disease, '없음') as good_disease, nvl(bad_disease, '없음') as bad_disease from food_info where food_name = ? ";
 		try {
 			con= DBConn.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);

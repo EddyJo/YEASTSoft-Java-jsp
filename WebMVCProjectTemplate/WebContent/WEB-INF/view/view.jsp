@@ -49,8 +49,7 @@
 				<img src="http://cfile212.uf.daum.net/image/265D8B35538DE42D23A09F">
 			</c:if>
 			<c:if test="${result==100}">
-				<img
-					src="http://mblogthumb3.phinf.naver.net/20130917_54/beauty_pop_1379424039089fO7UC_PNG/2202001_emot_019.png?type=w2">
+				<img src="http://mblogthumb3.phinf.naver.net/20130917_54/beauty_pop_1379424039089fO7UC_PNG/2202001_emot_019.png?type=w2">
 			</c:if>
 			<c:if test="${result==10}">
 				<img src="http://cfile4.uf.tistory.com/image/224E463F5443B42A056C0A">
