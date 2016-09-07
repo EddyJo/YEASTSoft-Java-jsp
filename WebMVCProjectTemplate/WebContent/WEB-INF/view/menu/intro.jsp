@@ -5,6 +5,7 @@
 <fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <head>
 
 
@@ -16,8 +17,7 @@
 
 <title>YEASTsoft - 약빵 template</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+
 
 <!-- Custom CSS -->
 <link href="css/one-page-wonder.css" rel="stylesheet">
@@ -56,7 +56,8 @@ div.form-group {
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">HOME</a>
+			<a class="navbar-brand"
+				href="<c:url value='/forward.do?url=/menu/intro.jsp'/>">HOME</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -69,20 +70,15 @@ div.form-group {
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/member/login.do'/>">My Page<fmt:message
-									key="MY_INFO" /></a>
+						<li><a href="<c:url value='/member/login.do'/>">My Page</a>
 						<li><a href="<c:url value='/member/update.do'/>">Update
-								Info<fmt:message key="UPDATE_USER_INFO" />
-						</a>
+								Info</a>
 						<li><a href="<c:url value='/member/delete.do'/>">Exit
-								Member<fmt:message key="EXIT_MEMBER" />
-						</a>
-						<li><a href="<c:url value='/member/logout.do'/>">Sign
-								Out)<fmt:message key="SIGN_OUT" />
+								Member</a>
+						<li><a href="<c:url value='/member/logout.do'/>">Sign Out
 						</a>
 						<li><a href="<c:url value='/member/insert.do'/>">Join
-								Member)<fmt:message key="JOIN_MEMBER" />
-						</a>
+								Member </a>
 					</ul></li>
 
 
@@ -99,12 +95,12 @@ div.form-group {
 						<c:if test="${empty userid}">
 
 							<a href="<c:url value='/member/login.do'/>"
-								class="btn btn-danger"><fmt:message key="SIGN_IN" /></a>
+								class="btn btn-danger">Sign In</a>
 						</c:if>
 						<c:if test="${!empty userid}">
 
 							<a href="<c:url value='/forward.do?url=/member/login.jsp'/>"
-								class="btn btn-danger"><fmt:message key="MY_INFO" /></a>
+								class="btn btn-danger">My Info</a>
 						</c:if>
 					</div></li>
 			</ul>
@@ -124,7 +120,7 @@ div.form-group {
 	</header>
 
 	<!-- Page Content -->
-	<div class="container" align=center style="height: 500px;">
+	<div class="container" align=center style="height: 525px;">
 
 		<hr class="featurette-divider">
 

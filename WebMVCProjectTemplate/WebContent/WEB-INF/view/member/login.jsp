@@ -5,6 +5,8 @@
 <fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
+
 <head>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,22 +46,22 @@ if(userid==null) {
 		out.println(message);
 	--%>
 	<form action="<c:url value='/member/login.do'/>" method="post" class="form-horizontal">
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="id"><fmt:message key="MEMBER_ID"/></label>
-      <div class="col-sm-8">
-        <input type="text" name="userid" id="id" class="form-control" placeholder="<fmt:message key="MEMBER_ID"/>" aria-describedby="basic-addon1">
-      </div>
+	<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
+      <label class="control-label col-sm-2" for="id">Member ID</label><br>
+     
+        <input type="text" name="userid" id="id" class="form-control" placeholder="아이디를 입력하세요" ><br>
+     
+       <label class="control-label col-sm-2" for="id">Member PW</label><br>
+        <input type="password" name="password" id="pw" class="form-control" placeholder="비밀번호를 입력하세요" >
+    
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pw"><fmt:message key="MEMBER_PW"/></label>
-      <div class="col-sm-8">
-        <input type="password" name="password" id="pw" class="form-control" placeholder="<fmt:message key="MEMBER_PW"/>" aria-describedby="basic-addon1">
-      </div>
-    </div>
+    <br>
+    <br>
+   
     <div class="form-group">
     	<div class="col-sm-offset-2 col-sm-8">
-		<input type="submit" class="btn btn-info" value="<fmt:message key="SIGN_IN"/>">
-		<input type="reset" class="btn btn-info" value="<fmt:message key="CANCEL"/>">
+		<input type="submit" class="btn btn-info" value="Sign In">
+		<input type="reset" class="btn btn-info" value="Cancel">
 		</div>
 	</div>
 	</form>
@@ -70,7 +72,7 @@ if(userid==null) {
 <br>
 <br>
 <c:if test="${not empty sessionScope.userid}">
-	<h4><fmt:message key="SIGN_IN"/>: ${userid}</h4>
+	<h4>회원정보: ${userid}</h4>
 	<a href="<c:url value='/member/update.do'/>">[<fmt:message key="UPDATE_USER_INFO"/>]</a>
 	<a href="<c:url value='/member/logout.do'/>">[<fmt:message key="SIGN_OUT"/>]</a>
 	<a href="<c:url value='/member/delete.do'/>">[<fmt:message key="EXIT_MEMBER"/>]</a>
