@@ -25,6 +25,9 @@ public class SearchFuncController extends SearchController {
 				//int serial = Integer.parseInt(request.getParameter("serialNum"));
 				//int serialNum = serial;
 				String userId = (String)session.getAttribute("userid");
+				if(userId == null) { 
+					view = "/member/login.jsp";
+				} else {
 				String medKey =  request.getParameter("medKey");
 				String foodKey =  request.getParameter("foodKey");
 				//String searchDate =  request.getParameter("searchDate");
@@ -43,7 +46,7 @@ public class SearchFuncController extends SearchController {
 				dao.insertLog(searchlog);
 				System.out.println(searchlog.getFoodKey());		
 				return "redirect:/analysis.do?med_name="+URLEncoder.encode(searchlog.getMedKey(), "utf-8") + "&food_name=" + URLEncoder.encode(searchlog.getFoodKey(), "utf-8");
-
+				}
 			}catch(Exception e){
 				request.setAttribute("message", e.getMessage());
 				e.printStackTrace();

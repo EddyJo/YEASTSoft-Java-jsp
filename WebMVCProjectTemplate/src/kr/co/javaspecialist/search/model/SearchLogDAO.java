@@ -63,8 +63,9 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 	}
 
+	
 	@Override
-	public Collection<SearchLogVO>  selectUserId(String userId) {
+	public Collection<SearchLogVO> selectUserId(String userId) {
 		Connection con = null;
 
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
