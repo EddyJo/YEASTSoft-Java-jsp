@@ -97,24 +97,21 @@ public class SearchLogDAO implements ISearchLogDAO {
 		Connection con = null;
 		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
 
-		String sql = "select * from ( "
-				+ " select * from ( "
-				+ " select * from search_log "
-				+ " order by SERIAL_NUM DESC"
-				; 
+		String sql = "select * from search_log order by SERIAL_NUM DESC"; 
 
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-
-			SearchLogVO searchlog = new SearchLogVO();
-			searchlog.setSerialNum(rs.getInt("serial_num"));
-			searchlog.setUserId(rs.getString("userid"));
-			searchlog.setMedKey(rs.getString("med_key"));
-			searchlog.setFoodKey(rs.getString("food_key"));
-			searchlog.setSearchDate(rs.getString("search_date"));
-
+			while(rs.next()){
+				SearchLogVO searchlog = new SearchLogVO();
+				searchlog.setSerialNum(rs.getInt("serial_num"));
+				searchlog.setUserId(rs.getString("userid"));
+				searchlog.setMedKey(rs.getString("med_key"));
+				searchlog.setFoodKey(rs.getString("food_key"));
+				searchlog.setSearchDate(rs.getString("search_date"));
+				list.add(searchlog);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

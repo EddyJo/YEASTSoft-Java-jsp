@@ -13,6 +13,7 @@ public class AnalysisController implements CommandHandler {
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		String med_name = request.getParameter("med_name");
 		String food_name = request.getParameter("food_name");
+
 		AnalysisService service = new AnalysisService();
 		String result = service.analysis(med_name, food_name);
 		request.setAttribute("result", result);

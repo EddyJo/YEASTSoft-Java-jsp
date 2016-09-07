@@ -14,7 +14,7 @@ public class MemberLogoutController extends MemberController {
 		String view = "/";
 		if(method.equalsIgnoreCase("get")) {
 			session.invalidate(); //로그아웃
-			view = "/index.jsp";
+			view = "/search/form.jsp";
 		}else if(method.equalsIgnoreCase("post")) {
 			
 		}
