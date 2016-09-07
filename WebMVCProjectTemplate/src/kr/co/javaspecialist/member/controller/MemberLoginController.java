@@ -38,6 +38,7 @@ public class MemberLoginController extends MemberController {
 						System.out.println("1111");
 						return "/manager/manager.jsp";
 					}
+					return "/search/form.jsp";
 				}else {
 					//비밀번호 불일치
 					session.invalidate();
