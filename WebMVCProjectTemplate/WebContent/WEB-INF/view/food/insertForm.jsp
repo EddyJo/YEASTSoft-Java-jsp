@@ -5,7 +5,6 @@
 <head>
 
 
-<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -94,10 +93,10 @@ div.form-group {
 					placeholder="식품명을 입력하세요""><br>
 					<br>
 			    <input type="text" class="searchname" name="GOOD" style="width:300px; height:70px;"
-					placeholder=">GOOD effect"><br>
+					placeholder="GOOD effect"><br>
 					<br>
 				<input type="text" class="searchname" name="BAD" style="width:300px; height:70px;"
-					placeholder=">BAD effect"><br>
+					placeholder="BAD effect"><br>
 					<br>
 				<button type="submit" class="btn btn-primary btn-lg active">저장
 					</button>

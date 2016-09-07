@@ -10,11 +10,11 @@
   </context-param>
   <context-param>
     <param-name>email</param-name>
-    <param-value>master@yoursite.co.kr</param-value>
+    <param-value>YEAST@yeastsoft.co.kr</param-value>
   </context-param>
   <context-param>
     <param-name>phone</param-name>
-    <param-value>010-0000-0000</param-value>
+    <param-value>010-1234-5678</param-value>
   </context-param>
   <listener>
     <listener-class>kr.co.javaspecialist.common.listener.WebDBInitializer</listener-class>
