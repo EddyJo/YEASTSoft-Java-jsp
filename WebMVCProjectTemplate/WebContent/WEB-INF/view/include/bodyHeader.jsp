@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:setBundle basename="i18n/header" />
+
 <style>
 div.form-group {
 	margin: 0px;
@@ -35,26 +36,23 @@ div.form-group {
 			<ul class="nav navbar-nav">
 
 
-				<li><a href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About US</a></li>
+				<li><a
+					href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About
+						US</a></li>
 				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
 				<li><a href='<c:url value="/searchAll.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/member/login.do'/>">My Page<fmt:message
-									key="MY_INFO" /></a>
+						<li><a href="<c:url value='/member/login.do'/>">My Page</a>
 						<li><a href="<c:url value='/member/update.do'/>">Update
-								Info<fmt:message key="UPDATE_USER_INFO" />
-						</a>
+								Info</a>
 						<li><a href="<c:url value='/member/delete.do'/>">Exit
-								Member<fmt:message key="EXIT_MEMBER" />
-						</a>
-						<li><a href="<c:url value='/member/logout.do'/>">Sign
-								Out)<fmt:message key="SIGN_OUT" />
+								Member</a>
+						<li><a href="<c:url value='/member/logout.do'/>">Sign Out
 						</a>
 						<li><a href="<c:url value='/member/insert.do'/>">Join
-								Member)<fmt:message key="JOIN_MEMBER" />
-						</a>
+								Member </a>
 					</ul></li>
 
 				<c:if test="${sessionScope.userid eq 'admin'}">
@@ -68,14 +66,14 @@ div.form-group {
 				</c:if>
 				<li><div style="margin-top: 10px;">
 						<c:if test="${empty userid}">
-							
+
 							<a href="<c:url value='/member/login.do'/>"
-								class="btn btn-danger"><fmt:message key="SIGN_IN" /></a>
+								class="btn btn-danger">Sign In</a>
 						</c:if>
 						<c:if test="${!empty userid}">
-							
+
 							<a href="<c:url value='/forward.do?url=/member/login.jsp'/>"
-								class="btn btn-danger"><fmt:message key="MY_INFO" /></a>
+								class="btn btn-danger">My Info</a>
 						</c:if>
 					</div></li>
 
