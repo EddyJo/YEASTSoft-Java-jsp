@@ -31,7 +31,7 @@ public class MemberLoginController extends MemberController {
 				//아이디 있음
 				if(dbPassword.equals(password)) {
 					//비밀번호 일치
-					String manager = "heojk";
+					String manager = "admin";
 					session.setAttribute("userid", userid);
 					System.out.println(userid);
 					if(userid.equals(manager)){

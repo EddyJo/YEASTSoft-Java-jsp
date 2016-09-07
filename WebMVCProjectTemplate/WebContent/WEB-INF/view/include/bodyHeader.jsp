@@ -36,7 +36,7 @@
 								</form>
 							</div>
 						</li>
-						<li class="dropdown"><a href="<c:url value='/menu/intro.jsp'/>"
+						<li class="dropdown"><a href="<c:url value='/forward.do?url=/menu/intro.jsp'/>"
 							class="dropdown-toggle">소개(기능 및 조직구성)
 							<!--<fmt:message key="DASHBOARD" />-->
 							</a>
