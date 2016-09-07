@@ -41,37 +41,6 @@ div.form-group {
 	text-align: center;
 }
 
-#footer_wrap {
-	color: #FFFFFF;
-	float: left;
-	background: #003399;
-	width: 100%;
-	height: 150px;
-	text-align: center;
-}
-
-.footer_box {
-	width: 1000px;
-	margin: 0 auto;
-}
-
-.footer_box ul {
-	float: left;
-	width: 1000px;
-	margin: 0 auto 20px auto;
-	padding-top: 30px;
-	text-align: center;
-}
-
-.footer_box ul li {
-	padding: 0 10px;
-	text-align: center;
-	display: inline-block;;
-}
-
-.footer_box ul .last {
-	background: none;
-}
 </style>
 
 <body>
@@ -96,7 +65,7 @@ div.form-group {
 
 				<li><a href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About US</a></li>
 				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
-				<li><a href='<c:url value="/emp/list.do"/>'>Trend Analysis</a></li>
+				<li><a href='<c:url value="/searchAll.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
 					<ul class="dropdown-menu">
@@ -111,7 +80,6 @@ div.form-group {
 						<li><a href="<c:url value='/member/logout.do'/>">Sign
 								Out)<fmt:message key="SIGN_OUT" />
 						</a>
-						<li role="separator" class="divider"></li>
 						<li><a href="<c:url value='/member/insert.do'/>">Join
 								Member)<fmt:message key="JOIN_MEMBER" />
 						</a>
@@ -156,7 +124,7 @@ div.form-group {
 	</header>
 
 	<!-- Page Content -->
-	<div class="container" align=center style="height: 530px;">
+	<div class="container" align=center style="height: 500px;">
 
 		<hr class="featurette-divider">
 

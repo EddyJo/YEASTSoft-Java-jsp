@@ -37,23 +37,25 @@ div.form-group {
 
 				<li><a href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About US</a></li>
 				<li><a href='<c:url value="/searchId.do"/>'>Log History</a></li>
-				<li><a href='<c:url value="/emp/list.do"/>'>Trend Analysis</a></li>
+				<li><a href='<c:url value="/searchAll.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/member/login.do'/>">(메뉴5-1)<fmt:message
+						<li><a href="<c:url value='/member/login.do'/>">My Page<fmt:message
 									key="MY_INFO" /></a>
-						<li><a href="<c:url value='/member/update.do'/>">(메뉴5-2)<fmt:message
-									key="UPDATE_USER_INFO" /></a>
-						<li><a href="<c:url value='/member/delete.do'/>">(메뉴5-3)<fmt:message
-									key="EXIT_MEMBER" /></a>
-						<li><a href="<c:url value='/member/logout.do'/>">(메뉴5-4)<fmt:message
-									key="SIGN_OUT" /></a>
-						<li role="separator" class="divider"></li>
-						<li><a href="<c:url value='/member/insert.do'/>">(메뉴5-5)<fmt:message
-									key="JOIN_MEMBER" /></a>
+						<li><a href="<c:url value='/member/update.do'/>">Update
+								Info<fmt:message key="UPDATE_USER_INFO" />
+						</a>
+						<li><a href="<c:url value='/member/delete.do'/>">Exit
+								Member<fmt:message key="EXIT_MEMBER" />
+						</a>
+						<li><a href="<c:url value='/member/logout.do'/>">Sign
+								Out)<fmt:message key="SIGN_OUT" />
+						</a>
+						<li><a href="<c:url value='/member/insert.do'/>">Join
+								Member)<fmt:message key="JOIN_MEMBER" />
+						</a>
 					</ul></li>
-
 
 				<c:if test="${sessionScope.userid eq 'admin'}">
 					<li class="dropdown"><a href='<c:url value="/"/>'
@@ -68,7 +70,7 @@ div.form-group {
 						<c:if test="${empty userid}">
 							
 							<a href="<c:url value='/member/login.do'/>"
-								class="btn btn-danger">(로그인)<fmt:message key="SIGN_IN" /></a>
+								class="btn btn-danger"><fmt:message key="SIGN_IN" /></a>
 						</c:if>
 						<c:if test="${!empty userid}">
 							
