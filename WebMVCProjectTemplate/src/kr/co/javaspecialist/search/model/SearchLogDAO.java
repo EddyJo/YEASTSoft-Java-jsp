@@ -124,6 +124,57 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 		return list;
 	}
+	
+	@Override
+	public void searchLogDelete(String userId){
+		Connection con=null;
+		int deletedRow = 0;
+		String sql = "delete from search_log where userid= ?";
+		try{
+			con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			deletedRow = pstmt.executeUpdate();
+		}catch(SQLException e){
+			throw new RuntimeException(e);			
+		}finally{
+			closeConnection(con);
+		}
+		return ;
+	}
+	
+	
+	@Override
+	public SearchLogVO getSearchLogDetails(String userId){
+		SearchLogVO searchLog = new SearchLogVO();
+		String sql = "select * from search_log where userid=? ";
+		Connection con = null;
+		try{
+			con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				searchLog.setUserId(userId);
+				searchLog.setSerialNum(rs.getInt("serial_num"));;
+				searchLog.setMedKey(rs.getString("med_key"));
+				searchLog.setFoodKey(rs.getString("food_key"));
+				searchLog.setSearchDate(rs.getString("search_date"));
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}finally{
+			closeConnection(con);
+		}
+		
+		return searchLog;
+		
+		
+		
+	}
 
 
 

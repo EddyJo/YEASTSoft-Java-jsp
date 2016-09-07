@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 /command.properties
 /db/
+/kr/
 /i18n/
-/kr/
-<<<<<<< HEAD
-/db/
-=======
 /log4j.properties
-=======
-/kr/
->>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp
->>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp.git
