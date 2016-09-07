@@ -34,10 +34,6 @@ public class MemberLoginController extends MemberController {
 					String manager = "admin";
 					session.setAttribute("userid", userid);
 					System.out.println(userid);
-					if(userid.equals(manager)){
-						System.out.println("1111");
-						return "/manager/manager.jsp";
-					}
 					return "/search/form.jsp";
 				}else {
 					//비밀번호 불일치
