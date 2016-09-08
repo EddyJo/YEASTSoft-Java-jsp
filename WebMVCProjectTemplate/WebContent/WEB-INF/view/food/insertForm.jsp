@@ -26,12 +26,9 @@
 				<h2>
 					<span class="text-muted">DB에 추가할 식품명과 해당하는 질병명을 입력하세요</span>
 				</h2>
-				<br> <input type="text" name="foodName" id="name"
-					class="form-control" placeholder="식품명을 입력하세요">
-				<br> <input type="text" name="goodDisease" id="name" class="form-control"
-					placeholder="Good Disease">
-				<br><input type="text" name="badDisease" id="name"
-					class="form-control" placeholder="Bad Disease">
+				<br> <input type="text" name="foodName" id="name" class="form-control" placeholder="식품명을 입력하세요"> <br> 
+					<input type="text" name="goodDisease" id="name" class="form-control" placeholder="Good Disease"> <br> 
+					<input type="text" name="badDisease" id="name" class="form-control"	placeholder="Bad Disease">
 			</div>
 			<br>
 			<center>
@@ -39,8 +36,17 @@
 			</center>
 
 		</form>
+		<form action="<c:url value='fooddelete.do'/>" method="post"
+			class="form-horizontal">
+			<br> <input type="text" name="foodName" id="name" class="form-control" placeholder="식품명을 입력하세요"> <br>
+			<center>
+				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
+			</center>
+		</form>
+
+
 	</div>
-<%--주석 --%>
+	<%--주석 --%>
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 

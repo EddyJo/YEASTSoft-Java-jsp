@@ -9,6 +9,6 @@ public interface IFoodInfoDAO {
 		FoodInfoVO selectFoodInfo(String foodName);
 //		ArrayList<FoodInfoVO> selectAll_FoodInfo();
 //		void update(FoodInfoVO FoodInfo);
-//		int delete(FoodInfoVO FoodInfo);	
+		String delete(String foodName);	
 		}
 	
