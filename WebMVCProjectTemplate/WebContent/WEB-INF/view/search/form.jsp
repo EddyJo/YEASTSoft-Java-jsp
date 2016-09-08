@@ -7,7 +7,7 @@
 <jsp:include page="/WEB-INF/view/include/staticFiles.jsp" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
