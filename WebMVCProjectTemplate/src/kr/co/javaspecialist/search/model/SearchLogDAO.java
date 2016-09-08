@@ -69,11 +69,9 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<SearchLogVO> selectUserId(String userId) {
 		Connection con = null;
-
+		
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
-		
 		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by SERIAL_NUM DESC"  ;
-		
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -130,13 +128,13 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public void searchLogDelete(String userId){
 		Connection con=null;
-		int deletedRow = 0;
-		String sql = "delete from search_log where userid= ?";
+		int count=0;
+		String sql = "delete * from search_log where userid= ?";
 		try{
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userId);
-			deletedRow = pstmt.executeUpdate();
+			count = pstmt.executeUpdate();
 		}catch(SQLException e){
 			throw new RuntimeException(e);			
 		}finally{
@@ -155,9 +153,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userId);
-			
 			ResultSet rs = pstmt.executeQuery();
-			
 			if(rs.next()){
 				searchLog.setUserId(userId);
 				searchLog.setSerialNum(rs.getInt("serial_num"));;
