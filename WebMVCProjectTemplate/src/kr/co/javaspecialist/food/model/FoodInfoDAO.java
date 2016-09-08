@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import kr.co.javaspecialist.common.db.DBConn;
-import kr.co.javaspecialist.medicine.model.MedInfoVO;
+;
 
 
 
@@ -18,12 +18,13 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public void insertFoodInfo(FoodInfoVO FoodInfo) {
 		// TODO Auto-generated method stub
 		Connection con = null;
+		String sql2 = "insert into food_info values (?, ?, ?, ?)";
 		String sql1 = "select nvl(max(serial_num),0) from food_info";
 		try {
 			con = DBConn.getConnection();
 			//1. 쿼리 작성
 			int serial_num = 0;
-			String sql2 = "insert into food_info values (?, ?, ?, ?)";
+			
 			//2. statement 객체 생성 
 			PreparedStatement stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery();
