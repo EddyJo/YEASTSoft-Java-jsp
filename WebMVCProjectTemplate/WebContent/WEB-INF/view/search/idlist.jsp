@@ -15,11 +15,7 @@
 
 <title>YEASTsoft - 약빵 template</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="css/one-page-wonder.css" rel="stylesheet">
 <style>
 table, td, th {
 	border: 1px solid #ddd;
