@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,10 +14,21 @@ div.form-group {
 	height: 100px;
 }
 
+
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 .text-placeholder {
 	text-align: center;
 }
-
+.titlefont{
+	font-size: 65px;
+	font-weight: bold;
+	font-family: 'nanumgothic';
+}
+.subfont{
+	font-size: 35px;
+	font-weight: bold;
+	font-family: 'nanumgothic';
+}
 </style>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,10 +55,11 @@ div.form-group {
 	<header class="header-image">
 	<div class="headline">
 		<div class="container">
-			<h1>세상을 바꾸는 약빵</h1>
-			<h2>식품과 약품의 궁합 정보</h2>
+			<div class="titlefont">세상을 바꾸는 약빵</div>
+			<div class="subfont">식품과 약품의 궁합 정보</div>
 		</div>
 	</div>
+	<hr class="featurette-divider">
 	</header>
 
 
@@ -56,7 +69,7 @@ div.form-group {
 	
 	<!-- Page Content -->
 	<div class="container" align=center style="height: 525px;">
-		<hr class="featurette-divider">
+		
 		<!-- First Featurette -->
 		<form action="<c:url value='search.do'/>" method="post"
 			class="form-horizontal" style="height: 300px;">
@@ -67,8 +80,7 @@ div.form-group {
 				<br> <input type="text" class="searchname" name="medKey"
 					style="width: 300px; height: 70px;" placeholder="약품명을 입력하세요"><br>
 				<br>
-				<button type="submit" class="btn btn-primary btn-lg active">궁합
-					검색</button>
+				<button type="submit" class="btn btn-primary btn-lg active">궁합 검색</button>
 			</div>
 		</form>
 	</div>
