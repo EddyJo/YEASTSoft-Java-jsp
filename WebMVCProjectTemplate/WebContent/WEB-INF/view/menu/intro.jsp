@@ -6,6 +6,7 @@
 <fmt:setBundle basename="i18n/header" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <style>
 div.form-group {
@@ -67,23 +68,26 @@ div.form-group {
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 	
 	
-	<!-- Page Content -->
-	<div class="container" align=center style="height: 525px;">
-		
-		<!-- First Featurette -->
-		<form action="<c:url value='search.do'/>" method="post"
-			class="form-horizontal" style="height: 300px;">
-			<div class="form-group">
+	 <!-- Page Content -->
+   <div class="container" style="height: 525px;">
 
-				<input type="text" class="searchname" name="foodKey"
-					style="width: 300px; height: 70px;" placeholder="식품명을 입력하세요""><br>
-				<br> <input type="text" class="searchname" name="medKey"
-					style="width: 300px; height: 70px;" placeholder="약품명을 입력하세요"><br>
-				<br>
-				<button type="submit" class="btn btn-primary btn-lg active">궁합 검색</button>
-			</div>
-		</form>
-	</div>
+      <!-- First Featurette -->
+      <form action="<c:url value='search.do'/>" method="post"
+         class="form-horizontal">
+         <div class="form-group" style="margin: auto;">
+            <center>
+               <input type="text" class="searchname" name="foodKey"
+                  style="width: 300px; height: 70px;" placeholder="식품명을 입력하세요""><br>
+               <br> <input type="text" class="searchname" name="medKey"
+                  style="width: 300px; height: 70px;" placeholder="약품명을 입력하세요"><br>
+               <br>
+               <button type="submit" class="btn btn-primary btn-lg active">궁합
+                  검색</button>
+            </center>
+         </div>
+      </form>
+   </div>
+
 
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>

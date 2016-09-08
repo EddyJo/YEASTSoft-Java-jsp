@@ -2,6 +2,7 @@
 	trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <style>
 #footer_wrap {
 	color: #FFFFFF;
@@ -38,7 +39,7 @@
 	background: none;
 }
 </style>
-
+<meta name="viewport"  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <!-- FOOTER -->
 <footer>
 	<div id="footer_wrap">

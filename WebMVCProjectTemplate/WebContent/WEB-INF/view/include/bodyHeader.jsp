@@ -4,6 +4,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:setBundle basename="i18n/header" />
 
+<style>
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+li{
+	font-size: 15px;
+	font-weight: bold;
+	font-family: 'nanumgothic';
+}
+</style>
 
 <!-- HEADER -->
 <!-- Navigation -->
@@ -27,30 +35,29 @@
 
 
 				<li><a
-					href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>About
-						US</a></li>
+					href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>'>소개</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
-					class="dropdown-toggle" data-toggle="dropdown">Log History</a>
+					class="dropdown-toggle" data-toggle="dropdown">검색이력 조회</a>
 					<ul class="dropdown-menu">
 						<li><a href="<c:url value='/searchId.do'/>">개인검색이력 조회</a>
 						<c:if test="${sessionScope.userid eq 'admin'}">
 							<li><a href="<c:url value='/searchAll.do'/>">모든 검색이력 조회</a>
 						</c:if>
 					</ul></li>
-				<li><a href='<c:url value="/emp/salaryChart.do"/>'>Trend Analysis</a></li>
+				<li><a href='<c:url value="/emp/salaryChart.do"/>'>통계분석</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
-					class="dropdown-toggle" data-toggle="dropdown">Member Service</a>
+					class="dropdown-toggle" data-toggle="dropdown">마이페이지</a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/member/login.do'/>">My Page</a>
-						<li><a href="<c:url value='/member/update.do'/>">Update Info</a>
-						<li><a href="<c:url value='/member/delete.do'/>">Exit Member</a>
-						<li><a href="<c:url value='/member/logout.do'/>">Sign Out</a>
-						<li><a href="<c:url value='/member/insert.do'/>">Join Member </a>
+						<li><a href="<c:url value='/member/login.do'/>">마이페이지</a>
+						<li><a href="<c:url value='/member/update.do'/>">개인정보수정</a>
+						<li><a href="<c:url value='/member/delete.do'/>">회원탈퇴</a>
+						<li><a href="<c:url value='/member/logout.do'/>">로그아웃</a>
+						<li><a href="<c:url value='/member/insert.do'/>">회원가입</a>
 					</ul></li>
 
 				<c:if test="${sessionScope.userid eq 'admin'}">
 					<li class="dropdown"><a href='<c:url value="/"/>'
-						class="dropdown-toggle" data-toggle="dropdown">Administrator Menu</a>
+						class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
 							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품DB추가</a>
