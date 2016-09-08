@@ -13,7 +13,7 @@ import kr.co.javaspecialist.search.model.SearchLogChartVO;
 import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 
-public class SearchLogFrequencyController implements CommandHandler {
+public class SearchMedLogFrequencyController implements CommandHandler {
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
