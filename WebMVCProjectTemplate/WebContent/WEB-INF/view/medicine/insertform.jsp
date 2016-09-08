@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp" />
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,93 +12,39 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>YEASTsoft - 약빵 template</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="css/one-page-wonder.css" rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
-<style>
-div.form-group {
-	margin: 0px;
-	width: 1140px;
-	height: 128px;
-}
-
-.text-placeholder{
-	text-align: center;
-}
-</style>
 
 <body>
-
-	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">HOME</a>
-		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="#about">About US</a></li>
-				<li><a href="#services">Log History</a></li>
-				<li><a href="#contact">Trend Analysis</a></li>
-				<li><a href="#member">Member Service</a></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-	<!-- /.container --> </nav>
-
-	<!-- Full Width Image Header -->
-	<header class="header-image">
-	<div class="headline">
-		<div class="container">
-			<h1>세상을 바꾸는 약빵</h1>
-			<h2>식품과 약품의 궁합 정보</h2>
-		</div>
-	</div>
-	</header>
-
-	<!-- Page Content -->
-	<div class="content">
-	<form action="<c:url value='insertmedinfo.do'/>" method="post"
-		class="form-horizontal">
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="name"></label>
-			<div class="col-sm-2">
-				<h1>>약품 정보 입력<</h1>
-				<br>
-				약품명: <input type="text" name="medname" id="name" class="form-control"><br>
-				질병분류: <input type="text" name="disease" id="name" class="form-control">
-			</div>
-		</div>
-		<input type="submit" value="저장">
-	</form>
-</div>
-
+	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 
 	
+	<div class="content" style="width: 500px; height: 300px; margin: auto;">
+		<form action="<c:url value='insertmedinfo.do'/>" method="post"
+			class="form-horizontal">
 
+			<label class="control-label col-sm-2" for="name"></label>
+			<div class="featurette">
+				<h1 class="featurette-heading">약품 정보 입력</h1>
+				<h2>
+					<span class="text-muted">DB에 추가할 약품명과 해당하는 질병명을 입력하세요</span>
+				</h2>
+				<br> <input type="text" name="medname" id="name"
+					class="form-control" placeholder="약품명을 입력하세요"><br> <input
+					type="text" name="disease" id="name" class="form-control"
+					placeholder=" 질병명을 입력하세요">
+			</div>
+			<br>
+			<center>
+				<button type="submit" class="btn btn-primary btn-lg active">저장</button>
+			</center>
+
+		</form>
+	</div>
+
+
+
+<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
 </html>
