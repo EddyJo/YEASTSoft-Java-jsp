@@ -110,10 +110,24 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 //
 //	}
 //
-//	@Override
-//	public int delete(FoodInfoVO FoodInfo) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
+	@Override
+	public String delete(String foodName) {
+		// 관리자 식품 정보 삭제 구현
+		Connection con = null;
+		String sql = "delete from food_info where food_name = ?";
+		try{
+			con = DBConn.getConnection(); //sqldeveloper의 hr 계정연결
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, foodName);
+			pstmt.executeUpdate();//쿼리문 실행
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}finally{
+			DBConn.closeConnection(con);
+		}
+		
+		return "삭제되었습니다";
+		
+	}
 
 }
