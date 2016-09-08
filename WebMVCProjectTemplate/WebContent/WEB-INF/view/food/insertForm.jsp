@@ -40,7 +40,7 @@
 
 		</form>
 	</div>
-
+<%--주석 --%>
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
