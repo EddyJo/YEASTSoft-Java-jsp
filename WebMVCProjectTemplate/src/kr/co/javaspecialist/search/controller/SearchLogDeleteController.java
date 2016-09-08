@@ -15,7 +15,6 @@ public class SearchLogDeleteController extends SearchController {
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		String method = request.getMethod();
 		String view = "/";
-		HttpSession session = ((HttpServletRequest)request).getSession();
 		if(method.equalsIgnoreCase("get")){
 			view = "/search/deletelog.jsp";
 		
