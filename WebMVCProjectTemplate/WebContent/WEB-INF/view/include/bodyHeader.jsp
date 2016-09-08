@@ -54,6 +54,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
 							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품DB추가</a>
+							<li><a href="<c:url value='/searchlogdelete.do'/>">유저 로그 관리</a>
 						</ul></li>
 				</c:if>
 				<li><div style="margin-top: 10px;">
