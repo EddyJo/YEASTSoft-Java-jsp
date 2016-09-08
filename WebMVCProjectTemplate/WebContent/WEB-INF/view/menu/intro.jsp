@@ -11,7 +11,6 @@
 <style>
 div.form-group {
 	margin: 0px;
-	width: 1140px;
 	height: 100px;
 }
 
