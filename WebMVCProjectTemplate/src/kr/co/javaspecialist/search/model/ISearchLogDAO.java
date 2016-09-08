@@ -1,10 +1,9 @@
 package kr.co.javaspecialist.search.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
-import kr.co.javaspecialist.search.model.SearchLogChartVO;
-import kr.co.javaspecialist.emp.model.AvgSalChartVO;
+import kr.co.javaspecialist.search.model.SearchMedLogChartVO;
+import kr.co.javaspecialist.search.model.SearchLogVO;
 
 public interface ISearchLogDAO {
 	
@@ -13,5 +12,6 @@ public interface ISearchLogDAO {
 	Collection<SearchLogVO> selectAllList();
 	String searchLogDelete(String userId);
 	SearchLogVO getSearchLogDetails(String userId);
-	Collection<SearchLogChartVO> getFrequencyGroupingbyMedcine();
+	Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine();
+	Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood();
 }

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.management.RuntimeErrorException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import kr.co.javaspecialist.board.model.BoardVO;
-import kr.co.javaspecialist.search.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchMedLogChartVO;
 import kr.co.javaspecialist.common.db.DBConn;
 
 public class SearchLogDAO implements ISearchLogDAO {
@@ -172,8 +173,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	}
 	
 	@Override
-	public Collection<SearchLogChartVO> getFrequencyGroupingbyMedcine(){
-		ArrayList<SearchLogChartVO> list = new ArrayList<SearchLogChartVO>();
+	public Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine(){
+		ArrayList<SearchMedLogChartVO> list = new ArrayList<SearchMedLogChartVO>();
 		String sql = "select med_key, count(*) as co from search_log group by med_key";
 		Connection con = null;
 		try{
@@ -181,7 +182,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
-				SearchLogChartVO logChart = new SearchLogChartVO();
+				SearchMedLogChartVO logChart = new SearchMedLogChartVO();
 				logChart.setMedName(rs.getString("med_key"));
 				logChart.setCountMed(rs.getInt("co"));
 				list.add(logChart);
@@ -194,6 +195,27 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return list;
 	}
 
+	@Override
+	public Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood() {
+		ArrayList<SearchFoodLogChartVO> foodloglist = new ArrayList<SearchFoodLogChartVO>();
+		String sql = "select food_key, count(*) as co from search_log group by food_key";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				SearchFoodLogChartVO foodlogchart = new SearchFoodLogChartVO();
+				foodlogchart.setFoodName(rs.getString("food_key"));
+				foodlogchart.setCountFood(rs.getInt("co"));
+				foodloglist.add(foodlogchart);			
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyFood : " + e.getMessage());
+		}
+		return foodloglist;
+	}
 
 
 }
