@@ -16,7 +16,7 @@ public class SearchLogDeleteController extends SearchController {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
-			view = "/search/deletelog.jsp";
+			view = "/search/searchlogform.jsp";
 		
 		}else if(method.equalsIgnoreCase("post")){
 			try{
