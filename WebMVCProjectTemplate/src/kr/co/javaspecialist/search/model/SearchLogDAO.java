@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.management.RuntimeErrorException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import kr.co.javaspecialist.board.model.BoardVO;
-import kr.co.javaspecialist.search.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchMedLogChartVO;
 import kr.co.javaspecialist.common.db.DBConn;
 
 public class SearchLogDAO implements ISearchLogDAO {
@@ -69,11 +70,9 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<SearchLogVO> selectUserId(String userId) {
 		Connection con = null;
-
+		
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
-		
 		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by SERIAL_NUM DESC"  ;
-		
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -128,24 +127,24 @@ public class SearchLogDAO implements ISearchLogDAO {
 	}
 	
 	@Override
-	public void searchLogDelete(String userId){
+	public String searchLogDelete(String userId){
 		Connection con=null;
-		int deletedRow = 0;
 		String sql = "delete from search_log where userid= ?";
 		try{
-			con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, userId);
-			deletedRow = pstmt.executeUpdate();
+			con = getConnection();//sqldeveloper키고 hr계정 연결
+			PreparedStatement pstmt = con.prepareStatement(sql);//쿼리문 작성
+			pstmt.setString(1, userId);//쿼리문 완성
+			pstmt.executeUpdate();//쿼리문 실횅
 		}catch(SQLException e){
 			throw new RuntimeException(e);			
 		}finally{
 			closeConnection(con);
 		}
-		return ;
+
+		return "삭제되었습니다";
 	}
-	
-	
+
+
 	@Override
 	public SearchLogVO getSearchLogDetails(String userId){
 		SearchLogVO searchLog = new SearchLogVO();
@@ -155,9 +154,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userId);
-			
 			ResultSet rs = pstmt.executeQuery();
-			
 			if(rs.next()){
 				searchLog.setUserId(userId);
 				searchLog.setSerialNum(rs.getInt("serial_num"));;
@@ -176,8 +173,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	}
 	
 	@Override
-	public Collection<SearchLogChartVO> getFrequencyGroupingbyMedcine(){
-		ArrayList<SearchLogChartVO> list = new ArrayList<SearchLogChartVO>();
+	public Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine(){
+		ArrayList<SearchMedLogChartVO> list = new ArrayList<SearchMedLogChartVO>();
 		String sql = "select med_key, count(*) as co from search_log group by med_key";
 		Connection con = null;
 		try{
@@ -185,7 +182,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
-				SearchLogChartVO logChart = new SearchLogChartVO();
+				SearchMedLogChartVO logChart = new SearchMedLogChartVO();
 				logChart.setMedName(rs.getString("med_key"));
 				logChart.setCountMed(rs.getInt("co"));
 				list.add(logChart);
@@ -198,6 +195,27 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return list;
 	}
 
+	@Override
+	public Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood() {
+		ArrayList<SearchFoodLogChartVO> foodloglist = new ArrayList<SearchFoodLogChartVO>();
+		String sql = "select food_key, count(*) as co from search_log group by food_key";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				SearchFoodLogChartVO foodlogchart = new SearchFoodLogChartVO();
+				foodlogchart.setFoodName(rs.getString("food_key"));
+				foodlogchart.setCountFood(rs.getInt("co"));
+				foodloglist.add(foodlogchart);			
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyFood : " + e.getMessage());
+		}
+		return foodloglist;
+	}
 
 
 }

@@ -9,16 +9,16 @@ import org.apache.poi.util.SystemOutLogger;
 
 import com.google.gson.Gson;
 
-import kr.co.javaspecialist.search.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchMedLogChartVO;
 import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 
-public class SearchLogFrequencyController implements CommandHandler {
+public class SearchMedLogFrequencyController implements CommandHandler {
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		SearchLogDAO sdao = new SearchLogDAO();
-		Collection<SearchLogChartVO> logChart = sdao.getFrequencyGroupingbyMedcine();
+		Collection<SearchMedLogChartVO> logChart = sdao.getFrequencyGroupingbyMedcine();
 		Gson gson = new Gson();
 		String logData = gson.toJson(logChart);
 		System.out.println(logData);

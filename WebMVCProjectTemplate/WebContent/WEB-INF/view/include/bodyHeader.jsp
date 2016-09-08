@@ -44,7 +44,14 @@ li{
 							<li><a href="<c:url value='/searchAll.do'/>">모든 검색이력 조회</a>
 						</c:if>
 					</ul></li>
-				<li><a href='<c:url value="/emp/salaryChart.do"/>'>통계분석</a></li>
+								
+				<li class="dropdown"><a href='<c:url value="/"/>'
+					class="dropdown-toggle" data-toggle="dropdown">통계분석</a>
+					<ul class="dropdown-menu">
+						<li><a href="<c:url value='/showmedfrequency.do'/>">약품검색 통계분석</a>
+						<li><a href="<c:url value='/showfoodfrequency.do'/>">식품검색 통계분석</a>
+					</ul></li>
+				
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">마이페이지</a>
 					<ul class="dropdown-menu">
@@ -60,8 +67,8 @@ li{
 						class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
-							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품DB추가</a>
-							<li><a href="<c:url value='/searchlogdelete.do'/>">유저 로그 관리</a>
+							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품 DB추가</a>
+							<li><a href="<c:url value='/searchlogselect.do'/>">유저 로그 관리</a>
 						</ul></li>
 				</c:if>
 				<li><div style="margin-top: 10px;">

@@ -18,66 +18,84 @@
 <style>
 div.form-group {
 	margin: 0px;
-	width: 1140px;
 	height: 128px;
 }
-
-.text-placeholder{
-	text-align: center;
-}
 </style>
-
 <body>
-<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />	
-
-	<!-- Page Content -->
-	<div class="container" align=center style="height:630px;">
-
-		<hr class="featurette-divider">
-
-		<!-- First Featurette -->
+	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 
 
-		<form action="<c:url value='searchlogdelete.do'/>" method="post"
-			class="form-horizontal" style="height:300px;">
-			<div class="form-group">
+<<<<<<< HEAD
+   <div class="content" style="width: 500px; height: 700px; margin: auto;">
+      <form action="<c:url value='searchlogselect.do'/>" method="post"
+         class="form-horizontal">
+         
+            <label class="control-label col-sm-2" for="name"></label>
+            <div class="featurette">
+               <h1 class="featurette-heading">유저 로그 관리</h1>
+               <h2>
+                  <span class="text-muted">유저 아이디로 유저의 검색로그를 조회 및 삭제합니다.</span>
+               </h2>
+               <br>
+                <input type="text" name="userId" id="name" 
+                  class="form-control" placeholder="조회할 사용자 아이디를 입력하세요.">
+               <center><button type="submit" class="btn btn-primary btn-lg active" style="margin: 5px 0 20px 0;">조회</button></center>
+               
+                <input type="text" name="userId1" id="name"
+                  class="form-control" placeholder="로그 정보를 삭제할 사용자 아이디를 입력하세요."> 
+               <center><button type="submit" class="btn btn-primary btn-lg active" style="margin: 5px;">삭제</button></center>
+            </div>
+            <br>
+=======
+	<div class="content" style="width: 500px; height: 500px; margin: auto;">
 
-				<input type="text" class="searchname" name="userId" style="width:300px; height:70px;"
-					placeholder="조회할 사용자 아이디를 입력하세요."">&nbsp; 
-					
-			    <button type="submit" class="btn btn-primary btn-lg active">조회</button><br><br>
-					
-				<input type="text" class="searchname" name="userId" style="width:300px; height:70px;"
-					placeholder="로그 정보를 삭제할 사용자 아이디를 입력하세요.">&nbsp;
-					
-				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
+		<div class="featurette">
+			<form action="<c:url value='/searchlogselect.do'/>" method="post"
+				class="form-horizontal">
 
-			</div>
+				<h1 class="featurette-heading">유저 로그 관리</h1>
+				<h2><span class="text-muted">유저 아이디로 유저의 검색로그를 조회 및 삭제합니다.</span></h2>
+				<br> <input type="text" name="userId" id="name"
+					class="form-control" placeholder="조회할 사용자 아이디를 입력하세요.">
+				<center>
+					<button type="submit" class="btn btn-primary btn-lg active"
+						style="margin: 10px 0 20px 0;">조회</button>
+				</center>
 
+			</form>
 
-
-		</form>
-	</div>
-
-	
-	<!-- Footer -->
-	<footer>
-	<div class="row">
-		<div class="col-lg-12">
-			<p>Copyright &copy; Your Website 2014</p>
+			<form action="<c:url value='searchlogdelete.do'/>" method="post"
+				class="form-horizontal">
+				<div class="featurette">
+					<input type="text" name="userId" id="name" class="form-control"
+						placeholder="로그 정보를 삭제할 사용자 아이디를 입력하세요.">
+					<center>
+						<button type="submit" class="btn btn-primary btn-lg active"
+							style="margin: 10px 0 0 0;">삭제</button>
+					</center>
+				</div>
+			</form>
 		</div>
+>>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp.git
+
+		<c:if test="${!empty result}">${result}</c:if>
+
+<<<<<<< HEAD
+         
+
+      </form>
+   </div>
+=======
 	</div>
-	</footer>
+>>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp.git
 
-	</div>
-	<!-- /.container -->
+<<<<<<< HEAD
+   <jsp:include page="/WEB-INF/view/include/footer.jsp" />
+=======
 
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-<jsp:include page="/WEB-INF/view/include/footer.jsp" />
+	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
+>>>>>>> branch 'master' of https://github.com/EddyJo/YEASTSoft-Java-jsp.git
 </body>
 
 </html>

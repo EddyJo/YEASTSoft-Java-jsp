@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 import kr.co.javaspecialist.search.model.SearchLogVO;
 
-public class SearchLogDeleteController extends SearchController {
+public class SearchLogSelectController extends SearchController {
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
@@ -20,9 +20,9 @@ public class SearchLogDeleteController extends SearchController {
 		}else if(method.equalsIgnoreCase("post")){
 			try{
 				String userId = (String)request.getParameter("userId");
-				String result = dao.searchLogDelete(userId);
-				request.setAttribute("result", result);
-				return "/search/searchlogform.jsp";
+				Collection<SearchLogVO> logListByUserId = dao.selectUserId(userId);
+				request.setAttribute("logListByUserId", logListByUserId);
+				return "/search/idlist.jsp";
 				}catch(Exception e) {
 					request.setAttribute("message", e.getMessage());
 					view="/search/error.jsp";
