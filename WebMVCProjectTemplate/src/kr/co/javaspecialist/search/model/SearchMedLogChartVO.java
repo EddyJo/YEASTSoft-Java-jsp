@@ -5,7 +5,7 @@ public class SearchMedLogChartVO {
 	//private int countFood;
 	private String medName;
 	private int countMed;
-
+	private String color;
 //	public String getFoodName() {
 //		return foodName;
 //	}
@@ -29,6 +29,12 @@ public class SearchMedLogChartVO {
 	}
 	public void setCountMed(int countMed) {
 		this.countMed = countMed;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	

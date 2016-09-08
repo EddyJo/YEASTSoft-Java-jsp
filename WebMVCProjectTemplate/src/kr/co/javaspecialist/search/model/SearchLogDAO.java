@@ -175,17 +175,25 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine(){
 		ArrayList<SearchMedLogChartVO> list = new ArrayList<SearchMedLogChartVO>();
-		String sql = "select med_key, count(*) as co from search_log group by med_key";
+		String sql = "select med_key, count(*) as co from search_log group by med_key order by co desc";
 		Connection con = null;
 		try{
 			con = DBConn.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
 			while(rs.next()){
 				SearchMedLogChartVO logChart = new SearchMedLogChartVO();
 				logChart.setMedName(rs.getString("med_key"));
 				logChart.setCountMed(rs.getInt("co"));
+				logChart.setColor(colorList[count]);
 				list.add(logChart);
+				count++;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -198,17 +206,26 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood() {
 		ArrayList<SearchFoodLogChartVO> foodloglist = new ArrayList<SearchFoodLogChartVO>();
-		String sql = "select food_key, count(*) as co from search_log group by food_key";
+		String sql = "select food_key, count(*) as co from search_log group by food_key order by co desc";
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+			
 			while(rs.next()){
 				SearchFoodLogChartVO foodlogchart = new SearchFoodLogChartVO();
 				foodlogchart.setFoodName(rs.getString("food_key"));
 				foodlogchart.setCountFood(rs.getInt("co"));
-				foodloglist.add(foodlogchart);			
+				foodlogchart.setColor(colorList[count]);
+				foodloglist.add(foodlogchart);
+				count++;
 			}
 		}catch(Exception e){
 			e.printStackTrace();
