@@ -77,7 +77,7 @@ div.form-group {
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-
+<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
 </html>
