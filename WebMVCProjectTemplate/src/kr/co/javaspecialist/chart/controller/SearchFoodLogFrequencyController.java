@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
-import kr.co.javaspecialist.search.model.SearchLogFoodChartVO;
+import kr.co.javaspecialist.search.model.SearchFoodLogChartVO;
 
 public class SearchFoodLogFrequencyController implements CommandHandler {
 
@@ -17,7 +17,7 @@ public class SearchFoodLogFrequencyController implements CommandHandler {
 	public String process(HttpServletRequest request,
 			HttpServletResponse response) {
 		SearchLogDAO dao = new SearchLogDAO();
-		Collection<SearchLogFoodChartVO> foodlogchart = dao.getFreqeuncyGroupingbyFood();
+		Collection<SearchFoodLogChartVO> foodlogchart = dao.getFrequencyGroupingbyFood();
 		Gson gson = new Gson();
 		String foodLogData = gson.toJson(foodlogchart);
 		System.out.println(foodLogData);

@@ -1,10 +1,10 @@
 package kr.co.javaspecialist.search.model;
 
-public class SearchLogChartVO {
+
+
+public class SearchFoodLogChartVO {
 	private String foodName;
 	private int countFood;
-	private String medName;
-	private int countMed;
 	
 	public String getFoodName() {
 		return foodName;
@@ -18,18 +18,7 @@ public class SearchLogChartVO {
 	public void setCountFood(int countFood) {
 		this.countFood = countFood;
 	}
-	public String getMedName() {
-		return medName;
-	}
-	public void setMedName(String medName) {
-		this.medName = medName;
-	}
-	public int getCountMed() {
-		return countMed;
-	}
-	public void setCountMed(int countMed) {
-		this.countMed = countMed;
-	}
+	
 	
 	
 }
