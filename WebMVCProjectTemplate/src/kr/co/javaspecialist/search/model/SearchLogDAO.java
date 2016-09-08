@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.management.RuntimeErrorException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.http.HttpServletRequest;
@@ -194,6 +195,27 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return list;
 	}
 
+	@Override
+	public Collection<SearchLogFoodChartVO> getFreqeuncyGroupingbyFood() {
+		ArrayList<SearchLogFoodChartVO> foodloglist = new ArrayList<SearchLogFoodChartVO>();
+		String sql = "select food_key, count(*) as co from search_log group by food_key";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				SearchLogFoodChartVO foodlogchart = new SearchLogFoodChartVO();
+				foodlogchart.setFoodName(rs.getString("food_key"));
+				foodlogchart.setCountFood(rs.getInt("co"));
+				foodloglist.add(foodlogchart);			
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.selectAllList : " + e.getMessage());
+		}
+		return foodloglist;
+	}
 
 
 }
