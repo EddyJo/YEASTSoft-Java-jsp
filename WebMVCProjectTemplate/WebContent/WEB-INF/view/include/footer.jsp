@@ -14,13 +14,13 @@
 }
 
 .footer_box {
-	width: 1000px;
+	width: 100%;
 	margin: 0 auto;
 }
 
 .footer_box ul {
 	float: left;
-	width: 1000px;
+	width: 100%;
 	margin: 20px auto 50px auto;
 	padding-top: 30px;
 	text-align: center;
