@@ -33,7 +33,9 @@
 					class="dropdown-toggle" data-toggle="dropdown">Log History</a>
 					<ul class="dropdown-menu">
 						<li><a href="<c:url value='/searchId.do'/>">user</a>
-						<li><a href="<c:url value='/searchAll.do'/>">all</a>
+						<c:if test="${sessionScope.userid eq 'admin'}">
+							<li><a href="<c:url value='/searchAll.do'/>">all</a>
+						</c:if>
 					</ul></li>
 				<li><a href='<c:url value="/emp/salaryChart.do"/>'>Trend Analysis</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
@@ -55,8 +57,7 @@
 						class="dropdown-toggle" data-toggle="dropdown">관리자메뉴</a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/insertmedinfo.do'/>">약품 DB추가</a>
-							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품
-									DB추가</a>
+							<li><a href="<c:url value='/insertFoodInfo.do'/>">식품DB추가</a>
 						</ul></li>
 				</c:if>
 				<li><div style="margin-top: 10px;">

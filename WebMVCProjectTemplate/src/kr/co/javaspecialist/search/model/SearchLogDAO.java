@@ -79,7 +79,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				SearchLogVO logListByUserId = new SearchLogVO();
-				logListByUserId.setMedKey(rs.getString("med_Key"));
+				logListByUserId.setMedKey(rs.getString("med_key"));
 				logListByUserId.setFoodKey(rs.getString("food_key"));
 				logListByUserId.setSearchDate(rs.getString("search_date"));
 				idlist.add(logListByUserId);
