@@ -3,7 +3,7 @@ package kr.co.javaspecialist.search.model;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import kr.co.javaspecialist.chart.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchLogChartVO;
 import kr.co.javaspecialist.emp.model.AvgSalChartVO;
 
 public interface ISearchLogDAO {

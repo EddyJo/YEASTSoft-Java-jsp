@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import kr.co.javaspecialist.board.model.BoardVO;
-import kr.co.javaspecialist.chart.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchLogChartVO;
 import kr.co.javaspecialist.common.db.DBConn;
 
 public class SearchLogDAO implements ISearchLogDAO {

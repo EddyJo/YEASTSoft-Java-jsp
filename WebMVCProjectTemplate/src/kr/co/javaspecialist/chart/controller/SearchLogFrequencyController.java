@@ -9,11 +9,11 @@ import org.apache.poi.util.SystemOutLogger;
 
 import com.google.gson.Gson;
 
-import kr.co.javaspecialist.chart.model.SearchLogChartVO;
+import kr.co.javaspecialist.search.model.SearchLogChartVO;
 import kr.co.javaspecialist.common.controller.CommandHandler;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 
-public class SearchLogFrequencyChartController implements CommandHandler {
+public class SearchLogFrequencyController implements CommandHandler {
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {

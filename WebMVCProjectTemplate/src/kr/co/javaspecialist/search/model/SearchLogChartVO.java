@@ -1,4 +1,4 @@
-package kr.co.javaspecialist.chart.model;
+package kr.co.javaspecialist.search.model;
 
 public class SearchLogChartVO {
 	private String foodName;
