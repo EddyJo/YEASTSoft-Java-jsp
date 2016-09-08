@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>${result} 차트를 그립니다.</h2>
+<h2>${logData}차트를 그립니다.</h2>
 </body>
 </html>

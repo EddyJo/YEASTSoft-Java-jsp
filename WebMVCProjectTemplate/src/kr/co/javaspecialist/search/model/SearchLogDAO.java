@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import kr.co.javaspecialist.board.model.BoardVO;
+import kr.co.javaspecialist.chart.model.SearchLogChartVO;
+import kr.co.javaspecialist.common.db.DBConn;
 
 public class SearchLogDAO implements ISearchLogDAO {
 
@@ -171,9 +173,29 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 		
 		return searchLog;
-		
-		
-		
+	}
+	
+	@Override
+	public Collection<SearchLogChartVO> getFrequencyGroupingbyMedcine(){
+		ArrayList<SearchLogChartVO> list = new ArrayList<SearchLogChartVO>();
+		String sql = "select med_key, count(*) as co from search_log group by med_key";
+		Connection con = null;
+		try{
+			con = DBConn.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				SearchLogChartVO logChart = new SearchLogChartVO();
+				logChart.setMedName(rs.getString("med_key"));
+				logChart.setCountMed(rs.getInt("co"));
+				list.add(logChart);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.selectAllList : " + e.getMessage());
+			
+		}
+		return list;
 	}
 
 
