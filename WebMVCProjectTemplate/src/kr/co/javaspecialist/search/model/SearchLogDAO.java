@@ -127,24 +127,24 @@ public class SearchLogDAO implements ISearchLogDAO {
 	}
 	
 	@Override
-	public void searchLogDelete(String userId){
+	public String searchLogDelete(String userId){
 		Connection con=null;
-		int count=0;
-		String sql = "delete * from search_log where userid= ?";
+		String sql = "delete from search_log where userid= ?";
 		try{
-			con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, userId);
-			count = pstmt.executeUpdate();
+			con = getConnection();//sqldeveloper키고 hr계정 연결
+			PreparedStatement pstmt = con.prepareStatement(sql);//쿼리문 작성
+			pstmt.setString(1, userId);//쿼리문 완성
+			pstmt.executeUpdate();//쿼리문 실횅
 		}catch(SQLException e){
 			throw new RuntimeException(e);			
 		}finally{
 			closeConnection(con);
 		}
-		return ;
+
+		return "삭제되었습니다";
 	}
-	
-	
+
+
 	@Override
 	public SearchLogVO getSearchLogDetails(String userId){
 		SearchLogVO searchLog = new SearchLogVO();

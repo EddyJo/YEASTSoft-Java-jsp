@@ -20,9 +20,9 @@ public class SearchLogDeleteController extends SearchController {
 		}else if(method.equalsIgnoreCase("post")){
 			try{
 				String userId = (String)request.getParameter("userId");
-				Collection<SearchLogVO> logListByUserId = dao.selectUserId(userId);
-				request.setAttribute("logListByUserId", logListByUserId);
-				return "/search/idlist.jsp";
+				String result = dao.searchLogDelete(userId);
+				request.setAttribute("result", result);
+				return "/search/searchlogform.jsp";
 				}catch(Exception e) {
 					request.setAttribute("message", e.getMessage());
 					view="/search/error.jsp";
