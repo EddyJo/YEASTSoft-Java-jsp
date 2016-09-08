@@ -44,7 +44,7 @@ li{
 							<li><a href="<c:url value='/searchAll.do'/>">모든 검색이력 조회</a>
 						</c:if>
 					</ul></li>
-				<li><a href='<c:url value="/emp/salaryChart.do"/>'>통계분석</a></li>
+				<li><a href='<c:url value="/showfrequency.do"/>'>통계분석</a></li>
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">마이페이지</a>
 					<ul class="dropdown-menu">
