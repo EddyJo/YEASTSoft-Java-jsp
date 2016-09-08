@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 import kr.co.javaspecialist.search.model.SearchLogVO;
 
-public class SearchLogDeleteController extends SearchController {
+public class SearchLogSelectController extends SearchController {
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
