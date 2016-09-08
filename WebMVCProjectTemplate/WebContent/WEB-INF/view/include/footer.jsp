@@ -23,7 +23,7 @@
 	width: 100%;
 	margin: 20px auto 50px auto;
 	padding-top: 30px;
-	text-align: center;
+	text-align: center; 
 }
 
 .footer_box ul li {
