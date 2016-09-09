@@ -11,4 +11,45 @@ VALUES (1, '타이레놀', '두통');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
 VALUES (2, '아스피린', '해열');
 
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (1, '타이레놀', '두통');
+
+INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
+VALUES (2, '아스피린', '해열');
+
 commit;

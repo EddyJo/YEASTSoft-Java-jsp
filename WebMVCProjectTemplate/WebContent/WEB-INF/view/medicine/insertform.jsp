@@ -17,7 +17,26 @@
 
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-
+	
+	<div class="content" style="text-align: center;">
+		<table border=1>
+			<tr>
+				<th>NO</th>
+				<th>User ID</th>
+				<th>Med Key</th>
+				<th>Food Key</th>
+				<th>Search Date</th>
+			</tr>
+			<c:forEach var="alog" items="${allList}">
+				<tr>
+					<td>${alog.serialNum}</td>
+					<td>${alog.userId}</td>
+					<td>${alog.medKey}</td>
+					<td>${alog.searchDate}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 	
 	<div class="content" style="width: 500px; height: 300px; margin: auto;">
 		<form action="<c:url value='insertmedinfo.do'/>" method="post"
@@ -40,6 +59,24 @@
 			</center>
 
 		</form>
+		
+		<form action="<c:url value='fooddelete.do'/>" method="post"
+			class="form-horizontal">
+			<br> <input type="text" name="foodName" id="name" class="form-control" placeholder="식품명을 입력하세요"> <br>
+			<center>
+				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
+			</center>
+		</form>
+		
+		<div class="featurette" id="services" style="height: 700px;">
+		
+		<h1 class="featurette-heading" style="margin-top: 300px;">실행 결과</h1>
+		<h2>
+			<span class="text-muted"> 약품 정보가 삭제되었습니다</span>
+		</h2>
+		<p class="lead">${result}</p>
+		
+	</div>
 	</div>
 
 
