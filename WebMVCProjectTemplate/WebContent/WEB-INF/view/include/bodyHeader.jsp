@@ -55,7 +55,7 @@ li{
 				<li class="dropdown"><a href='<c:url value="/"/>'
 					class="dropdown-toggle" data-toggle="dropdown">마이페이지</a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value='/member/login.do'/>">마이페이지</a>
+						<li><a href="<c:url value='/member/mypage.do'/>">마이페이지</a>
 						<li><a href="<c:url value='/member/update.do'/>">개인정보수정</a>
 						<li><a href="<c:url value='/member/delete.do'/>">회원탈퇴</a>
 						<li><a href="<c:url value='/member/logout.do'/>">로그아웃</a>
