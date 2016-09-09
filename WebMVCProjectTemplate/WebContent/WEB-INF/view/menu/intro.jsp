@@ -55,6 +55,7 @@ div.form-group {
 	<header class="header-image">
 	<div class="headline">
 		<div class="container">
+			<i class="fa fa-medkit fa-5x" aria-hidden="true" ></i>
 			<div class="titlefont">세상을 바꾸는 약빵</div>
 			<div class="subfont">식품과 약품의 궁합 정보</div>
 		</div>
