@@ -10,7 +10,7 @@ CREATE TABLE search_log(
 
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (1, 'chan', '타이레놀', '커피', '16/09/04');
+VALUES (1, 'dachan', '타이레놀', '커피', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (2, 'admin', '아스피린', '사과', '16/09/04');
@@ -64,25 +64,25 @@ INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (18, 'jiin', '아모디핀', '매실', '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (19, 'chan', '드로넬', '포도', '16/09/09');
+VALUES (19, 'dachan', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (20, 'jiin', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (21, 'chan', '드로넬', '포도', '16/09/09');
+VALUES (21, 'dachan', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (22, 'chan', '아스피린', '양배추', '16/09/09');
+VALUES (22, 'dachan', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (23, 'jiin', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (24, 'chan', '아모디핀', '매실', '16/09/09');
+VALUES (24, 'dachan', '아모디핀', '매실', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (25, 'chan', '코라솔', '우유', '16/09/09');
+VALUES (25, 'dachan', '코라솔', '우유', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (26, 'yeji', '코라솔', '우유', '16/09/09');
@@ -94,13 +94,13 @@ INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (28, 'yeji', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (29, 'chan', '아모디핀', '매실', '16/09/09');
+VALUES (29, 'dachan', '아모디핀', '매실', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (30, 'chan', '코라솔', '우유', '16/09/09');
+VALUES (30, 'dachan', '코라솔', '우유', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (31, 'chan', '아스피린', '양배추', '16/09/09');
+VALUES (31, 'dachan', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (32, 'yeji', '아스피린', '양배추', '16/09/09');
