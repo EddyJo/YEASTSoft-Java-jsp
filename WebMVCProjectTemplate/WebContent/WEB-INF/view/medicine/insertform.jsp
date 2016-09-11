@@ -53,7 +53,7 @@ th, td {
 		<form action="<c:url value='meddelete.do'/>" method="post"
 			class="form-horizontal">
 			<br> <input type="text" name="serialNum" id="name"
-				class="form-control" placeholder="식품명을 입력하세요"> <br>
+				class="form-control" placeholder="삭제할 약품의 번호를 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
 			</center>
