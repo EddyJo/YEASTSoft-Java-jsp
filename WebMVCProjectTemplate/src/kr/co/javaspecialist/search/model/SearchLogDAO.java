@@ -100,9 +100,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 	public Collection<SearchLogVO> selectAllList() {
 		Connection con = null;
 		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
-
 		String sql = "select * from search_log order by SERIAL_NUM"; 
-
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);

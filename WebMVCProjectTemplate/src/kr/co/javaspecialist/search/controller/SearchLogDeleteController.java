@@ -23,13 +23,13 @@ public class SearchLogDeleteController extends SearchController {
 				String result = dao.searchLogDelete(userId);
 				request.setAttribute("result", result);
 				return "/search/searchlogform.jsp";
-				}catch(Exception e) {
-					request.setAttribute("message", e.getMessage());
-					view="/search/error.jsp";
-				}
+			}catch(Exception e) {
+				request.setAttribute("message", e.getMessage());
+				view="/search/error.jsp";
 			}
-			return view;
-
 		}
-	
+		return view;
+
 	}
+
+}

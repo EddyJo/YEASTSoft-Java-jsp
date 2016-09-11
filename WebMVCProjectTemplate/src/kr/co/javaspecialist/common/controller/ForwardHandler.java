@@ -10,5 +10,6 @@ public class ForwardHandler implements CommandHandler {
 		String url = request.getParameter("url");
 		return url;
 	}
+	
 
 }

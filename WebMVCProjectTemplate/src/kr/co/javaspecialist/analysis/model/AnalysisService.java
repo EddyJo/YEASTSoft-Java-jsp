@@ -1,9 +1,5 @@
 package kr.co.javaspecialist.analysis.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Collection;
 
 import kr.co.javaspecialist.food.model.FoodInfoDAO;
@@ -17,9 +13,9 @@ public class AnalysisService {
 		//toString 으로 출력 
 		//분석 (추후 업데이트)
 		MedInfoDAO med = new MedInfoDAO();
-		Collection<MedInfoVO> medList = med.selectMedList(med_name);
+		Collection<MedInfoVO> medList = med.selectMedList();
 		FoodInfoDAO food = new FoodInfoDAO();
-		Collection<FoodInfoVO> foodList = food.selectFoodList(food_name);
+		Collection<FoodInfoVO> foodList = food.selectFoodList();
 		System.out.println(foodList);
 		System.out.println(foodList.size()==0);
 		System.out.println(medList);

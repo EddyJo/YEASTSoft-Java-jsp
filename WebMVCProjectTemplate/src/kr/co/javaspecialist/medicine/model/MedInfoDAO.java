@@ -9,6 +9,7 @@ import java.util.Collection;
 
 import kr.co.javaspecialist.board.model.BoardVO;
 import kr.co.javaspecialist.common.db.DBConn;
+import kr.co.javaspecialist.food.model.FoodInfoVO;
 
 public class MedInfoDAO implements IMedInfoDAO {
 
@@ -34,7 +35,7 @@ public class MedInfoDAO implements IMedInfoDAO {
 			stmt.setString(3, medinfo.getDisease());
 			//4. 쿼리 실행, executeQuery 또는 executeUpdate
 			stmt.executeUpdate();
-						
+
 		}catch(SQLException e){
 			e.printStackTrace();
 			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());
@@ -43,40 +44,70 @@ public class MedInfoDAO implements IMedInfoDAO {
 		}
 
 	}
-	public Collection<MedInfoVO> selectMedList(String med_name) {
-			Connection con = null;
-			ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
-
-			String sql = "select med_name, disease from med_info where med_name = ?";
-			try {
-				con= DBConn.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, med_name);
-				ResultSet rs = pstmt.executeQuery();
-				while(rs.next()) {
-					MedInfoVO medinfo = new MedInfoVO();
-					medinfo.setMedName(rs.getString("med_name"));
-					medinfo.setDisease(rs.getString("disease"));
-					list.add(medinfo);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-				throw new RuntimeException("medInfoDAO.selectArticleList : " + e.getMessage());
-			} finally {
-				DBConn.closeConnection(con);
-			}
-			return list;
-	}
-//	public BoardVO selectArticle(int bbsno) {}
-//	public void updateReadCount(int bbsno) {}
-//	public int selectTotalArticleCount() {}
-//	public void updateArticle(BoardVO board) {}
-//	public void deleteArticle(int bbsno, int replynumber) {}
-
-	@Override
 	public Collection<MedInfoVO> selectMedList() {
+		Connection con = null;
+		ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
+		String sql = "select * from med_info order by serial_num";
+		try {
+			con= DBConn.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MedInfoVO medinfo = new MedInfoVO();
+				medinfo.setSerialNum(rs.getInt("serial_num"));
+				medinfo.setMedName(rs.getString("med_name"));
+				medinfo.setDisease(rs.getString("disease"));
+				list.add(medinfo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("medInfoDAO.selectArticleList : " + e.getMessage());
+		} finally {
+			DBConn.closeConnection(con);
+		}
+		return list;
+	}
+	@Override
+	public String delete(int serialNum) {
+		// 관리자 식품 정보 삭제 구현
+		Connection con = null;
+		String sql = "delete from med_info where SERIAL_NUM = ?";
+		try{
+			con = DBConn.getConnection(); //sqldeveloper의 hr 계정연결
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, serialNum);
+			pstmt.executeUpdate();//쿼리문 실행
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}finally{
+			DBConn.closeConnection(con);
+		}
+
+		return "삭제되었습니다";
+
+	}
+	@Override
+	public MedInfoVO selectMedInfo(String medName) {
 		// TODO Auto-generated method stub
+		Connection con = null;
+		try {
+			con = DBConn.getConnection();
+			//1. 쿼리 작성
+			int serial_num = 0;
+			String sql = "select * from med_info where foodName=?";
+			//2. statement 객체 생성 
+			PreparedStatement stmt = con.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			serial_num = rs.getInt(1)+1;
+			//3. 쿼리 파라미터 설정
+			stmt.setString(1, medName);
+			//4. 쿼리 실행, executeQuery 또는 executeUpdate
+			stmt.executeUpdate();
+		}catch(SQLException e) {
+			throw new RuntimeException(e);
+		}finally {
+			DBConn.closeConnection(con);
+		}
 		return null;
 	}
-	
 }

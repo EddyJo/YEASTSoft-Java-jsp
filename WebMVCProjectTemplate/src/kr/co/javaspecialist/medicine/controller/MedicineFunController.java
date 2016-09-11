@@ -1,8 +1,11 @@
 package kr.co.javaspecialist.medicine.controller;
 
+import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.javaspecialist.food.model.FoodInfoVO;
 import kr.co.javaspecialist.medicine.model.MedInfoVO;
 import kr.co.javaspecialist.medicine.model.MedicineService;
 
@@ -14,6 +17,8 @@ public class MedicineFunController extends MedicineController {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
+			Collection<MedInfoVO> allList = dao.selectMedList();
+			request.setAttribute("allList", allList);
 			view = "/medicine/insertform.jsp";
 		}else if(method.equalsIgnoreCase("post")){
 			try{
@@ -27,7 +32,6 @@ public class MedicineFunController extends MedicineController {
 				MedInfoVO medinfo = new MedInfoVO();
 				medinfo.setMedName(medname);
 				medinfo.setDisease(disease);
-				
 				dao.insertMedInfo(medinfo);
 
 				return "/medicine/insertmedinfo.jsp";

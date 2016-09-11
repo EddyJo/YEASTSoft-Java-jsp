@@ -1,5 +1,7 @@
 package kr.co.javaspecialist.food.controller;
 
+import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +16,8 @@ public class FoodFunController extends FoodController {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
+			Collection<FoodInfoVO> allList = dao.selectFoodList();
+			request.setAttribute("allList", allList);
 			view = "/food/insertForm.jsp";
 		}else if(method.equalsIgnoreCase("post")){
 			try{
@@ -40,4 +44,6 @@ public class FoodFunController extends FoodController {
 		}
 		return view;
 	}
+	
+	
 }

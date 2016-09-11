@@ -55,7 +55,7 @@ div.form-group {
 		</div>
 
 
-		<c:if test="${!empty result}">${result}</c:if>
+		<center><c:if test="${!empty result}">${result}</c:if></center>
 
 
    </div>

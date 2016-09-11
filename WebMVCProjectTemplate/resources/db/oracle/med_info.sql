@@ -65,7 +65,7 @@ VALUES (22, '타이레놀', '식도염');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
 VALUES (23, '아스피린', '우울증');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (24, '에피신정', '');
+VALUES (24, '이부프로펜', '염증');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
 VALUES (25, '아스피린', '녹내장');

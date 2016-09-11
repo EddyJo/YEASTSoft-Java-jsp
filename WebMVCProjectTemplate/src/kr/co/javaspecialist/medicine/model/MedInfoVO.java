@@ -1,8 +1,16 @@
 package kr.co.javaspecialist.medicine.model;
 
 public class MedInfoVO {
+	private int serialNum;
 	private String medName;
 	private String disease;
+	
+	public int getSerialNum() {
+		return serialNum;
+	}
+	public void setSerialNum(int serialNum) {
+		this.serialNum = serialNum;
+	}
 	public String getMedName() {
 		return medName;
 	}

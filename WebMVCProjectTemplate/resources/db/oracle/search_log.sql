@@ -34,7 +34,7 @@ INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (8, 'jiin', '코라솔', '우유', '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (9, 'jiin', '아모디핀', '알로에' '16/09/05');
+VALUES (9, 'jiin', '아모디핀', '알로에', '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (10, 'kyung', '코라솔', '우유', '16/09/06');
@@ -58,7 +58,7 @@ INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (16, 'admin', '아모디핀', '매실', '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (17, 'yeji', '아모디핀', '알로에' '16/09/08');
+VALUES (17, 'yeji', '아모디핀', '알로에', '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
 VALUES (18, 'jiin', '아모디핀', '매실', '16/09/08');

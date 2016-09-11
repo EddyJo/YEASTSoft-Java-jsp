@@ -6,6 +6,7 @@ import kr.co.javaspecialist.food.model.IFoodInfoDAO;
 
 public abstract class FoodController implements CommandHandler {
 	IFoodInfoDAO dao = new FoodInfoDAO();
+	
 
 
 }

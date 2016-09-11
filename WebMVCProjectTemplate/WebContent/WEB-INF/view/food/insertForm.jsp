@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,28 +32,7 @@ th, td {
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 
-	<div class="content" style="text-align: center;">
-		<table border=1>
-			<tr>
-				<th>NO</th>
-				<th>User ID</th>
-				<th>Food Key</th>
-				<th>Search Date</th>
-			</tr>
-			<c:forEach var="alog" items="${allList}">
-				<tr>
-					<td>${alog.serialNum}</td>
-					<td>${alog.userId}</td>
-					<td>${alog.medKey}</td>
-					<td>${alog.foodKey}</td>
-					<td>${alog.searchDate}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
-	
-	
-	<div class="content" style="width: 500px; height: 700px; margin: auto;">
+	<div class="content" style="width: 500px; height: 600px; margin: auto;">
 		<form action="<c:url value='insertFoodInfo.do'/>" method="post"
 			class="form-horizontal">
 
@@ -62,9 +42,12 @@ th, td {
 				<h2>
 					<span class="text-muted">DB에 추가할 식품명과 해당하는 질병명을 입력하세요</span>
 				</h2>
-				<br> <input type="text" name="foodName" id="name" class="form-control" placeholder="식품명을 입력하세요"> <br> 
-					<input type="text" name="goodDisease" id="name" class="form-control" placeholder="Good Disease"> <br> 
-					<input type="text" name="badDisease" id="name" class="form-control"	placeholder="Bad Disease">
+				<br> <input type="text" name="foodName" id="name"
+					class="form-control" placeholder="식품명을 입력하세요"> <br> <input
+					type="text" name="goodDisease" id="name" class="form-control"
+					placeholder="Good Disease"> <br> <input type="text"
+					name="badDisease" id="name" class="form-control"
+					placeholder="Bad Disease">
 			</div>
 			<br>
 			<center>
@@ -74,22 +57,36 @@ th, td {
 		</form>
 		<form action="<c:url value='fooddelete.do'/>" method="post"
 			class="form-horizontal">
-			<br> <input type="text" name="foodName" id="name" class="form-control" placeholder="식품명을 입력하세요"> <br>
+			<br> <input type="text" name="serialNum" id="name"
+				class="form-control" placeholder="삭제할 식품의 번호를 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
 			</center>
 		</form>
-		
-		<div class="featurette" id="services" style="height: 700px;">
-		
-		<h1 class="featurette-heading" style="margin-top: 300px;">실행 결과</h1>
-		<h2>
-			<span class="text-muted"> 식품 정보가 삭제되었습니다</span>
-		</h2>
-		<p class="lead">${result}</p>
-		
-	</div>
 
+
+	</div>
+	<center>
+		<c:if test="${!empty result}">${result}</c:if>
+	</center>
+
+	<div class="content" style="text-align: center;">
+		<table border=1>
+			<tr>
+				<th>Serial Number</th>
+				<th>Food Name</th>
+				<th>Good Effect</th>
+				<th>Bad Effect</th>
+			</tr>
+			<c:forEach var="alog" items="${allList}">
+				<tr>
+					<td>${alog.serialNum}</td>
+					<td>${alog.foodName}</td>
+					<td>${alog.goodDisease}</td>
+					<td>${alog.badDisease}</td>
+				</tr>
+			</c:forEach>
+		</table>
 	</div>
 	<%--주석 --%>
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
