@@ -10,105 +10,105 @@ CREATE TABLE search_log(
 
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (1, 'chan', '타이레놀', '커피', '2016/09/04');
+VALUES (1, 'chan', '타이레놀', '커피', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (2, 'HYJ', '아스피린', '사과', '2016/09/05');
+VALUES (2, 'admin', '아스피린', '사과', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (3, '', '', '', '2016//');
+VALUES (3, 'admin', '아스피린', '사과', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (4, '', '', '', '2016//');
+VALUES (4, 'yeji', '아스피린', '우유', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (5, '', '', '', '2016//');
+VALUES (5, 'jiin', '드로넬', '포도', '16/09/04');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (6, '', '', '', '2016//');
+VALUES (6, 'kyung', '드로넬', '포도', '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (7, '', '', '', '2016//');
+VALUES (7, 'kyung', '아모디핀', '알로에', '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (8, '', '', '', '2016//');
+VALUES (8, 'jiin', '코라솔', '우유', '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (9, '', '', '', '2016//');
+VALUES (9, 'jiin', '아모디핀', '알로에' '16/09/05');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (10, '', '', '', '2016//');
+VALUES (10, 'kyung', '코라솔', '우유', '16/09/06');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (11, '', '', '', '2016//');
+VALUES (11, 'kyung', '아모디핀', '매실', '16/09/07');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (12, '', '', '', '2016//');
+VALUES (12, 'admin', '아모디핀', '알로에', '16/09/07');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (13, '', '', '', '2016//');
+VALUES (13, 'admin', '코라솔', '우유', '16/09/07');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (14, '', '', '', '2016//');
+VALUES (14, 'admin', '아모디핀', '매실', '16/09/07');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (15, '', '', '', '2016//');
+VALUES (15, 'jiin', '코라솔', '우유', '16/09/07');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (16, '', '', '', '2016//');
+VALUES (16, 'admin', '아모디핀', '매실', '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (17, '', '', '', '2016//');
+VALUES (17, 'yeji', '아모디핀', '알로에' '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (18, '', '', '', '2016//');
+VALUES (18, 'jiin', '아모디핀', '매실', '16/09/08');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (19, '', '', '', '2016//');
+VALUES (19, 'chan', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (20, '', '', '', '2016//');
+VALUES (20, 'jiin', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (21, '', '', '', '2016//');
+VALUES (21, 'chan', '드로넬', '포도', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (22, '', '', '', '2016//');
+VALUES (22, 'chan', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (23, '', '', '', '2016//');
+VALUES (23, 'jiin', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (24, '', '', '', '2016//');
+VALUES (24, 'chan', '아모디핀', '매실', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (25, '', '', '', '2016//');
+VALUES (25, 'chan', '코라솔', '우유', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (26, '', '', '', '2016//');
+VALUES (26, 'yeji', '코라솔', '우유', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (27, '', '', '', '2016//');
+VALUES (27, 'yeji', '아모디핀', '매실', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (28, '', '', '', '2016//');
+VALUES (28, 'yeji', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (29, '', '', '', '2016//');
+VALUES (29, 'chan', '아모디핀', '매실', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (30, '', '', '', '2016//');
+VALUES (30, 'chan', '코라솔', '우유', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (31, '', '', '', '2016//');
+VALUES (31, 'chan', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (32, '', '', '', '2016//');
+VALUES (32, 'yeji', '아스피린', '양배추', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (33, '', '', '', '2016//');
+VALUES (33, 'yeji', '크레스토', '삼겹살', '16/09/09');
 
 INSERT INTO search_log (SERIAL_NUM, USERID, MED_KEY, FOOD_KEY, SEARCH_DATE)
-VALUES (34, '', '', '', '2016//');
+VALUES (34, 'yeji', '크레스토', '삼겹살', '16/09/09');
 --test
 commit;

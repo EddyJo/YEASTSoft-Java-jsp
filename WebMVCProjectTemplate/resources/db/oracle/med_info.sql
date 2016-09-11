@@ -55,39 +55,39 @@ VALUES (18, '아스피린', '신부전');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
 VALUES (19, '아스피린', '설사');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (5, '타이레놀', '심근경색');
+VALUES (20, '타이레놀', '심근경색');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (6, '아스피린', '비염');
+VALUES (21, '아스피린', '비염');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (7, '타이레놀', '식도염');
+VALUES (22, '타이레놀', '식도염');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (8, '아스피린', '우울증');
+VALUES (23, '아스피린', '우울증');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (9, '에피신정', '');
+VALUES (24, '에피신정', '');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (10, '아스피린', '녹내장');
+VALUES (25, '아스피린', '녹내장');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (11, '타이레놀', '뇌졸중');
+VALUES (26, '타이레놀', '뇌졸중');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (12, '아스피린', '당뇨병');
+VALUES (27, '아스피린', '당뇨병');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (13, '타이레놀', '백내장');
+VALUES (28, '타이레놀', '백내장');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (14, '아스피린', '변비');
+VALUES (29, '아스피린', '변비');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (15, '타이레놀', '부정맥');
+VALUES (30, '타이레놀', '부정맥');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (16, '아스피린', '불면증');
+VALUES (31, '아스피린', '불면증');
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (17, '타이레놀', '빈혈');
+VALUES (32, '타이레놀', '빈혈');
 
 INSERT INTO med_info (SERIAL_NUM, MED_NAME, DISEASE)
-VALUES (18, '아스피린', '신부전');
+VALUES (33, '아스피린', '신부전');
 
 commit;

@@ -58,42 +58,42 @@ INSERT INTO food_info (SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
 VALUES(17, '카레', '신우신염');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(18, '바나나', '고혈압')
+VALUES(18, '바나나', '고혈압');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(19, '매실', '고혈압')
+VALUES(19, '매실', '고혈압');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(20, '오렌지', '고혈압')
+VALUES(20, '오렌지', '고혈압');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(21, '우유', '감기')
+VALUES(21, '우유', '감기');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(22, '요구르트', '소화불량')
+VALUES(22, '요구르트', '소화불량');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(23, '우유', '변비')
+VALUES(23, '우유', '변비');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(24, '커피', '천식')
+VALUES(24, '커피', '천식');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(25, '초콜렛', '천식')
+VALUES(25, '초콜렛', '천식');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(26, '치즈', '아토피')
+VALUES(26, '치즈', '아토피');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(27, '고등어', '아토피')
+VALUES(27, '고등어', '아토피');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(28, '바나나', '아토피')
+VALUES(28, '바나나', '아토피');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(29, '양배추', '해열')
+VALUES(29, '양배추', '해열');
 
 INSERT INTO food_info ( SERIAL_NUM, FOOD_NAME, BAD_DISEASE)
-VALUES(30, '브로컬리', '항응혈')
+VALUES(30, '브로컬리', '항응혈');
 
 commit;
