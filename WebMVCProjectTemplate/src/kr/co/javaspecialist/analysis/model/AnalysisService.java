@@ -30,11 +30,11 @@ public class AnalysisService {
 				}else{
 					for(FoodInfoVO foodinfo : foodList){
 						if(medicine.getDisease().equals(foodinfo.badDisease)){
-							score = 10;
-							result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 나쁜 관계입니다.";
+							return score = 10;
+							//result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 나쁜 관계입니다.";
 						}else if(medicine.getDisease().equals(foodinfo.goodDisease)){
-							score = 100;
-							result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 좋은 관계입니다.";
+							return score = 100;
+							//result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 좋은 관계입니다.";
 						}else if(medicine.getDisease() != foodinfo.badDisease & medicine.getDisease() != foodinfo.goodDisease ){
 							score = 50;
 							result = medicine.getMedName() + "와 " + foodinfo.foodName +"은 아무런 관계가 없습니다.";
