@@ -15,7 +15,8 @@ public class MemberDAO implements IMemberDAO{
 		try {
 			con = DBConn.getConnection();
 			//1. 쿼리 작성
-			String sql = "insert into member (userid, name, password, phone, email) values (?, ?, ?, ?, ?)";
+			String sql = "insert into member (userid, name, password, phone, email, gender, age, location) "
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
 			//2. statement 객체 생성 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			//3. 쿼리 파라미터 설정
@@ -24,6 +25,9 @@ public class MemberDAO implements IMemberDAO{
 			stmt.setString(3, member.getPassword());
 			stmt.setString(4, member.getPhone());
 			stmt.setString(5, member.getEmail());
+			stmt.setString(6, member.getGender());
+			stmt.setString(7, member.getAge());
+			stmt.setString(8, member.getLocation());
 			//4. 쿼리 실행, executeQuery 또는 executeUpdate
 			stmt.executeUpdate();
 		}catch(SQLException e) {
@@ -50,6 +54,9 @@ public class MemberDAO implements IMemberDAO{
 				member.setName(rs.getString("name"));
 				member.setPhone(rs.getString("phone"));
 				member.setEmail(rs.getString("email"));
+				member.setGender(rs.getString("gender"));
+				member.setAge(rs.getString("age"));
+				member.setLocation(rs.getString("location"));
 			}
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
@@ -80,6 +87,9 @@ public class MemberDAO implements IMemberDAO{
 				vo.setPassword(rs.getString("password"));
 				vo.setPhone(rs.getString(4));//권하지는 않는다. select 열 순서를 입력해도 됨
 				vo.setEmail(rs.getString("email"));
+				vo.setGender(rs.getString("gender"));
+				vo.setAge(rs.getString("age"));
+				vo.setLocation(rs.getString("location"));
 				//ResultSet을 소비하는 도중에 select 쿼리를 전송시키면 안된다.
 //				String sql2 = "select * from board where writer=?";
 //				PreparedStatement stmt2 = con.prepareStatement(sql2);
@@ -102,14 +112,18 @@ public class MemberDAO implements IMemberDAO{
 		try {
 			con = DBConn.getConnection();
 			con.setAutoCommit(false);
-			String sql = "update member set name=?, password=?, phone=?, email=? where userid=?";
+			String sql = "update member set "
+					+ "name=?, password=?, phone=?, email=?, gender=?, age=?, location=?"
+					+ "where userid=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, member.getName());
 			stmt.setString(2, member.getPassword());
 			stmt.setString(3, member.getPhone());
 			stmt.setString(4, member.getEmail());
 			stmt.setString(5, member.getUserid());
-
+			stmt.setString(6, member.getGender());
+			stmt.setString(7, member.getAge());
+			stmt.setString(8, member.getLocation());
 			stmt.executeUpdate();
 			con.commit();
 		}catch(SQLException e) {

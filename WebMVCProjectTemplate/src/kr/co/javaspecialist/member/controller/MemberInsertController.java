@@ -23,6 +23,9 @@ public class MemberInsertController extends MemberController {
 				String name = request.getParameter("name");		
 				String phone = request.getParameter("phone");
 				String email = request.getParameter("email");
+				String gender = request.getParameter("gender");
+				String age = request.getParameter("age"); 
+				String location = request.getParameter("location");
 
 				MemberVO member = new MemberVO();
 				member.setUserid(userid);
@@ -30,6 +33,9 @@ public class MemberInsertController extends MemberController {
 				member.setName(name);
 				member.setPhone(phone);
 				member.setEmail(email);
+				member.setGender(gender);
+				member.setAge(age);
+				member.setLocation(location);
 				
 				dao.insert(member);
 				session.invalidate();

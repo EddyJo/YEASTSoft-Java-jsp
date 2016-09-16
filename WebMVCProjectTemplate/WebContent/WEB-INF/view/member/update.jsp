@@ -41,6 +41,24 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="control-label col-sm-2" for="gender"><fmt:message key="MEMBER_GENDER"/></label>
+      <div class="col-sm-8">
+        <input type="text" name="gender" id="gender" value="${member.gender}" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="age"><fmt:message key="MEMBER_AGE"/></label>
+      <div class="col-sm-8">
+        <input type="text" name="age" id="age" value="${member.age}" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="location"><fmt:message key="MEMBER_LOCATION"/></label>
+      <div class="col-sm-8">
+        <input type="text" name="location" id="location" value="${member.location}" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
     	<div class="col-sm-offset-2 col-sm-8">
 		<input type="submit" class="btn btn-info" value="<fmt:message key="SAVE"/>">
 		<input type="reset" class="btn btn-info" value="<fmt:message key="CANCEL"/>">

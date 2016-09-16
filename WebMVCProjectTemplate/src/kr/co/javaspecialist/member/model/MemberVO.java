@@ -6,6 +6,9 @@ public class MemberVO {
     private String password;
     private String phone;
     private String email;
+    private String gender;
+    private String age;
+    private String location;
     
 	public String getUserid() {
 		return userid;
@@ -36,6 +39,24 @@ public class MemberVO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 }
