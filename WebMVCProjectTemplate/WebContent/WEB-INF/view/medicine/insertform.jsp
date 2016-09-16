@@ -35,16 +35,16 @@ th, td {
 			class="form-horizontal">
 
 			<label class="control-label col-sm-2" for="name"></label>
-			<div class="featurette">
+			
 				<h1 class="featurette-heading">약품 정보 입력</h1>
 				<h2>
-					<span class="text-muted">DB에 추가할 약품명과 해당하는 질병명을 입력하세요</span>
+					<span class="text-muted">DB에 추가할 약품명과 해당하는 <br>질병명을 입력하세요</span>
 				</h2>
 				<br> <input type="text" name="medname" id="name"
 					class="form-control" placeholder="약품명을 입력하세요"><br> <input
 					type="text" name="disease" id="name" class="form-control"
 					placeholder=" 질병명을 입력하세요">
-			</div>
+			
 			<br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">저장</button>

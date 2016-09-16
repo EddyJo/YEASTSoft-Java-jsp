@@ -21,6 +21,7 @@ table, td, th {
 table {
 	border-collapse: collapse;
 	width: 100%;
+	
 }
 
 th, td {
@@ -37,10 +38,10 @@ th, td {
 			class="form-horizontal">
 
 			<label class="control-label col-sm-2" for="name"></label>
-			<div class="featurette">
+			
 				<h1 class="featurette-heading">식품 정보 입력</h1>
 				<h2>
-					<span class="text-muted">DB에 추가할 식품명과 해당하는 질병명을 입력하세요</span>
+					<span class="text-muted">DB에 추가할 식품명과 <br>해당하는 질병명을 입력하세요</span>
 				</h2>
 				<br> <input type="text" name="foodName" id="name"
 					class="form-control" placeholder="식품명을 입력하세요"> <br> <input
@@ -48,7 +49,7 @@ th, td {
 					placeholder="Good Disease"> <br> <input type="text"
 					name="badDisease" id="name" class="form-control"
 					placeholder="Bad Disease">
-			</div>
+			
 			<br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">저장</button>
