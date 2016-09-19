@@ -42,18 +42,18 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public void insertLog(SearchLogVO searchlog) {
 		Connection con = null;
-		String sql1 = "select nvl(max(serial_num),0) from search_log"; //Oracle
+		String sql1 = "select nvl(max(log_serial_num),0) from search_log"; //Oracle
 
-		int serial_num = 0;
+		int log_serial_num = 0;
 		String sql2 = "insert into search_log values (?, ?, ?, ?, sysdate)"; //Oracle
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql1);
 			ResultSet rs = pstmt.executeQuery();
 			rs.next();
-			serial_num = rs.getInt(1)+1;
+			log_serial_num = rs.getInt(1)+1;
 			pstmt = con.prepareStatement(sql2);
-			pstmt.setInt(1, serial_num);
+			pstmt.setInt(1, log_serial_num);
 			pstmt.setString(2, searchlog.getUserId());
 			pstmt.setString(3, searchlog.getMedKey());
 			pstmt.setString(4, searchlog.getFoodKey());
@@ -72,7 +72,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		Connection con = null;
 		
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
-		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by SERIAL_NUM DESC"  ;
+		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by LOG_SERIAL_NUM DESC"  ;
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -100,14 +100,14 @@ public class SearchLogDAO implements ISearchLogDAO {
 	public Collection<SearchLogVO> selectAllList() {
 		Connection con = null;
 		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
-		String sql = "select * from search_log order by SERIAL_NUM"; 
+		String sql = "select * from search_log order by LOG_SERIAL_NUM"; 
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				SearchLogVO searchlog = new SearchLogVO();
-				searchlog.setSerialNum(rs.getInt("serial_num"));
+				searchlog.setSerialNum(rs.getInt("log_serial_num"));
 				searchlog.setUserId(rs.getString("userid"));
 				searchlog.setMedKey(rs.getString("med_key"));
 				searchlog.setFoodKey(rs.getString("food_key"));
@@ -155,7 +155,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
 				searchLog.setUserId(userId);
-				searchLog.setSerialNum(rs.getInt("serial_num"));;
+				searchLog.setSerialNum(rs.getInt("log_serial_num"));;
 				searchLog.setMedKey(rs.getString("med_key"));
 				searchLog.setFoodKey(rs.getString("food_key"));
 				searchLog.setSearchDate(rs.getString("search_date"));

@@ -45,12 +45,6 @@
 	<div id="footer_wrap">
 		<div class="footer_box">
 			<ul>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">개인정보취급방침</a></li>
-				<li><a href="#">찾아오시는길</a></li>
-				<li class="last"><a href="#">사이트맵</a></li>
-				<br>
-				<br>
 				<li>yeastsoft@yeastsoft.com</li>
 			</ul>
 		</div>

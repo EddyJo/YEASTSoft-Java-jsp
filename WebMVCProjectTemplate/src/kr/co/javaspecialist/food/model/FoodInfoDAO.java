@@ -19,20 +19,20 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		String sql2 = "insert into food_info values (?, ?, ?, ?)";
-		String sql1 = "select nvl(max(serial_num),0) from food_info";
+		String sql1 = "select nvl(max(food_serial_num),0) from food_info";
 		try {
 			con = DBConn.getConnection();
 			//1. 쿼리 작성
-			int serial_num = 0;
+			int food_serial_num = 0;
 			
 			//2. statement 객체 생성 
 			PreparedStatement stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery();
 			rs.next();
-			serial_num = rs.getInt(1)+1;
+			food_serial_num = rs.getInt(1)+1;
 			//3. 쿼리 파라미터 설정
 			stmt = con.prepareStatement(sql2);
-			stmt.setInt(1, serial_num);
+			stmt.setInt(1, food_serial_num);
 			stmt.setString(2, FoodInfo.getFoodName());
 			stmt.setString(3,FoodInfo.getGoodDisease());
 			stmt.setString(4, FoodInfo.getBadDisease());
@@ -50,14 +50,14 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public Collection<FoodInfoVO> selectFoodListAll() {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
-		String sql = "select * from food_info order by SERIAL_NUM";
+		String sql = "select * from food_info order by FOOD_SERIAL_NUM";
 		try {
 			con= DBConn.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				FoodInfoVO foodinfo = new FoodInfoVO();
-				foodinfo.setSerialNum(rs.getInt("serial_num"));
+				foodinfo.setSerialNum(rs.getInt("food_serial_num"));
 				foodinfo.setFoodName(rs.getString("food_name"));
 				foodinfo.setGoodDisease(rs.getString("good_disease"));
 				foodinfo.setBadDisease(rs.getString("bad_disease"));
@@ -75,7 +75,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public Collection<FoodInfoVO> selectFoodList(String foodName) {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
-		String sql = "select * from food_info where food_name = ? order by SERIAL_NUM";
+		String sql = "select * from food_info where food_name = ? order by FOOD_SERIAL_NUM";
 		try {
 			con= DBConn.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -83,7 +83,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				FoodInfoVO foodinfo = new FoodInfoVO();
-				foodinfo.setSerialNum(rs.getInt("serial_num"));
+				foodinfo.setSerialNum(rs.getInt("food_serial_num"));
 				foodinfo.setFoodName(rs.getString("food_name"));
 				foodinfo.setGoodDisease(rs.getString("good_disease"));
 				foodinfo.setBadDisease(rs.getString("bad_disease"));
@@ -138,7 +138,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	public String delete(int serialNum) {
 		// 관리자 식품 정보 삭제 구현
 		Connection con = null;
-		String sql = "delete from food_info where SERIAL_NUM = ?";
+		String sql = "delete from food_info where FOOD_SERIAL_NUM = ?";
 		try{
 			con = DBConn.getConnection(); //sqldeveloper의 hr 계정연결
 			PreparedStatement pstmt = con.prepareStatement(sql);
