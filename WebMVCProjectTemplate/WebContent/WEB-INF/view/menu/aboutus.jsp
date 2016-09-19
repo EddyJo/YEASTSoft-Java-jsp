@@ -31,7 +31,9 @@
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 <div class="content" style="text-align: center; height: 700px;">
-기능 및 팀 소개 
+
+<img src="<c:url value='/images/service.jpg'/>"><p>
+
 </div>
 <jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
