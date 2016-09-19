@@ -16,7 +16,7 @@ public class FoodFunController extends FoodController {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
-			Collection<FoodInfoVO> allList = dao.selectFoodList();
+			Collection<FoodInfoVO> allList = dao.selectFoodListAll();
 			request.setAttribute("allList", allList);
 			view = "/food/insertForm.jsp";
 		}else if(method.equalsIgnoreCase("post")){

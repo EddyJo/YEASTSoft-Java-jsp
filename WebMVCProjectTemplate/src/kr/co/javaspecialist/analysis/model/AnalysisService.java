@@ -15,7 +15,7 @@ public class AnalysisService {
 		MedInfoDAO med = new MedInfoDAO();
 		Collection<MedInfoVO> medList = med.selectMedList(med_name);
 		FoodInfoDAO food = new FoodInfoDAO();
-		Collection<FoodInfoVO> foodList = food.selectFoodList();
+		Collection<FoodInfoVO> foodList = food.selectFoodList(food_name);
 		System.out.println(foodList);
 		System.out.println(foodList.size()==0);
 		System.out.println(medList);

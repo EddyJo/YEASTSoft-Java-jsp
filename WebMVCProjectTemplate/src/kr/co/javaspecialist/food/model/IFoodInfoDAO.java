@@ -4,7 +4,8 @@ import java.util.Collection;
 
 public interface IFoodInfoDAO {
 		void insertFoodInfo(FoodInfoVO FoodInfo);
-		Collection<FoodInfoVO> selectFoodList();
+		Collection<FoodInfoVO> selectFoodListAll();
+		Collection<FoodInfoVO> selectFoodList(String foodName);
 		FoodInfoVO selectFoodInfo(String foodName);
 		String delete(int serialNum);
 //		ArrayList<FoodInfoVO> selectAll_FoodInfo();

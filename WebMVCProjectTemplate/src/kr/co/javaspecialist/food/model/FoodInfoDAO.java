@@ -47,7 +47,7 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 	}
 	
 	@Override
-	public Collection<FoodInfoVO> selectFoodList() {
+	public Collection<FoodInfoVO> selectFoodListAll() {
 		Connection con = null;
 		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
 		String sql = "select * from food_info order by SERIAL_NUM";
@@ -71,7 +71,32 @@ public class FoodInfoDAO implements IFoodInfoDAO {
 		}
 		return list;
 	}
-	
+	@Override
+	public Collection<FoodInfoVO> selectFoodList(String foodName) {
+		Connection con = null;
+		ArrayList<FoodInfoVO> list = new ArrayList<FoodInfoVO>();
+		String sql = "select * from food_info where food_name = ? order by SERIAL_NUM";
+		try {
+			con= DBConn.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, foodName);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				FoodInfoVO foodinfo = new FoodInfoVO();
+				foodinfo.setSerialNum(rs.getInt("serial_num"));
+				foodinfo.setFoodName(rs.getString("food_name"));
+				foodinfo.setGoodDisease(rs.getString("good_disease"));
+				foodinfo.setBadDisease(rs.getString("bad_disease"));
+				list.add(foodinfo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("foodInfoDAO.selectFoodList : " + e.getMessage());
+		} finally {
+			DBConn.closeConnection(con);
+		}
+		return list;
+	}
 	@Override
 	public FoodInfoVO selectFoodInfo(String foodName) {
 		// TODO Auto-generated method stub
