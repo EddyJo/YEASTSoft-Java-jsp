@@ -6,7 +6,8 @@ import kr.co.javaspecialist.board.model.BoardVO;
 
 public interface IMedInfoDAO {
 	void insertMedInfo(MedInfoVO medinfo);
-	Collection<MedInfoVO> selectMedList();
+	Collection<MedInfoVO> selectMedList(String medName);
+	Collection<MedInfoVO> selectMedListAll();
 	MedInfoVO selectMedInfo(String medName);
 	String delete(int serialNum);
 //	BoardVO selectArticle(int bbsno);

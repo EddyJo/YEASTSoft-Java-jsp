@@ -44,7 +44,32 @@ public class MedInfoDAO implements IMedInfoDAO {
 		}
 
 	}
-	public Collection<MedInfoVO> selectMedList() {
+	public Collection<MedInfoVO> selectMedList(String medName) {
+		Connection con = null;
+		ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
+		String sql = "select * from med_info where med_name = ? order by serial_num";
+		try {
+			con= DBConn.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, medName);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MedInfoVO medinfo = new MedInfoVO();
+				medinfo.setSerialNum(rs.getInt("serial_num"));
+				medinfo.setMedName(rs.getString("med_name"));
+				medinfo.setDisease(rs.getString("disease"));
+				list.add(medinfo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("medInfoDAO.selectArticleList : " + e.getMessage());
+		} finally {
+			DBConn.closeConnection(con);
+		}
+		return list;
+	}
+	
+	public Collection<MedInfoVO> selectMedListAll() {
 		Connection con = null;
 		ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
 		String sql = "select * from med_info order by serial_num";

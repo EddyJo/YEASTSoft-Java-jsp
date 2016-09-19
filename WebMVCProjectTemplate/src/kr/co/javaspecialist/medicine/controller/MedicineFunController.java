@@ -17,7 +17,7 @@ public class MedicineFunController extends MedicineController {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
-			Collection<MedInfoVO> allList = dao.selectMedList();
+			Collection<MedInfoVO> allList = dao.selectMedListAll();
 			request.setAttribute("allList", allList);
 			view = "/medicine/insertform.jsp";
 		}else if(method.equalsIgnoreCase("post")){

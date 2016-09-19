@@ -41,18 +41,18 @@
 
 	<div class="featurette" id="about" >
 			
-		<h2>궁합도 : ${result}</h2>
+		<h2>${result2[0]}과 ${result2[1]}의 궁합도 </h2>
 		<p class="lead">
-			<c:if test="${result==50}">
-				<img src="http://cfile212.uf.daum.net/image/265D8B35538DE42D23A09F">
+			<c:if test="${result2[2]==50}">
+				<img src="http://cfile217.uf.daum.net/image/2631923A52959C7C3626B6">
 			</c:if>
-			<c:if test="${result==100}">
+			<c:if test="${result2[2]==100}">
 				<img src="http://mblogthumb3.phinf.naver.net/20130917_54/beauty_pop_1379424039089fO7UC_PNG/2202001_emot_019.png?type=w2">
 			</c:if>
-			<c:if test="${result==10}">
+			<c:if test="${result2[2]==10}">
 				<img src="http://cfile4.uf.tistory.com/image/224E463F5443B42A056C0A">
 			</c:if>
-			<c:if test="${result==0}">
+			<c:if test="${result2[2]==0}">
 				<h3>일치하는 정보가 없습니다.</h3>
 			</c:if>
 		
