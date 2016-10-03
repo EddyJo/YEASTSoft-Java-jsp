@@ -14,4 +14,5 @@ public interface ISearchLogDAO {
 	SearchLogVO getSearchLogDetails(String userId);
 	Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine();
 	Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood();
+	Collection<MemberLocationChartVO> getFrequencyGroupingbyLocation();
 }

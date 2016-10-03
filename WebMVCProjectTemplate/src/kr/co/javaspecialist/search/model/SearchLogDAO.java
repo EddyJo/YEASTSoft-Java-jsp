@@ -232,6 +232,36 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return foodloglist;
 	}
 
+	@Override
+	public Collection<MemberLocationChartVO> getFrequencyGroupingbyLocation() {
+		ArrayList<MemberLocationChartVO> LocationList = new ArrayList<MemberLocationChartVO>();
+		String sql = "select location, count(*) as co from member m, search_log s where m.userid = s.userid group by location order by co desc";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+			
+			while(rs.next()){
+				MemberLocationChartVO locationchart = new MemberLocationChartVO();
+				locationchart.setLocationName(rs.getString("location"));
+				locationchart.setCountLocation(rs.getInt("co"));
+				locationchart.setColor(colorList[count]);
+				LocationList.add(locationchart);
+				count++;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyLocation : " + e.getMessage());
+		}
+		return LocationList;
+	}
 
 }
 

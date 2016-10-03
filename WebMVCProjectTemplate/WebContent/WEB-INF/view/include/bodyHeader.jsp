@@ -50,6 +50,7 @@ li{
 					<ul class="dropdown-menu">
 						<li><a href="<c:url value='/showmedfrequency.do'/>">약품검색 통계분석</a>
 						<li><a href="<c:url value='/showfoodfrequency.do'/>">식품검색 통계분석</a>
+						<li><a href="<c:url value='/showlocationfrequency.do'/>">지역별검색 통계분석</a>
 					</ul></li>
 				
 				<li class="dropdown"><a href='<c:url value="/"/>'
