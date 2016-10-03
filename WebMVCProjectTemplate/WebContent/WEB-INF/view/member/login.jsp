@@ -10,6 +10,15 @@
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7&appId=790580357751641";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="content" style="text-align: center; height: 700px;">
 <%--
 String userid = (String)session.getAttribute("userid");
@@ -34,10 +43,12 @@ if(userid==null) {
         style="width:300px;" placeholder="비밀번호를 입력하세요" >
     
     </div>
+    
     <br>
     <br>
-   
-    <div class="form-group">
+    	<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+	    <br>
+	    <div class="form-group">
     	<div class="col-sm-offset-2 col-sm-8">
 		<input type="submit" class="btn btn-info" value="Sign In">
 		<input type="reset" class="btn btn-info" value="Cancel">
