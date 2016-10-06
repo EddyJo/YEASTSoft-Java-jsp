@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import kr.co.javaspecialist.board.model.BoardVO;
+
 import kr.co.javaspecialist.search.model.SearchMedLogChartVO;
 import kr.co.javaspecialist.common.db.DBConn;
 

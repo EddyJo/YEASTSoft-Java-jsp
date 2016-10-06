@@ -2,7 +2,7 @@ package kr.co.javaspecialist.medicine.model;
 
 import java.util.Collection;
 
-import kr.co.javaspecialist.board.model.BoardVO;
+
 
 public interface IMedInfoDAO {
 	void insertMedInfo(MedInfoVO medinfo);

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import kr.co.javaspecialist.board.model.BoardVO;
+
 import kr.co.javaspecialist.common.db.DBConn;
 import kr.co.javaspecialist.food.model.FoodInfoVO;
 
