@@ -15,4 +15,5 @@ public interface ISearchLogDAO {
 	Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine();
 	Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood();
 	Collection<MemberLocationChartVO> getFrequencyGroupingbyLocation();
+	Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName);
 }
