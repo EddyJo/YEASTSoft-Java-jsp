@@ -17,11 +17,12 @@ public class MedLocationFrequencyController implements CommandHandler {
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		SearchLogDAO dao = new SearchLogDAO();
 		String medName = request.getParameter("medName");
-		Collection<MedLocationChartVO> locationchart = dao.getMedCountGroupingbyLocation(medName);
+		Collection<MedLocationChartVO> locMedchart = dao.getMedCountGroupingbyLocation(medName);
 		Gson gson = new Gson();
-		String LocationData = gson.toJson(locationchart);
-		System.out.println(LocationData);
-		request.setAttribute("locationData",LocationData);
+		String LocMedData = gson.toJson(locMedchart);
+		System.out.println(LocMedData);
+		request.setAttribute("locmedData",LocMedData);
+		System.out.println(LocMedData);
 		return "/chart/medperlocchart.jsp";
 		
 		

@@ -265,8 +265,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	
 	@Override
 	public Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName){
-		ArrayList<MedLocationChartVO> LocationList = new ArrayList<MedLocationChartVO>();
-		String sql = "select location, count(*) from member m, search_log s where m.userid=s.userid and s.med_key = ? group by location "; 
+		ArrayList<MedLocationChartVO> LocMedList = new ArrayList<MedLocationChartVO>();
+		String sql = "select location, count(*) as co from member m, search_log s where m.userid=s.userid and s.med_key = ? group by location "; 
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();
@@ -281,18 +281,19 @@ public class SearchLogDAO implements ISearchLogDAO {
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
 			
 			while(rs.next()){
-				MedLocationChartVO locationchart = new MedLocationChartVO();
-				locationchart.setLocationName(rs.getString("location"));
-				locationchart.setCountMedPerLoc(rs.getInt("co"));
-				locationchart.setColor(colorList[count]);
-				LocationList.add(locationchart);
+				MedLocationChartVO locMedchart = new MedLocationChartVO();
+				locMedchart.setLocationName(rs.getString("location"));
+				locMedchart.setCountMedPerLoc(rs.getInt("co"));
+				locMedchart.setColor(colorList[count]);
+				LocMedList.add(locMedchart);
 				count++;
 			}
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyLocation : " + e.getMessage());
 		}
-		return LocationList;
+		System.out.println(LocMedList);
+		return LocMedList;
 	}
 	
 }
