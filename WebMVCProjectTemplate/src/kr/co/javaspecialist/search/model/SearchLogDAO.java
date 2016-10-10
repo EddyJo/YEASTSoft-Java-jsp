@@ -266,7 +266,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName){
 		ArrayList<MedLocationChartVO> LocMedList = new ArrayList<MedLocationChartVO>();
-		String sql = "select location, count(*) as co from member m, search_log s where m.userid=s.userid and s.med_key = ? group by location "; 
+		String sql = "select location, count(*) as co from member m, search_log s "
+				+ "where m.userid=s.userid and s.med_key = ? group by location "; 
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();
@@ -290,9 +291,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyLocation : " + e.getMessage());
+			throw new RuntimeException("SearchLogDAO.getMedCountGroupingbyLocation : " + e.getMessage());
 		}
-		System.out.println(LocMedList);
 		return LocMedList;
 	}
 	
@@ -300,13 +300,32 @@ public class SearchLogDAO implements ISearchLogDAO {
 	public Collection<FoodLocationChartVO> getFoodCountGroupingbyLocation(String foodName){
 		ArrayList<FoodLocationChartVO> LocFoodList = new ArrayList<FoodLocationChartVO>();
 		String sql = "select location, count(*) as co from member m, search_log s "
-					+ "where m.userid=s.userid and s.food_key=? group by location";
+				+ "where m.userid=s.userid and s.food_key = ? group by location "; 
 		Connection conn = null;
-		//try{
-		//	conn = DBConn.getConnection();
-		//	PreparedStatement pstmt = conn.prepareStatement(sql);
-		//	
-		//}
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, foodName);
+			ResultSet rs = pstmt.executeQuery();
+			int count =0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+			
+			while(rs.next()){
+				FoodLocationChartVO locFoodchart = new FoodLocationChartVO();
+				locFoodchart.setLocationName(rs.getString("location"));
+				locFoodchart.setCountFoodPerLoc(rs.getInt("co"));
+				locFoodchart.setColor(colorList[count]);
+				LocFoodList.add(locFoodchart);
+				count++;
+			}	
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getFoodCountGroupingbyLocation : " + e.getMessage());
+		}
 		return LocFoodList;
 	}
 

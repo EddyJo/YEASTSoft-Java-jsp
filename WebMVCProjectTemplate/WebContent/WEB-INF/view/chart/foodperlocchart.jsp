@@ -10,8 +10,8 @@
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 <form>
          <div class="form-group">
-			<input type="text" class="searchname" name="medName"
-			       style="width: 300px; height: 50px; margin: 10px;" placeholder="약품명을 입력하세요">
+			<input type="text" class="searchname" name="foodName"
+			       style="width: 300px; height: 50px; margin: 10px;" placeholder="식품명을 입력하세요">
             <button type="submit" class="btn btn-primary btn-lg active">검색</button>
          </div>
 </form>
@@ -85,8 +85,8 @@ var chart = AmCharts.makeChart("chartdiv", {
       }
     }]
   },
-  "dataProvider": ${locmedData},
-  "valueField": "countMedPerLoc",
+  "dataProvider": ${locfoodData},
+  "valueField": "countFoodPerLoc",
   "titleField": "locationName",
   "export": {
     "enabled": true

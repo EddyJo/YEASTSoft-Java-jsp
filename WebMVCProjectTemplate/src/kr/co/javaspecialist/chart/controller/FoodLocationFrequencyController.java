@@ -8,22 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import kr.co.javaspecialist.common.controller.CommandHandler;
-import kr.co.javaspecialist.search.model.MedLocationChartVO;
+import kr.co.javaspecialist.search.model.FoodLocationChartVO;
 import kr.co.javaspecialist.search.model.SearchLogDAO;
 
-public class MedLocationFrequencyController implements CommandHandler {
-	
+public class FoodLocationFrequencyController implements CommandHandler {
+
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		SearchLogDAO dao = new SearchLogDAO();
-		String medName = request.getParameter("medName");
-		Collection<MedLocationChartVO> locMedchart = dao.getMedCountGroupingbyLocation(medName);
+		String foodName = request.getParameter("foodName");
+		Collection<FoodLocationChartVO> locFoodchart = dao.getFoodCountGroupingbyLocation(foodName);
 		Gson gson = new Gson();
-		String LocMedData = gson.toJson(locMedchart);
-		request.setAttribute("locmedData",LocMedData);
-		//System.out.println(LocMedData);
-		return "/chart/medperlocchart.jsp";
-		
-		
+		String LocFoodData = gson.toJson(locFoodchart);
+		request.setAttribute("locfoodData", LocFoodData);
+		//System.out.println(LocFoodData);
+		return "/chart/foodperlocchart.jsp";
 	}
+
 }
