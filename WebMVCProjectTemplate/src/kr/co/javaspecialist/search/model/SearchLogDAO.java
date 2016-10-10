@@ -296,6 +296,19 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return LocMedList;
 	}
 	
-}
+	@Override
+	public Collection<FoodLocationChartVO> getFoodCountGroupingbyLocation(String foodName){
+		ArrayList<FoodLocationChartVO> LocFoodList = new ArrayList<FoodLocationChartVO>();
+		String sql = "select location, count(*) as co from member m, search_log s "
+					+ "where m.userid=s.userid and s.food_key=? group by location";
+		Connection conn = null;
+		//try{
+		//	conn = DBConn.getConnection();
+		//	PreparedStatement pstmt = conn.prepareStatement(sql);
+		//	
+		//}
+		return LocFoodList;
+	}
 
+}
 
