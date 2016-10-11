@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +9,20 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-<form>
+<form action="<c:url value='/medperloc.do'/>" method="post">
          <div class="form-group">
 			<input type="text" class="searchname" name="medName"
 			       style="width: 300px; height: 50px; margin: 10px;" placeholder="약품명을 입력하세요">
             <button type="submit" class="btn btn-primary btn-lg active">검색</button>
          </div>
 </form>
-
+<form action="<c:url value='/foodperloc.do'/>" method="post">
+         <div class="form-group">
+			<input type="text" class="searchname" name="foodName"
+			       style="width: 300px; height: 50px; margin: 10px;" placeholder="식품명을 입력하세요">
+            <button type="submit" class="btn btn-primary btn-lg active">검색</button>
+         </div>
+</form>
 <!-- Styles -->
 <style>
 #chartdiv {
@@ -50,6 +57,13 @@
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
 <!-- Chart code -->
+<h1>
+	<c:if test="${!empty locfoodData}">
+		<c:if test="${locfoodData eq '[]' }">데이터가 없습니다</c:if>
+	</c:if>
+</h1>
+
+
 <script>
 var chart = AmCharts.makeChart("chartdiv", {
   "type": "pie",
@@ -85,8 +99,8 @@ var chart = AmCharts.makeChart("chartdiv", {
       }
     }]
   },
-  "dataProvider": ${locmedData},
-  "valueField": "countMedPerLoc",
+  "dataProvider": ${locfoodData},
+  "valueField": "countFoodPerLoc",
   "titleField": "locationName",
   "export": {
     "enabled": true
