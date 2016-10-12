@@ -22,7 +22,7 @@ public class MedLocationFrequencyController implements CommandHandler {
 		String LocMedData = gson.toJson(locMedchart);
 		request.setAttribute("locmedData",LocMedData);
 		//System.out.println(LocMedData);
-		return "/chart/medperlocchart.jsp";
+		return "/chart/mcountperlocchart.jsp";
 		
 		
 	}

@@ -22,7 +22,7 @@ public class FoodLocationFrequencyController implements CommandHandler {
 		String LocFoodData = gson.toJson(locFoodchart);
 		request.setAttribute("locfoodData", LocFoodData);
 		//System.out.println(LocFoodData);
-		return "/chart/foodperlocchart.jsp";
+		return "/chart/fcountperlocchart.jsp";
 	}
 
 }

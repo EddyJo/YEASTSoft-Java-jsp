@@ -256,6 +256,9 @@ public class SearchLogDAO implements ISearchLogDAO {
 				LocationList.add(locationchart);
 				count++;
 			}
+			if(LocationList.size() ==0){
+				
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyLocation : " + e.getMessage());

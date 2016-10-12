@@ -9,6 +9,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
+
+
 <!-- Styles -->
 <style>
 #chartdiv {
@@ -31,6 +33,9 @@
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
 <!-- Chart code -->
+<center>
+	<c:if test="${empty locmedData}">데이터가 없음</c:if>
+</center>
 <script>
 var chart = AmCharts.makeChart("chartdiv", {
   "type": "serial",
