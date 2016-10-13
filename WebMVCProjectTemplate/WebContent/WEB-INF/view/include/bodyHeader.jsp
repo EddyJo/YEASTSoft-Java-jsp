@@ -52,6 +52,7 @@ li{
 						<li><a href="<c:url value='/showfoodfrequency.do'/>">식품검색 통계분석</a>
 						<li><a href="<c:url value='/showlocationfrequency.do'/>">지역별검색 통계분석</a>
 						<li><a href="<c:url value='/forward.do?url=/chart/mcountperlocchart.jsp'/>">식품,약품별 지역통계분석</a>
+						<li><a href="<c:url value='/foodmedlog.do'/>">궁합도검색 통계분석</a>
 					</ul></li>
 				
 				<li class="dropdown"><a href='<c:url value="/"/>'
