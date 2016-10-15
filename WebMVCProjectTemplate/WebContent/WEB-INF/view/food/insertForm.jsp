@@ -68,6 +68,9 @@ th, td {
 
 	</div>
 	<center>
+		<c:if test="${!empty warning}"><h1>${warning}</h1></c:if>
+	</center>
+	<center>
 		<c:if test="${!empty result}">${result}</c:if>
 	</center>
 

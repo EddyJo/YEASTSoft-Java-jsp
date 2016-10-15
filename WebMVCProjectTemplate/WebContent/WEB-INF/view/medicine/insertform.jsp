@@ -59,7 +59,9 @@ th, td {
 			</center>
 		</form>
 	</div>
-	
+	<center>
+		<c:if test="${!empty warning}"><h1>${warning}</h1></c:if>
+	</center>
 	<div class="content" style="text-align: center;">
 		<table border=1>
 			<tr>

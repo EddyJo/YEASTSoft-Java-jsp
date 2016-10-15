@@ -21,9 +21,21 @@ public class MedicineFunController extends MedicineController {
 			request.setAttribute("allList", allList);
 			view = "/medicine/insertform.jsp";
 		}else if(method.equalsIgnoreCase("post")){
+			String medname = request.getParameter("medname");
+			String disease = request.getParameter("disease");
+			Collection<MedInfoVO> meddb = dao.selectMedList(medname);
+			for(MedInfoVO meddata : meddb){
+				if(disease.equals(meddata.getDisease())){
+					String warning = "경고!, 중복된 데이터입니다";
+					request.setAttribute("warning", warning);
+					Collection<MedInfoVO> allList = dao.selectMedListAll();
+					request.setAttribute("allList", allList);
+
+					return "/medicine/insertform.jsp";
+				}
+			}
 			try{
-				String medname = request.getParameter("medname");
-				String disease = request.getParameter("disease");		
+						
 				MedicineService service = new MedicineService();
 				String result = service.saymedi(medname, disease);
 				request.setAttribute("result", result);

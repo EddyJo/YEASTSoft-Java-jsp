@@ -20,10 +20,20 @@ public class FoodFunController extends FoodController {
 			request.setAttribute("allList", allList);
 			view = "/food/insertForm.jsp";
 		}else if(method.equalsIgnoreCase("post")){
+			String foodName = request.getParameter("foodName");
+			String goodDisease = request.getParameter("goodDisease");
+			String badDisease = request.getParameter("badDisease");	
+			Collection<FoodInfoVO> fooddb = dao.selectFoodList(foodName);
+			for(FoodInfoVO fooddata : fooddb){
+				if(badDisease.equals(fooddata.badDisease)||goodDisease.equals(fooddata.goodDisease)){
+					String warning = "경고!, 중복된 데이터입니다";
+					request.setAttribute("warning", warning);
+					Collection<FoodInfoVO> allList = dao.selectFoodListAll();
+					request.setAttribute("allList", allList);
+					return "/food/insertForm.jsp";
+				}
+			}
 			try{
-				String foodName = request.getParameter("foodName");
-				String goodDisease = request.getParameter("goodDisease");
-				String badDisease = request.getParameter("badDisease");		
 				FoodService service = new FoodService();
 				String result = service.sayFood(foodName, goodDisease, badDisease);
 				request.setAttribute("result", result);
