@@ -49,6 +49,15 @@ th, td {
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">저장</button>
 			</center>
+			</form>
+		<form action="<c:url value='medrevise.do'/>" method="post"
+			class="form-horizontal">
+			<br> <input type="text" name="serialNum" id="name"
+				class="form-control" placeholder="수정할 약품의 번호를 입력하세요"> <br>
+			<center>
+				<button type="submit" class="btn btn-primary btn-lg active">수정</button>
+			</center>
+		</form>
 		</form>
 		<form action="<c:url value='meddelete.do'/>" method="post"
 			class="form-horizontal">

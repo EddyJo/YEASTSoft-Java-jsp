@@ -10,9 +10,6 @@ public interface IMedInfoDAO {
 	Collection<MedInfoVO> selectMedListAll();
 	MedInfoVO selectMedInfo(String medName);
 	String delete(int serialNum);
-//	BoardVO selectArticle(int bbsno);
-//	void updateReadCount(int bbsno);
-//	int selectTotalArticleCount();
-//	void updateArticle(BoardVO board);
-//	void deleteArticle(int bbsno, int replynumber);
+	String update(int serialNum);
+
 }

@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import kr.co.javaspecialist.common.db.DBConn;
 import kr.co.javaspecialist.food.model.FoodInfoVO;
+import kr.co.javaspecialist.member.model.MemberVO;
 
 public class MedInfoDAO implements IMedInfoDAO {
 
@@ -68,7 +69,7 @@ public class MedInfoDAO implements IMedInfoDAO {
 		}
 		return list;
 	}
-	
+
 	public Collection<MedInfoVO> selectMedListAll() {
 		Connection con = null;
 		ArrayList<MedInfoVO> list = new ArrayList<MedInfoVO>();
@@ -92,6 +93,26 @@ public class MedInfoDAO implements IMedInfoDAO {
 		}
 		return list;
 	}
+	@Override
+	public String update(int serialNum) {
+		Connection con = null;
+		String sql = "update med_info set med_name=?, disease=? where med_serial_num=?"; 
+		try {
+			con = DBConn.getConnection();
+			PreparedStatement stmt = con.prepareStatement(sql);
+//			stmt.setString(1, medName);
+//			stmt.setString(2, disease);
+			stmt.setInt(3, serialNum);
+			stmt.executeUpdate();
+			con.commit();
+		}catch(SQLException e) {
+			throw new RuntimeException(e);
+		}finally {
+			DBConn.closeConnection(con);
+		}
+		return "수정되었습니다.";
+	}
+
 	@Override
 	public String delete(int serialNum) {
 		// 관리자 식품 정보 삭제 구현
