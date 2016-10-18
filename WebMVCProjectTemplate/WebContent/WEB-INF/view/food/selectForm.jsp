@@ -81,6 +81,9 @@ th, td {
 	<center>
 		<c:if test="${!empty result}">${result}</c:if>
 	</center>
+	<center>
+		<c:if test="${empty list}">일치하는 데이터가 존재하지 않습니다.</c:if>
+	</center>
 
 	<div class="content" style="text-align: center;">
 		<table border=1>
@@ -90,7 +93,7 @@ th, td {
 				<th>Good Effect</th>
 				<th>Bad Effect</th>
 			</tr>
-			<c:forEach var="alog" items="${allList}">
+			<c:forEach var="alog" items="${list}">
 				<tr>
 					<td>${alog.serialNum}</td>
 					<td>${alog.foodName}</td>
