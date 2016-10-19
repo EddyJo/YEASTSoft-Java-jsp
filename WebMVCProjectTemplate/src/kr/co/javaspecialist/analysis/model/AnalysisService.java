@@ -12,6 +12,8 @@ public class AnalysisService {
 		//약품DAO, 식품DAO
 		//toString 으로 출력 
 		//분석 (추후 업데이트)
+		
+		
 		MedInfoDAO med = new MedInfoDAO();
 		Collection<MedInfoVO> medList = med.selectMedList(med_name);
 		FoodInfoDAO food = new FoodInfoDAO();
