@@ -1,8 +1,8 @@
 package kr.co.javaspecialist.analysis.model;
 
 public interface IAnalysisDAO {
-	int ingredientRelation(String med_ingredient, String food_ingredient);
-	int groupRelation(AnalysisVO analysis);
-	int diseaseRelation(AnalysisVO analysis);
+	int ingredientRelation(String med_name, String food_name);
+	int groupRelation(int score, String med_ingredient);
+	int diseaseRelation(int score, String disease);
 	
 }
