@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  파일이 생성됨 - 화요일-10월-18-2016   
+--  파일이 생성됨 - 목요일-10월-20-2016   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table DISEASE_RELATION
@@ -218,3 +218,22 @@ Insert into HR.DISEASE_RELATION (DISEASE,FOOD_NAME,DISEASE_RELATION) values ('�
 Insert into HR.DISEASE_RELATION (DISEASE,FOOD_NAME,DISEASE_RELATION) values ('피부염','커피','BAD');
 Insert into HR.DISEASE_RELATION (DISEASE,FOOD_NAME,DISEASE_RELATION) values ('피부염','홍차','BAD');
 Insert into HR.DISEASE_RELATION (DISEASE,FOOD_NAME,DISEASE_RELATION) values ('피부염','코코아','BAD');
+--------------------------------------------------------
+--  DDL for Index SYS_C007479
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."SYS_C007479" ON "HR"."DISEASE_RELATION" ("DISEASE", "FOOD_NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table DISEASE_RELATION
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."DISEASE_RELATION" MODIFY ("DISEASE_RELATION" NOT NULL ENABLE);
+  ALTER TABLE "HR"."DISEASE_RELATION" ADD PRIMARY KEY ("DISEASE", "FOOD_NAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;

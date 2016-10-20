@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  파일이 생성됨 - 화요일-10월-18-2016   
+--  파일이 생성됨 - 목요일-10월-20-2016   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table INGREDIENT_RELATION
@@ -101,3 +101,8 @@ Insert into HR.INGREDIENT_RELATION (MED_MAIN_INGREDIENT,FOOD_INGREDIENT,INGREDIE
 Insert into HR.INGREDIENT_RELATION (MED_MAIN_INGREDIENT,FOOD_INGREDIENT,INGREDIENT_RELATION) values ('히드로클로로티아지드','비타민D','BAD');
 Insert into HR.INGREDIENT_RELATION (MED_MAIN_INGREDIENT,FOOD_INGREDIENT,INGREDIENT_RELATION) values ('히드로클로로티아지드','칼슘','BAD');
 Insert into HR.INGREDIENT_RELATION (MED_MAIN_INGREDIENT,FOOD_INGREDIENT,INGREDIENT_RELATION) values ('히드록시진염산염','알코올','BAD');
+--------------------------------------------------------
+--  Constraints for Table INGREDIENT_RELATION
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."INGREDIENT_RELATION" MODIFY ("INGREDIENT_RELATION" NOT NULL ENABLE);

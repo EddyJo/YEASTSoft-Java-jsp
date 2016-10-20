@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  파일이 생성됨 - 화요일-10월-18-2016   
+--  파일이 생성됨 - 목요일-10월-20-2016   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table GROUP_RELATION
@@ -53,3 +53,22 @@ Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소�
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','탄산음료','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','우유','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','레몬','BAD');
+--------------------------------------------------------
+--  DDL for Index SYS_C007483
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."SYS_C007483" ON "HR"."GROUP_RELATION" ("MED_GROUP", "FOOD_NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table GROUP_RELATION
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."GROUP_RELATION" MODIFY ("GROUP_RELATION" NOT NULL ENABLE);
+  ALTER TABLE "HR"."GROUP_RELATION" ADD PRIMARY KEY ("MED_GROUP", "FOOD_NAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
