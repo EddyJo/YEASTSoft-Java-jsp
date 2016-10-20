@@ -10,13 +10,31 @@ import kr.co.javaspecialist.common.controller.CommandHandler;
 public class TestAnalysisController implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
+		String med_name = request.getParameter("med_name");
+		String food_name = request.getParameter("food_name");
 		AnalysisDAO dao = new AnalysisDAO();
-		int score = dao.ingredientRelation("타이레놀정", "소주");
-		System.out.println("성분"+score);
-		int score2 = dao.groupRelation("타이레놀", "소주");
-		int score3 = dao.diseaseRelation("타이레놀정", "소주");
-		System.out.println("질병" + score3);
-		return "/view.jsp";
+		
+		int ingre_score = dao.ingredientRelation(med_name, food_name);
+		int group_score = dao.groupRelation(med_name, food_name);
+		int disease_score = dao.diseaseRelation(med_name, food_name);
+		
+		System.out.println("성분 : "+ingre_score);
+		System.out.println("분류 : "+group_score);
+		System.out.println("질병 : " + disease_score);
+		
+		if(ingre_score==-100){
+			String result1 = ingre_score+"";
+			String result2[] = {med_name, food_name,result1};
+			request.setAttribute("result", result2);
+			return "/view.jsp";
+		}else{
+			int sum = ingre_score + group_score + disease_score;
+			String result1 = sum + "";
+			//String result1 = "100";
+			String result2[] = {med_name, food_name, result1};
+			request.setAttribute("result", result2);
+			return "/view.jsp";
+		}
 	}
 
 
