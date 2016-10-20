@@ -44,12 +44,12 @@
 		<h3>${result.getScore()}</h3>
 		<h4>Good Food 
 		<c:forEach var="good_food" items="${result.getGoodfoods()}">
-		 ${good_food}
+		 <a href=https://search.naver.com/search.naver?where=nexearch&query=${good_food}&sm=top_hty&fbm=1&ie=utf8>#${good_food}</a>
 		</c:forEach>
 		</h4>
 		<h4>Bad Food 
 		<c:forEach var="bad_food" items="${result.getBadfoods()}">
-		 #${bad_food}
+		 <a href=https://search.naver.com/search.naver?where=nexearch&query=${bad_food}&sm=top_hty&fbm=1&ie=utf8>#${bad_food}</a>
 		</c:forEach>
 		</h4>  
 	</div>
