@@ -45,7 +45,7 @@ public class SearchFuncController extends SearchController {
 				//searchlog에 담긴 데이터를 DB에 입력하기 - ISearchLogDAO 타입의 SearchLogDAO 객체에 넣기
 				dao.insertLog(searchlog);
 				System.out.println(searchlog.getFoodKey());		
-				return "redirect:/analysis.do?med_name="+URLEncoder.encode(searchlog.getMedKey(), "utf-8") + "&food_name=" + URLEncoder.encode(searchlog.getFoodKey(), "utf-8");
+				return "redirect:/testanal.do?med_name="+URLEncoder.encode(searchlog.getMedKey(), "utf-8") + "&food_name=" + URLEncoder.encode(searchlog.getFoodKey(), "utf-8");
 				}
 			}catch(Exception e){
 				request.setAttribute("message", e.getMessage());

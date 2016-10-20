@@ -2,8 +2,6 @@ package kr.co.javaspecialist.medicine.model;
 
 import java.util.Collection;
 
-
-
 public interface IMedInfoDAO {
 	void insertMedInfo(MedInfoVO medinfo);
 	Collection<MedInfoVO> selectMedList(String medName);
