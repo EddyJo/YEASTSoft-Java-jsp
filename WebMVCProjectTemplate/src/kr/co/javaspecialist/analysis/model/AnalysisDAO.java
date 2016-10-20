@@ -16,13 +16,13 @@ public class AnalysisDAO implements IAnalysisDAO {
 	public int ingredientRelation(String med_name, String food_name){
 		Connection con= null;
 		//약품성분+식품성분 관계를 리턴 
-		String sql1 = "SELECT ingredient_relation FROM ingredient_relation "
+		String sql = "SELECT ingredient_relation FROM ingredient_relation "
 				+ "WHERE med_main_ingredient IN (SELECT med_main_ingredient FROM med WHERE med_name=?) "
 				+ "AND food_ingredient IN (SELECT food_ingredient FROM food WHERE food_name=?)";
 
 		try{
 			con = DBConn.getConnection();
-			PreparedStatement stmt = con.prepareStatement(sql1);
+			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, med_name);
 			stmt.setString(2, food_name);
 			ResultSet rs = stmt.executeQuery();
@@ -55,8 +55,38 @@ public class AnalysisDAO implements IAnalysisDAO {
 
 	@Override
 	public int diseaseRelation(String med_name, String food_name) {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection con= null;
+		//약품성분+식품성분 관계를 리턴 
+		String sql = "select disease_relation from DISEASE_RELATION "
+				+ "where disease in(select med_disease from med where med_name = ?) "
+				+ "and food_name = ?";
+
+		try{
+			con = DBConn.getConnection();
+			PreparedStatement stmt = con.prepareStatement(sql);
+			System.out.println("11");
+			stmt.setString(1, med_name);
+			stmt.setString(2, food_name);
+			System.out.println("111");
+			ResultSet rs = stmt.executeQuery();
+			String result = "no relation";
+			//			결과값, 관계가 좋으면 60점, 좋지 않으면 -100, 관계가 없으면 0
+			while(rs.next()) {
+				result = rs.getString("disease_relation"); 
+			}
+			if(result=="GOOD") {
+				System.out.println(result);
+				return 10;
+			} else if(result=="BAD") {
+				System.out.println(result);
+				return -10;
+			} else System.out.println(result); return 0;
+		}catch(SQLException e){
+			e.printStackTrace();
+			throw new RuntimeException("AnalysisDAO.diesease : " + e.getMessage());
+		}finally{
+			DBConn.closeConnection(con);
+		}		
 	}
 }
 
