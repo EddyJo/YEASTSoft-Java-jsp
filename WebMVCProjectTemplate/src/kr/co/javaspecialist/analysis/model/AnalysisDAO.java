@@ -15,60 +15,87 @@ public class AnalysisDAO implements IAnalysisDAO {
 	@Override
 	public int ingredientRelation(String med_name, String food_name){
 		Connection con= null;
-		String sql = "SELECT ingredient_relation FROM ingredient_relation "
+		//약품성분+식품성분 관계를 리턴 
+		String sql1 = "SELECT ingredient_relation FROM ingredient_relation "
 				+ "WHERE med_main_ingredient IN (SELECT med_main_ingredient FROM med WHERE med_name=?) "
 				+ "AND food_ingredient IN (SELECT food_ingredient FROM food WHERE food_name=?";
+
 		try{
 			con = DBConn.getConnection();
-		
-			PreparedStatement stmt = con.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
+			PreparedStatement stmt = con.prepareStatement(sql1);
 			stmt.setString(1, med_name);
 			stmt.setString(2, food_name);
-			stmt.executeUpdate();
-//			결과값, 관계가 좋으면 60점, 좋지 않으면 return 0
-//			if()
+			ResultSet rs = stmt.executeQuery();
+			String result = "no relation";
+			//			결과값, 관계가 좋으면 60점, 좋지 않으면 -100, 관계가 없으면 0
+			while(rs.next()) {
+				result = rs.getString("ingredient_relation"); 
+			}
+			if(result=="GOOD") {
+				System.out.println(result);
+				return 60;
+			} else if(result=="BAD") {
+				System.out.println(result);
+				return -100;
+			} else System.out.println(result); return 0;
 		}catch(SQLException e){
 			e.printStackTrace();
 			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());
 		}finally{
 			DBConn.closeConnection(con);
 		}
-
+		
 	}
-	
-	
-	public int groupRelation(int score, String med_ingredient) {
-		//점수와 약품성분을 받아 약품DB와 join 하여 약품군을 찾기
-		//점수와 질병명을 리턴
+
+	@Override
+	public int groupRelation(String med_name, String food_name) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
-	
-	public int diseaseRelation(int score, AnalysisVO analysis){
-		//점수와 질병명을 받아 DB에서 관계찾기
-		//return 합계된 점수
-		Connection con= null;
-		String sql = "select disease_relation from disease_relation where disease = ? and food_name = ?";
-		try{
-			con = DBConn.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, analysis.getDisease();
-			pstmt.setString(2, analysis.getFood_name());
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.getString(0).equals("GOOD") { 
-				
-//			}else { BAD 이라면 있는 점수 리턴)
-				
 
-		}catch(SQLException e){
-			e.printStackTrace();
-			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());
-		}finally{
-			DBConn.closeConnection(con);
-		}
-		return score;
+	@Override
+	public int diseaseRelation(String med_name, String food_name) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
+
+//	@Override
+//	public int groupRelation(String med_name, String food_name) {
+//		//점수와 약품성분을 받아 약품DB와 join 하여 약품군을 찾기
+//		//약품성분을 select 하는 쿼리문
+//		String sql2 = "SELECT MED_MAIN_INGREDIENT FROM MED WHERE MED_NAME=?"; 
+//		
+//		//점수와 질병명을 리턴
+//		return 0;
+//	}
+//	
+//	@Override
+//	public int diseaseRelation(String med_name, String food_name){
+//점수와 질병명을 받아 DB에서 관계찾기
+//return 합계된 점수
+//		Connection con= null;
+//		String sql = "select disease_relation from disease_relation where disease = ? and food_name = ?";
+//		try{
+//			con = DBConn.getConnection();
+//			PreparedStatement pstmt = con.prepareStatement(sql);
+//			pstmt.setString(1, analysis.getDisease();
+//			pstmt.setString(2, analysis.getFood_name());
+//			ResultSet rs = pstmt.executeQuery();
+//			if(rs.getString(0).equals("GOOD") { 
+//				
+//			}else { BAD 이라면 있는 점수 리턴)
+//				
+//
+//		}catch(SQLException e){
+//			e.printStackTrace();
+//			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());
+//		}finally{
+//			DBConn.closeConnection(con);
+//		}
+//		return score;
+//	}
+//}
 
 //	public Collection<MedInfoVO> selectMedList(String medName) {
 //		Connection con = null;

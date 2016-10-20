@@ -56,7 +56,6 @@ public class AnalysisVO {
 				+ ", med_ingredient=" + med_ingredient + ", med_group=" + med_group + ", disease=" + disease
 				+ ", relation=" + relation + "]";
 	}
-	@Override
-
+	
 
 }
