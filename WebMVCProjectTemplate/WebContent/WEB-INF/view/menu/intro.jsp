@@ -50,43 +50,12 @@ div.form-group {
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->	
 
-
-	<!-- Full Width Image Header -->
-	<header class="header-image">
-	<div class="headline">
-		<div class="container">
-			<i class="fa fa-medkit fa-5x" aria-hidden="true" ></i>
-			<div class="titlefont">세상을 바꾸는 약빵</div>
-			<div class="subfont">식품과 약품의 궁합 정보</div>
-		</div>
-	</div>
-	<hr class="featurette-divider">
-	</header>
-
-
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 	
 	
 	 <!-- Page Content -->
    <div class="container" style="height: 525px;">
-
-      <!-- First Featurette -->
-      <form action="<c:url value='search.do'/>" method="post"
-         class="form-horizontal">
-         <div class="form-group" style="margin: auto;">
-            <center>
-               <input type="text" class="searchname" name="foodKey"
-                  style="width: 300px; height: 70px;" placeholder="식품명을 입력하세요""><br>
-               <br> <input type="text" class="searchname" name="medKey"
-                  style="width: 300px; height: 70px;" placeholder="약품명을 입력하세요"><br>
-               <br>
-               <button type="submit" class="btn btn-primary btn-lg active">궁합
-                  검색</button>
-            </center>
-         </div>
-      </form>
-   </div>
 
 
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
