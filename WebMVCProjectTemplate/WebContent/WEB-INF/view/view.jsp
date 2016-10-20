@@ -43,12 +43,12 @@
 		<h2>${result.getMed_name()}과 ${result.getFood_name()}의 궁합도 </h2>
 		<h3>${result.getScore()}</h3>
 		<h4>Good Food 
-		<c:forEach var="good_food" items="${result.getGood_foods()}">
+		<c:forEach var="good_food" items="${result.getGoodfoods()}">
 		 ${good_food}
 		</c:forEach>
 		</h4>
 		<h4>Bad Food 
-		<c:forEach var="bad_food" items="${result.getBad_foods()}">
+		<c:forEach var="bad_food" items="${result.getBadfoods()}">
 		 #${bad_food}
 		</c:forEach>
 		</h4>  

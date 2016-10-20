@@ -19,8 +19,8 @@ public class TestAnalysisController implements CommandHandler {
 		result.setMed_name(med_name);
 		result.setFood_name(food_name);
 		result.setScore(analysis.analysis(med_name, food_name));
-		result.setGood_foods(recommand.recommandgood(med_name));
-		result.setBad_foods(recommand.recommandbad(med_name));
+		result.setGoodfoods(recommand.recommandgood(med_name));
+		result.setBadfoods(recommand.recommandbad(med_name));
 		System.out.println(result);
 		request.setAttribute("result", result);
 		return "/view.jsp";
