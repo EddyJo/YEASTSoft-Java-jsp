@@ -49,9 +49,40 @@ public class AnalysisDAO implements IAnalysisDAO {
 
 	@Override
 	public int groupRelation(String med_name, String food_name) {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection con= null;
+		//약품성분+식품성분 관계를 리턴 
+		String sql = "select group_relation from group_RELATION "
+				+ "where med_group in(select med_group from med where med_name = ?) "
+				+ "and food_name = ?";
+
+		try{
+			con = DBConn.getConnection();
+			PreparedStatement stmt = con.prepareStatement(sql);
+			System.out.println("11");
+			stmt.setString(1, med_name);
+			stmt.setString(2, food_name);
+			System.out.println("111");
+			ResultSet rs = stmt.executeQuery();
+			String result = "no relation";
+			//			결과값, 관계가 좋으면 60점, 좋지 않으면 -100, 관계가 없으면 0
+			while(rs.next()) {
+				result = rs.getString("group_relation"); 
+			}
+			if(result.equals("GOOD")) {
+				System.out.println(result);
+				return 30;
+			} else if(result.equals("BAD")) {
+				System.out.println(result);
+				return -30;
+			} else System.out.println(result); return 0;
+		}catch(SQLException e){
+			e.printStackTrace();
+			throw new RuntimeException("AnalysisDAO.group : " + e.getMessage());
+		}finally{
+			DBConn.closeConnection(con);
+		}		
 	}
+
 
 	@Override
 	public int diseaseRelation(String med_name, String food_name) {
