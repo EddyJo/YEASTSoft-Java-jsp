@@ -31,10 +31,10 @@ public class AnalysisDAO implements IAnalysisDAO {
 			while(rs.next()) {
 				result = rs.getString("ingredient_relation"); 
 			}
-			if(result=="GOOD") {
+			if(result.equals("GOOD")) {
 				System.out.println(result);
 				return 60;
-			} else if(result=="BAD") {
+			} else if(result.equals("BAD")) {
 				System.out.println(result);
 				return -100;
 			} else System.out.println(result); return 0;
@@ -74,10 +74,10 @@ public class AnalysisDAO implements IAnalysisDAO {
 			while(rs.next()) {
 				result = rs.getString("disease_relation"); 
 			}
-			if(result=="GOOD") {
+			if(result.equals("GOOD")) {
 				System.out.println(result);
 				return 10;
-			} else if(result=="BAD") {
+			} else if(result.equals("BAD")) {
 				System.out.println(result);
 				return -10;
 			} else System.out.println(result); return 0;
