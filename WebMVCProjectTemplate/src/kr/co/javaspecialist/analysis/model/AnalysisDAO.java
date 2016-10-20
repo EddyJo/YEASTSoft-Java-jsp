@@ -18,7 +18,7 @@ public class AnalysisDAO implements IAnalysisDAO {
 		//약품성분+식품성분 관계를 리턴 
 		String sql1 = "SELECT ingredient_relation FROM ingredient_relation "
 				+ "WHERE med_main_ingredient IN (SELECT med_main_ingredient FROM med WHERE med_name=?) "
-				+ "AND food_ingredient IN (SELECT food_ingredient FROM food WHERE food_name=?";
+				+ "AND food_ingredient IN (SELECT food_ingredient FROM food WHERE food_name=?)";
 
 		try{
 			con = DBConn.getConnection();
@@ -40,7 +40,7 @@ public class AnalysisDAO implements IAnalysisDAO {
 			} else System.out.println(result); return 0;
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new RuntimeException("MedInfoDAO.insertMedInfo : " + e.getMessage());
+			throw new RuntimeException("AnalysisDAO.ingrerel : " + e.getMessage());
 		}finally{
 			DBConn.closeConnection(con);
 		}
