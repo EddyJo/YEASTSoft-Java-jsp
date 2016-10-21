@@ -31,7 +31,6 @@ public class MemberLoginController extends MemberController {
 				//아이디 있음
 				if(dbPassword.equals(password)) {
 					//비밀번호 일치
-					String manager = "admin";
 					session.setAttribute("userid", userid);
 					System.out.println(userid);
 					return "redirect:/search.do";
@@ -42,7 +41,6 @@ public class MemberLoginController extends MemberController {
 					view = "/member/login.jsp";
 				}
 			}
-			System.out.println("22222");
 			
 		}
 		return view;

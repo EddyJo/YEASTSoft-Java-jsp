@@ -30,16 +30,16 @@ public class MemberUpdateController extends MemberController {
 			try {
 				String userid = request.getParameter("userid");
 				String password = request.getParameter("password");
-				String name = request.getParameter("name");		
-				String phone = request.getParameter("phone");
-				String email = request.getParameter("email");
+				int age = Integer.parseInt(request.getParameter("age"));
+				String gender = request.getParameter("gender");
+				String location = request.getParameter("location");
 				
 				MemberVO member = new MemberVO();
 				member.setUserid(userid);
 				member.setPassword(password);
-				member.setName(name);
-				member.setPhone(phone);
-				member.setEmail(email);
+				member.setAge(age);
+				member.setGender(gender);
+				member.setLocation(location);
 				
 				dao.update(member);
 				request.setAttribute("message", "UPDATED_MEMBER_INFO");
