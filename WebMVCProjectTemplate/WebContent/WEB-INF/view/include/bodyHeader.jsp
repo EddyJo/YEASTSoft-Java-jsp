@@ -10,7 +10,7 @@
 <style>
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
-li, div, a, button {
+li, div, a ,button{
 	font-size: 15px;
 	font-weight: bold;
 	font-family: 'nanumgothic';

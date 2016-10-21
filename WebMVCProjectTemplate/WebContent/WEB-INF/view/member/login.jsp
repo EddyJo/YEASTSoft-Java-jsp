@@ -34,13 +34,13 @@ li, div, a ,button{
 <title>Stylish Portfolio - Start Bootstrap Theme</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="/css/stylish-portfolio.css" rel="stylesheet">
+<link href="../css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
 <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
 	rel="stylesheet" type="text/css">
@@ -53,56 +53,36 @@ li, div, a ,button{
     <![endif]-->
 
 </head>
-<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 
 <body>
+<center>
+<div class="container" style="text-align: center; height: 700px;">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7&appId=790580357751641";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div class="content" style="text-align: center; height: 700px;">
-<%--
-String userid = (String)session.getAttribute("userid");
-if(userid==null) {
---%>
 <c:if test="${empty sessionScope.userid}">
-	<%--h4><fmt:message key="${not empty message ? message : 'BLANK'}"/></h4--%>
-	<%--= request.getAttribute("message") --%>
-	<%-- 
-		String message = (String)request.getAttribute("message");
-		out.println(message);
-	--%>
-	<form action="<c:url value='/member/login.do'/>" method="post" class="form-horizontal">
-	<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
-      <label class="control-label col-sm-2" for="id">Member ID</label><br>
-        <input type="text" name="userid" id="id" class="form-control"
-        style="width:300px;" placeholder="아이디를 입력하세요" ><br>
-     
-       <label class="control-label col-sm-2" for="id">Member PW</label><br>
-        <input type="password" name="password" id="pw" class="form-control" 
-        style="width:300px;" placeholder="비밀번호를 입력하세요" >
-    
-    </div>
-    
-    <br>
-    <br>
-    	<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
-	    <br>
-	    <div class="form-group">
-    	<div class="col-sm-offset-2 col-sm-8">
-    	<a href="<c:url value='/member/login.do'/>" class="btn btn-dark btn-lg">회원가입</a>
-    	<button type="submit" class="btn btn-dark btn-lg">로그인</button>
-    	<button type="reset" class="btn btn-dark btn-lg">취소</button>
-		</div>
-	</div>
-	</form>
-</c:if>
+			<form action="<c:url value='/member/login.do'/>" method="post"
+				class="form-horizontal">
+				<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
+					<label class="control-label col-sm-2" for="id">Member ID</label> <input
+						type="text" name="userid" id="id" class="form-control"
+						style="width: 300px;" ><br>
+
+					<label class="control-label col-sm-2" for="id">Member PW</label> <input
+						type="password" name="password" id="pw" class="form-control"
+						style="width: 300px;">
+
+				</div>
+
+				<br> <br>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-8">
+						<a href="<c:url value='/member/insert.do'/>" class="btn btn-dark btn-lg">회원가입</a>
+						<button type="submit" class="btn btn-dark btn-lg">로그인</button>
+						<button type="reset" class="btn btn-dark btn-lg">취소</button>
+					</div>
+				</div>
+			</form>
+		</c:if>
+		
 <%--
 }else {
 --%>
@@ -115,7 +95,7 @@ if(userid==null) {
 	<a href="<c:url value='/member/delete.do'/>">[<fmt:message key="EXIT_MEMBER"/>]</a>
 </c:if>
 </div>
-
+</center>
 </body>
 </html>
 
