@@ -136,8 +136,7 @@ public class AnalysisDAO implements IAnalysisDAO {
 			stmt.setString(1, med_name);
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				String food = rs.getString("food_name");
-				goodlist.add(rs.getString(food));
+				goodlist.add(rs.getString("food_name"));
 			}
 			return goodlist;
 		}catch(SQLException e){
