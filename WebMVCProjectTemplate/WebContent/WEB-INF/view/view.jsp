@@ -13,8 +13,13 @@
 	position: absloute;
 }
 
+.liquidFillGaugeText {
+	font-family: Helvetica;
+	font-weight: bold;
+}
+
 </style>
-<head>
+<head  lang="en">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +40,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<script src="js/analysis.ui.js" language="JavaScript"></script>
+
+
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
@@ -51,7 +61,31 @@
 		<c:forEach var="bad_food" items="${result.getBadfoods()}">
 		 <a href=https://search.naver.com/search.naver?where=nexearch&query=${bad_food}&sm=top_hty&fbm=1&ie=utf8>#${bad_food}</a>
 		</c:forEach>
-		</h4>  
+		</h4>  		
+														
+		<svg id="fillgauge5" width="19%" height="200";"></svg>	
+	
+		<script language="JavaScript">
+	
+	    var config4 = liquidFillGaugeDefaultSettings();
+	    config4.circleThickness = 0.15;
+	    config4.circleColor = "#FF7777";
+	    config4.textColor = "#FF4444";
+	    config4.waveTextColor = "#FFFFAA";
+	    config4.waveColor = "#FFDDDD";
+	    config4.textVertPosition = 0.8;
+	    config4.waveAnimateTime = 1000;
+	    config4.waveHeight = 0.05;
+	    config4.waveAnimate = true;
+	    config4.waveRise = false;
+	    config4.waveHeightScaling = false;
+	    config4.waveOffset = 0.25;
+	    config4.textSize = 0.75;
+	    config4.waveCount = 3;
+	    var gauge5 = loadLiquidFillGauge("fillgauge5", 30, config4);
+	   
+		</script>
+		
 	</div>
 	
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />

@@ -4,14 +4,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:setBundle basename="i18n/header" />
 
+
+
+
 <style>
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
-li, div, a ,button{
+li, div, a, button {
 	font-size: 15px;
 	font-weight: bold;
 	font-family: 'nanumgothic';
 }
+
+
 </style>
 
 <head>
@@ -48,21 +53,23 @@ li, div, a ,button{
 <body>
 
 	<!-- Navigation -->
-	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i
+		class="fa fa-bars"></i></a>
 	<nav id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<a id="menu-close" href="#"
-				class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+				class="btn btn-light btn-lg pull-right toggle"><i
+				class="fa fa-times"></i></a>
 			<!--  <li class="sidebar-brand"><a
 				href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>' onclick=$("#menu-close").click();>약빵소개</a></li>-->
 			<li><a href="<c:url value='/member/login.do'/>" onclick=$("#menu-close").click();>로그인/회원가입</a>
 			<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
-			<li><a href="#about" onclick=$("#menu-close").click();>궁합도 검색</a>
-			</li>
-			<li><a href="#services" onclick=$("#menu-close").click();>약빵 사용법</a>
-			</li>
-			<li><a href="#portfolio" onclick=$("#menu-close").click();>About US</a>
-			</li>
+			<li><a href="#about" onclick=$("#menu-close").click();>궁합도
+					검색</a></li>
+			<li><a href="#services" onclick=$("#menu-close").click();>약빵
+					사용법</a></li>
+			<li><a href="#portfolio" onclick=$("#menu-close").click();>About
+					US</a></li>
 		</ul>
 	</nav>
 
@@ -71,7 +78,8 @@ li, div, a ,button{
 		<div class="text-vertical-center">
 			<h2>식품 &amp; 약품 궁합 분석 플랫폼</h2>
 			<h1>약 빵</h1>
-			<br> <a href="#about" class="btn btn-dark btn-lg">궁합 분석 Start</a>
+			<br> <a href="#about" class="btn btn-dark btn-lg">궁합 분석
+				Start</a>
 		</div>
 	</header>
 
@@ -79,25 +87,33 @@ li, div, a ,button{
 	<section id="about" class="about">
 		<!-- Page Content -->
 		<center>
-		<div class="container1" align=center>
-			<!-- First Featurette -->
-			<form action="<c:url value='search.do'/>"  method="post"
-				class="form-horizontal" style="align=center" >
-				<div class="form-group" >
-					<br><br>
-					<h1 class="text-vertical-center" style="font-weight=bold;">식품 & 약품 궁합도 분석</h1><br><br>
-					<input type="text" class="searchname" name="foodKey"
-						style="text-align:center; width: 300px; height: 60px;" placeholder="'식품명'을 입력하세요""><br>
-					<br> <input type="text" class="searchname" name="medKey" 
-						style="text-align:center; width: 300px; height: 60px;" placeholder="'약품명'을 입력하세요"><br>
-					<br><br>
-					<button type="submit" class="btn btn-dark btn-lg">궁합도 검색</button>
-				</div>
-			</form>
-		</div>
-		<center>
+			<div class="container1" align=center>
+				<!-- First Featurette -->
+				<form action="<c:url value='search.do'/>" method="post"
+					class="form-horizontal" style="">
+					<div class="form-group">
+						<br> <br>
+						<h1 class="text-vertical-center" style="">식품 & 약품 궁합도 분석</h1>
+						<br> <br>
+					
+						<input type="text" class="searchname" name="foodKey"
+							style="text-align: center; width: 300px; height: 60px;"
+							placeholder="'식품명'을 입력하세요""><br> <br> <input
+							type="text" class="searchname" name="medKey"
+							style="text-align: center; width: 300px; height: 60px;"
+							placeholder="'약품명'을 입력하세요"><br> <br> <br>
+												
+						<button type="submit" class="btn btn-dark btn-lg">궁합도 검색</button>
+						
+						
+					</div>
 
-		<!-- /.container -->
+
+				</form>
+			</div>
+			<center>
+
+				<!-- /.container -->
 	</section>
 
 	<!-- Services -->
@@ -118,7 +134,9 @@ li, div, a ,button{
 								<h4>
 									<strong>궁합도 분석</strong>
 								</h4>
-								<p style="font-weight:normal; font-size:0.8em ">식품명과 약품명을 입력받아<br>둘 사이의 궁합도를 분석합니다.</p>
+								<p style="font-weight: normal; font-size: 0.8em">
+									식품명과 약품명을 입력받아<br>둘 사이의 궁합도를 분석합니다.
+								</p>
 								<a href="#about" class="btn btn-light">START</a>
 							</div>
 						</div>
@@ -131,7 +149,9 @@ li, div, a ,button{
 								<h4>
 									<strong>검색이력 조회</strong>
 								</h4>
-								<p style="font-weight:normal; font-size:0.8em ">사용자의 궁합도 검색이력을<br>조회합니다.</p>
+								<p style="font-weight: normal; font-size: 0.8em">
+									사용자의 궁합도 검색이력을<br>조회합니다.
+								</p>
 								<a href="#" class="btn btn-light">START</a>
 							</div>
 						</div>
@@ -144,7 +164,9 @@ li, div, a ,button{
 								<h4>
 									<strong>통계분석</strong>
 								</h4>
-								<p style="font-weight:normal; font-size:0.8em ">모든 사용자의 검색이력을<br>주제별로 시각화하여 제공합니다.</p>
+								<p style="font-weight: normal; font-size: 0.8em">
+									모든 사용자의 검색이력을<br>주제별로 시각화하여 제공합니다.
+								</p>
 								<a href="#" class="btn btn-light">START</a>
 							</div>
 						</div>
@@ -157,11 +179,14 @@ li, div, a ,button{
 								<h4>
 									<strong>마이 페이지</strong>
 								</h4>
-								<p style="font-weight:normal; font-size:0.8em ">개인정보 관리페이지를<br>제공합니다.</p>
-								<a href="<c:url value='/member/mypage.do'/>" class="btn btn-light">START</a>
+								<p style="font-weight: normal; font-size: 0.8em">
+									개인정보 관리페이지를<br>제공합니다.
+								</p>
+								<a href="<c:url value='/member/mypage.do'/>"
+									class="btn btn-light">START</a>
 							</div>
 						</div>
-						
+
 					</div>
 					<!-- /.row (nested) -->
 				</div>
@@ -172,11 +197,9 @@ li, div, a ,button{
 		<!-- /.container -->
 	</section>
 
-	<!-- Callout--> 
+	<!-- Callout-->
 	<aside class="callout">
-		<div class="text-vertical-center">
-		
-		</div>
+		<div class="text-vertical-center"></div>
 	</aside>
 
 	<!-- Portfolio -->
