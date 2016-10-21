@@ -9,8 +9,7 @@ public interface ISearchLogDAO {
 	
 	void insertLog(SearchLogVO searchlog);
 	Collection<SearchLogVO> selectUserId(String userId);
-	Collection<SearchLogVO> selectAllList();
-	String searchLogDelete(String userId);
+
 	SearchLogVO getSearchLogDetails(String userId);
 	Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine();
 	Collection<SearchFoodLogChartVO> getFrequencyGroupingbyFood();

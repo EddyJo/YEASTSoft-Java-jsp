@@ -34,13 +34,12 @@ th, td {
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-
 	<div class="content" style="text-align: center;">
 		<table border=1>
 			<tr>
-				<th>Med Key</th>
-				<th>Food Key</th>
-				<th>Search Date</th>
+				<th>약품명</th>
+				<th>식품명</th>
+				<th>검색날짜</th>
 			</tr>
 			<c:forEach var="log" items="${logListByUserId}">
 				<tr>

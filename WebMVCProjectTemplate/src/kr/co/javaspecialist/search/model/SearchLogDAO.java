@@ -72,7 +72,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		Connection con = null;
 		
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
-		String sql = "select med_key, food_key, search_date from search_log where userid= + ? order by LOG_SERIAL_NUM DESC"  ;
+		String sql = "SELECT MED_NAME, FOOD_NAME, SEARCH_DATE FROM SEARCH_LOG_DB WHERE USERID = ? ORDER BY SEARCH_DATE ASC";
 		try {
 			con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -80,10 +80,11 @@ public class SearchLogDAO implements ISearchLogDAO {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				SearchLogVO logListByUserId = new SearchLogVO();
-				logListByUserId.setMedKey(rs.getString("med_key"));
-				logListByUserId.setFoodKey(rs.getString("food_key"));
-				logListByUserId.setSearchDate(rs.getString("search_date"));
+				logListByUserId.setMedKey(rs.getString("MED_NAME"));
+				logListByUserId.setFoodKey(rs.getString("FOOD_NAME"));
+				logListByUserId.setSearchDate(rs.getString("SEARCH_DATE"));
 				idlist.add(logListByUserId);
+				
 			}
 			
 		} catch (SQLException e) {
@@ -96,53 +97,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		return idlist;
 	}
 
-	@Override
-	public Collection<SearchLogVO> selectAllList() {
-		Connection con = null;
-		ArrayList<SearchLogVO> list = new ArrayList<SearchLogVO>();
-		String sql = "select * from search_log order by LOG_SERIAL_NUM"; 
-		try {
-			con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()){
-				SearchLogVO searchlog = new SearchLogVO();
-				searchlog.setSerialNum(rs.getInt("log_serial_num"));
-				searchlog.setUserId(rs.getString("userid"));
-				searchlog.setMedKey(rs.getString("med_key"));
-				searchlog.setFoodKey(rs.getString("food_key"));
-				searchlog.setSearchDate(rs.getString("search_date"));
-				list.add(searchlog);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException("SearchLogDAO.selectAllList : " + e.getMessage());
-		} finally {
-			closeConnection(con);
-		}
-		return list;
-	}
 	
-	@Override
-	public String searchLogDelete(String userId){
-		Connection con=null;
-		String sql = "delete from search_log where userid= ?";
-		try{
-			con = getConnection();//sqldeveloper키고 hr계정 연결
-			PreparedStatement pstmt = con.prepareStatement(sql);//쿼리문 작성
-			pstmt.setString(1, userId);//쿼리문 완성
-			pstmt.executeUpdate();//쿼리문 실횅
-		}catch(SQLException e){
-			throw new RuntimeException(e);			
-		}finally{
-			closeConnection(con);
-		}
-
-		return "삭제되었습니다";
-	}
-
-
 	@Override
 	public SearchLogVO getSearchLogDetails(String userId){
 		SearchLogVO searchLog = new SearchLogVO();
