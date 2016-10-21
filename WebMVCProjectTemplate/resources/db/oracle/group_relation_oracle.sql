@@ -21,7 +21,10 @@ Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈�
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','결명자','GOOD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','메밀','GOOD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','라면','BAD');
-Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','알코올','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','소주','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','맥주','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','와인','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','막걸리','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('혈압강하제','튀김','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('당뇨병용제','양배추','GOOD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('당뇨병용제','호두','GOOD');
@@ -47,10 +50,16 @@ Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소�
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','브로커리','GOOD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','부추','GOOD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','감자','GOOD');
-Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','알코올','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','소주','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','맥주','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','와인','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','막걸리','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','커피','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','밀가루','BAD');
-Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','탄산음료','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','사이다','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','콜라','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','웰치스','BAD');
+Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','환타','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','우유','BAD');
 Insert into HR.GROUP_RELATION (MED_GROUP,FOOD_NAME,GROUP_RELATION) values ('소화성궤양용제','레몬','BAD');
 --------------------------------------------------------

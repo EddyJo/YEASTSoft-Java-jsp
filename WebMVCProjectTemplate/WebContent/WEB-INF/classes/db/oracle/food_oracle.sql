@@ -95,6 +95,10 @@ Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (76,'표고버섯
 Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (77,'표고버섯','식이섬유');
 Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (78,'호프','진정제성분');
 Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (79,'홍차','카페인');
+Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (80, '이온음료','전해질');
+Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (81, '물','수분');
+Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (82, '우유','유당');
+Insert into HR.FOOD (FOOD_ID,FOOD_NAME,FOOD_INGREDIENT) values (83, '치즈','유당');
 --------------------------------------------------------
 --  DDL for Index SYS_C007467
 --------------------------------------------------------
