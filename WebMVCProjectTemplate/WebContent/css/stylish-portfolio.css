@@ -140,6 +140,7 @@ hr.small {
     position: fixed;
     top: 0;
     right: 0;
+    background-color: #000033;
 }
 
 #sidebar-wrapper.active {
@@ -248,6 +249,8 @@ hr.small {
 
 footer {
     padding: 100px 0;
+    background-color: #003366;
+    height:100px;
 }
 
 #to-top {

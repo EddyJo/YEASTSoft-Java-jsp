@@ -27,7 +27,6 @@ li, div, a ,button{
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Stylish Portfolio - Start Bootstrap Theme</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,9 +56,8 @@ li, div, a ,button{
 		class="fa fa-bars"></i></a>
 	<nav id="sidebar-wrapper">
 		<ul class="sidebar-nav">
-			<a id="menu-close" href="#"
-				class="btn btn-light btn-lg pull-right toggle"><i
-				class="fa fa-times"></i></a>
+			<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+				<i class="fa fa-times"></i></a>
 			<!--  <li class="sidebar-brand"><a
 				href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>' onclick=$("#menu-close").click();>약빵소개</a></li>-->
 			<li><a href="<c:url value='/member/login.do'/>" onclick=$("#menu-close").click();>로그인/회원가입</a>
@@ -98,8 +96,8 @@ li, div, a ,button{
 					
 						<input type="text" class="searchname" name="foodKey"
 							style="text-align: center; width: 300px; height: 60px;"
-							placeholder="'식품명'을 입력하세요""><br> <br> <input
-							type="text" class="searchname" name="medKey"
+							placeholder="'식품명'을 입력하세요""><br> <br> 
+						<input type="text" class="searchname" name="medKey"
 							style="text-align: center; width: 300px; height: 60px;"
 							placeholder="'약품명'을 입력하세요"><br> <br> <br>
 												
@@ -167,7 +165,7 @@ li, div, a ,button{
 								<p style="font-weight: normal; font-size: 0.8em">
 									모든 사용자의 검색이력을<br>주제별로 시각화하여 제공합니다.
 								</p>
-								<a href="#" class="btn btn-light">START</a>
+								<a href="<c:url value='/chartintro.do'/>" class="btn btn-light">START</a>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
