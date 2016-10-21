@@ -41,10 +41,9 @@ for(MemberVO member : members) {
 %>
 <tr>
 	<td><%=member.getUserid()%></td>
-	<td><%=member.getName()%></td>
+
 	<%-- <td><%=member.getPassword()%></td>--%>
-	<td><%=member.getPhone()%></td>
-	<td><%=member.getEmail()%></td>
+
 	<td><%=member.getGender()%></td>
 	<td><%=member.getAge()%></td>
 	<td><%=member.getLocation()%></td>
