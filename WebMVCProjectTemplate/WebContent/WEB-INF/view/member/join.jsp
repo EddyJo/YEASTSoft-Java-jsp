@@ -29,12 +29,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 </head>
 
 <body>
-<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
-
 	
 	<div class="content" style="margin-top: 100px;">
 	<form action="<c:url value='/member/insert.do'/>" method="post" class="form-horizontal">

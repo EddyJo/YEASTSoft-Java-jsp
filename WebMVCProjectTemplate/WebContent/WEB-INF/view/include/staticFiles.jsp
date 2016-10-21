@@ -64,10 +64,13 @@
 <script src="<c:url value='/js/wp.app.js'/>"></script>
 
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="<c:url value='/css/bootstrap.min.css'/>"></script>
 
 <!-- Custom CSS -->
+
+<script src="<c:url value='/css/stylish-portfolio.css'/>"></script>
 <link href="css/one-page-wonder.css" rel="stylesheet">
+<link href="css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,6 +80,15 @@
         <script src="<c:url value='/js/html5shiv.js'/>"></script>
 	    <script src="<c:url value='/js/respond.min.js'/>"></script>
     <![endif]-->
+
+
+
+
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
+	rel="stylesheet" type="text/css">
 
 
 <script>
