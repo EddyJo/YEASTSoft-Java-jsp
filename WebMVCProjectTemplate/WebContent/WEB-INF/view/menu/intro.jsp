@@ -53,12 +53,7 @@ div.form-group {
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
 	
-	
-	 <!-- Page Content -->
-   <div class="container" style="height: 525px;">
 
-
-	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
 </html>

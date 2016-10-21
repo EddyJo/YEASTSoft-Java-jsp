@@ -55,6 +55,7 @@ li, div, a ,button{
 </head>
 
 <body>
+<a id="menu-toggle" href="<c:url value="/forward.do?url=/menu/aboutus.jsp"/>" class="btn btn-dark btn-lg toggle"><i class="fa fa-home" ></i></a>
 <center>
 <div class="container" style="text-align: center; height: 700px;">
 
