@@ -45,7 +45,7 @@ th, td {
 				<tr>
 					<td>${log.getMedKey()}</td>
 					<td>${log.getFoodKey()}</td>
-					<td>${log.getSearchData()}</td>
+					<td>${log.getSearchDate()}</td>
 				</tr>
 			</c:forEach>
 		</table>

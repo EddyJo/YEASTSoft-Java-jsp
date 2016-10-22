@@ -19,6 +19,9 @@ public class SelectUserIdController extends SearchController{
 		String userId = (String)session.getAttribute("userid");
 		Collection<SearchLogVO> logListByUserId = dao.selectUserId(userId);
 		request.setAttribute("logListByUserId", logListByUserId);
+		for(SearchLogVO searchVO: logListByUserId){
+			System.out.println(searchVO.getFoodKey());
+		}
 		
 		return "/search/idlist.jsp";
 
