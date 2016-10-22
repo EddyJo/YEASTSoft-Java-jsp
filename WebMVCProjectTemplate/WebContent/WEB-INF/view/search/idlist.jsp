@@ -39,7 +39,7 @@ th, td {
 			<tr>
 				<th>약품명</th>
 				<th>식품명</th>
-				<th>검색날짜</th>
+				<th>검색 날짜</th>
 			</tr>
 			<c:forEach var="log" items="${logListByUserId}">
 				<tr>

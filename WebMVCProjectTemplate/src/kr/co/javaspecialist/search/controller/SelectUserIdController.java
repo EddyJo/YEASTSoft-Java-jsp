@@ -16,9 +16,7 @@ public class SelectUserIdController extends SearchController{
 		String method = request.getMethod();
 		String view = "/";
 		HttpSession session = ((HttpServletRequest)request).getSession();
-		
 		String userId = (String)session.getAttribute("userid");
-		
 		Collection<SearchLogVO> logListByUserId = dao.selectUserId(userId);
 		request.setAttribute("logListByUserId", logListByUserId);
 		

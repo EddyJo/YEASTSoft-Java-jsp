@@ -83,6 +83,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 				logListByUserId.setMedKey(rs.getString("MED_NAME"));
 				logListByUserId.setFoodKey(rs.getString("FOOD_NAME"));
 				logListByUserId.setSearchDate(rs.getString("SEARCH_DATE"));
+				System.out.println("123");
 				idlist.add(logListByUserId);
 				
 			}
@@ -93,7 +94,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		} finally {
 			closeConnection(con);
 		}
-
+		
 		return idlist;
 	}
 
@@ -128,7 +129,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine(){
 		ArrayList<SearchMedLogChartVO> list = new ArrayList<SearchMedLogChartVO>();
-		String sql = "select med_key, count(*) as co from search_log group by med_key order by co desc";
+		String sql = "select med_name, count(*) as co from search_log_db group by med_name order by co desc";
 		Connection con = null;
 		try{
 			con = DBConn.getConnection();
@@ -190,7 +191,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<MemberLocationChartVO> getFrequencyGroupingbyLocation() {
 		ArrayList<MemberLocationChartVO> LocationList = new ArrayList<MemberLocationChartVO>();
-		String sql = "select location, count(*) as co from member m, search_log s where m.userid = s.userid group by location order by co desc";
+		String sql = "select location, count(*) as co from member m, search_log_db s where m.userid = s.userid group by location order by co desc";
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();
@@ -224,8 +225,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName){
 		ArrayList<MedLocationChartVO> LocMedList = new ArrayList<MedLocationChartVO>();
-		String sql = "select location, count(*) as co from member m, search_log s "
-				+ "where m.userid=s.userid and s.med_key = ? group by location "; 
+		String sql = "select location, count(*) as co from MEMBER m, SEARCH_LOG_DB s "
+				+ "where m.userid=s.userid and s.med_NAME = ? group by location "; 
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();
@@ -257,8 +258,8 @@ public class SearchLogDAO implements ISearchLogDAO {
 	@Override
 	public Collection<FoodLocationChartVO> getFoodCountGroupingbyLocation(String foodName){
 		ArrayList<FoodLocationChartVO> LocFoodList = new ArrayList<FoodLocationChartVO>();
-		String sql = "select location, count(*) as co from member m, search_log s "
-				+ "where m.userid=s.userid and s.food_key = ? group by location "; 
+		String sql = "select location, count(*) as co from member m, search_log_db s "
+				+ "where m.userid=s.userid and s.food_name = ? group by location "; 
 		Connection conn = null;
 		try{
 			conn = DBConn.getConnection();

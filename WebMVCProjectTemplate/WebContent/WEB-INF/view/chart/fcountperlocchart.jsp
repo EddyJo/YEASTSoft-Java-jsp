@@ -108,7 +108,6 @@ li, div, a ,button{
 	</c:if>
 </h1>
 
-
 <script>
 var chart = AmCharts.makeChart("chartdiv", {
   "type": "pie",
