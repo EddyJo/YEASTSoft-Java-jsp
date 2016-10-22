@@ -43,9 +43,9 @@ th, td {
 			</tr>
 			<c:forEach var="log" items="${logListByUserId}">
 				<tr>
-					<td>${log.medKey}</td>
-					<td>${log.foodKey}</td>
-					<td>${log.searchDate}</td>
+					<td>${log.getMedKey()}</td>
+					<td>${log.getFoodKey()}</td>
+					<td>${log.getSearchData()}</td>
 				</tr>
 			</c:forEach>
 		</table>
