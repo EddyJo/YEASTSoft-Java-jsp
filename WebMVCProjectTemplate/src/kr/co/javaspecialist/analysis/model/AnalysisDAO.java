@@ -1,5 +1,6 @@
 package kr.co.javaspecialist.analysis.model;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import kr.co.javaspecialist.common.db.DBConn;
-import kr.co.javaspecialist.food.model.FoodInfoVO;
 import kr.co.javaspecialist.member.model.MemberVO;
 
 public class AnalysisDAO implements IAnalysisDAO {

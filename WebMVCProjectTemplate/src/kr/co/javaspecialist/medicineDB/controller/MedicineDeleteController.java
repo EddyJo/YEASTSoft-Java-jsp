@@ -1,23 +1,23 @@
-package kr.co.javaspecialist.food.controller;
+package kr.co.javaspecialist.medicineDB.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FoodDeleteController<Int> extends FoodController {
+public class MedicineDeleteController extends MedicineController {
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		String method = request.getMethod();
 		String view = "/";
 		if(method.equalsIgnoreCase("get")){
-			view = "/food/insertform.jsp";
+			view = "/medicine/insertform.jsp";
 		}else if(method.equalsIgnoreCase("post")){
 			try{
-				String serialNum = request.getParameter("serialNum");
-				int serialNumber= Integer.parseInt(serialNum);
-				String result = dao.delete(serialNumber);
+				String medId = request.getParameter("med_id");
+				int med_id= Integer.parseInt(medId);
+				String result = dao.delete(med_id);
 				request.setAttribute("result", result);
-				view = "redirect:/insertFoodInfo.do";
+				view = "redirect:/insertmedinfo.do";
 			}catch(Exception e){
 				request.setAttribute("message", e.getMessage());
 				view = "/error/error.jsp";
@@ -26,3 +26,4 @@ public class FoodDeleteController<Int> extends FoodController {
 		return view;
 	}
 }
+
