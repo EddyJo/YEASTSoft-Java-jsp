@@ -46,6 +46,7 @@ public class SearchFuncController extends SearchController {
 				dao.insertLog(searchlog);
 				System.out.println(searchlog.getFoodKey());		
 				return "redirect:/testanal.do?med_name="+URLEncoder.encode(searchlog.getMedKey(), "utf-8") + "&food_name=" + URLEncoder.encode(searchlog.getFoodKey(), "utf-8");
+				// "/analysis/view.jsp"
 				}
 			}catch(Exception e){
 				request.setAttribute("message", e.getMessage());
