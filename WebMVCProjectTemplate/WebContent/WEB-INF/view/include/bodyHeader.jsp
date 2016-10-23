@@ -9,6 +9,9 @@
 
 <style>
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
 
 li, div, a ,button{
 	font-size: 15px;
@@ -66,16 +69,17 @@ li, div, a ,button{
 			</c:if>
 			<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
 			<li><a href="#about" onclick=$("#menu-close").click();>궁합도	검색</a></li>
+			<li><a href="#portfolio1" onclick=$("#menu-close").click();>약빵 소개</a></li>
 			<li><a href="#services" onclick=$("#menu-close").click();>약빵 사용법</a></li>
-			<li><a href="#portfolio" onclick=$("#menu-close").click();>About US</a></li>
+			<li><a href="#portfolio2" onclick=$("#menu-close").click();>About US</a></li>
 		</ul>
 	</nav>
 
 	<!-- Header -->
 	<header id="top" class="header">
 		<div class="text-vertical-center">
-			<h2>식품 &amp; 약품 궁합 분석 플랫폼</h2>
-			<h1>약 빵</h1>
+			<h2 class="subtitle">식품 &amp; 약품 궁합 분석 플랫폼</h2>
+			<h1 class="title">약 빵</h1>
 			<br> <a href="#about" class="btn btn-dark btn-lg">궁합 분석 Start</a>
 		</div>
 	</header>
@@ -112,7 +116,27 @@ li, div, a ,button{
 
 				<!-- /.container -->
 	</section>
-
+	
+	<!-- Portfolio -->
+    <section id="portfolio1" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>약빵 소개</h2>
+                    <hr class="small">
+                    <div class="row">
+                    	<img class="img-portfolio img-responsive" src="img/service.jpg">
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#services" class="btn btn-dark">Learn more</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    
 	<!-- Services -->
 	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
 	<section id="services" class="services bg-primary">
@@ -201,8 +225,9 @@ li, div, a ,button{
 	</aside>
 
 	
+    
 	<!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio2" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -210,8 +235,6 @@ li, div, a ,button{
                     <hr class="small">
                     <div class="row">
                     	<img class="img-portfolio img-responsive" src="img/member.jpg">
-                    	<br>
-                    	<img class="img-portfolio img-responsive" src="img/service.jpg">
                     </div>
                     <!-- /.row (nested) -->
                     <a href="#services" class="btn btn-dark">Learn more</a>
