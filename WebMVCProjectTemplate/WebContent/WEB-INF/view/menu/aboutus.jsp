@@ -30,12 +30,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-<div class="content" style="text-align: center; height: 1800px;">
 <br>
-<img src="<c:url value='/images/service.jpg'/>"><p>
 
-<img src="<c:url value='/images/member.JPG'/>"><p>
 </div>
-<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 </html>

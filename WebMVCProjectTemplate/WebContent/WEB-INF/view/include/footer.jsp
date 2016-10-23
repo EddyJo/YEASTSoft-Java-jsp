@@ -45,7 +45,7 @@
 	<div id="footer_wrap">
 		<div class="footer_box">
 			<ul>
-				<li>yeastsoft@yeastsoft.com</li>
+				<li>Yeastsoft@yeastsoft.com</li>
 			</ul>
 		</div>
 	</div>

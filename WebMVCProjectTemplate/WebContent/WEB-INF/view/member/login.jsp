@@ -23,6 +23,7 @@ li, div, a ,button{
 }
 </style>
 
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <head>
 
 <meta charset="utf-8">
@@ -31,7 +32,6 @@ li, div, a ,button{
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Stylish Portfolio - Start Bootstrap Theme</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -63,8 +63,8 @@ li, div, a ,button{
 			<form action="<c:url value='/member/login.do'/>" method="post"
 				class="form-horizontal">
 				<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
-					<label class="control-label col-sm-2" for="id">Member ID</label> <input
-						type="text" name="userid" id="id" class="form-control"
+					<label class="control-label col-sm-2" for="id">Member ID</label> 
+					<input type="text" name="userid" id="id" class="form-control"
 						style="width: 300px;" ><br>
 
 					<label class="control-label col-sm-2" for="id">Member PW</label> <input

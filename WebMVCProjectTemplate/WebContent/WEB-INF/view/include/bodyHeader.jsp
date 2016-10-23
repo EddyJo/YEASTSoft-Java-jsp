@@ -76,8 +76,7 @@ li, div, a ,button{
 		<div class="text-vertical-center">
 			<h2>식품 &amp; 약품 궁합 분석 플랫폼</h2>
 			<h1>약 빵</h1>
-			<br> <a href="#about" class="btn btn-dark btn-lg">궁합 분석
-				Start</a>
+			<br> <a href="#about" class="btn btn-dark btn-lg">궁합 분석 Start</a>
 		</div>
 	</header>
 
@@ -261,15 +260,8 @@ li, div, a ,button{
 	</aside>-->
 
 	<!-- Footer--> 
-	<footer>
-	<div id="footer_wrap">
-		<div class="footer_box">
-			<ul>
-				<li>Yeastsoft@yeastsoft.com</li>
-			</ul>
-		</div>
-	</div>
-	</footer>
+	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
+	
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
