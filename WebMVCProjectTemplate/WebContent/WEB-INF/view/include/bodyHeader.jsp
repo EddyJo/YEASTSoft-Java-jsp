@@ -236,8 +236,6 @@ li, div, a ,button{
                     <div class="row">
                     	<img class="img-portfolio img-responsive" src="img/member.jpg">
                     </div>
-                    <!-- /.row (nested) -->
-                    <a href="#services" class="btn btn-dark">Learn more</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
