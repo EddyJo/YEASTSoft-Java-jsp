@@ -21,8 +21,6 @@ li, div, a ,button{
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Stylish Portfolio - Start Bootstrap Theme</title>
-
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
