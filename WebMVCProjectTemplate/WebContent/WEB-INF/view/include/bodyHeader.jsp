@@ -86,17 +86,17 @@ li, div, a ,button{
 		<center>
 			<div class="container1" align=center>
 				<!-- First Featurette -->
-				<form action="<c:url value='search.do'/>" method="post"
+				<form action="<c:url value='testanal.do'/>" method="post"
 					class="form-horizontal" style="">
 					<div class="form-group">
 						<br> <br>
 						<h1 class="text-vertical-center" style="">식품 & 약품 궁합도 분석</h1>
 						<br> <br>
 					
-						<input type="text" class="searchname" name="foodKey"
+						<input type="text" class="searchname" name="food_name"
 							style="text-align: center; width: 300px; height: 60px;"
 							placeholder="'식품명'을 입력하세요""><br> <br> 
-						<input type="text" class="searchname" name="medKey"
+						<input type="text" class="searchname" name="med_name"
 							style="text-align: center; width: 300px; height: 60px;"
 							placeholder="'약품명'을 입력하세요"><br> <br> <br>
 												
