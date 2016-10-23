@@ -90,10 +90,11 @@ li, div, a ,button{
 <br>
 <br>
 <c:if test="${not empty sessionScope.userid}">
-	<h4>회원정보: ${userid}</h4>
-	<a href="<c:url value='/member/update.do'/>">[<fmt:message key="UPDATE_USER_INFO"/>]</a>
-	<a href="<c:url value='/member/logout.do'/>">[<fmt:message key="SIGN_OUT"/>]</a>
-	<a href="<c:url value='/member/delete.do'/>">[<fmt:message key="EXIT_MEMBER"/>]</a>
+	<h4>회원정보 : ${userid}</h4>
+	<br>
+	<a href="<c:url value='/member/update.do'/>" class="btn btn-dark btn-lg"><fmt:message key="UPDATE_USER_INFO"/></a>
+	<a href="<c:url value='/member/logout.do'/>" class="btn btn-dark btn-lg"><fmt:message key="SIGN_OUT"/></a>
+	<a href="<c:url value='/member/delete.do'/>" class="btn btn-dark btn-lg"><fmt:message key="EXIT_MEMBER"/></a>
 </c:if>
 </div>
 </center>

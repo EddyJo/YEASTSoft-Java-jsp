@@ -41,7 +41,7 @@ public class MemberMypageController extends MemberController {
 					view = "/member/login.jsp";
 				}
 			}
-			System.out.println("22222");
+			//System.out.println("22222");
 
 		}
 		return view;

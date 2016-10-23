@@ -61,13 +61,13 @@ li, div, a ,button{
 			<!--  <li class="sidebar-brand"><a
 				href='<c:url value="/forward.do?url=/menu/aboutus.jsp"/>' onclick=$("#menu-close").click();>약빵소개</a></li>-->
 			<li><a href="<c:url value='/member/login.do'/>" onclick=$("#menu-close").click();>로그인/회원가입</a>
+			<c:if test="${!empty sessionScope.userid}">
+				<li><a href="<c:url value='/member/mypage.do'/>" onclick=$("#menu-close").click();>My Page</a></li>
+			</c:if>
 			<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
-			<li><a href="#about" onclick=$("#menu-close").click();>궁합도
-					검색</a></li>
-			<li><a href="#services" onclick=$("#menu-close").click();>약빵
-					사용법</a></li>
-			<li><a href="#portfolio" onclick=$("#menu-close").click();>About
-					US</a></li>
+			<li><a href="#about" onclick=$("#menu-close").click();>궁합도	검색</a></li>
+			<li><a href="#services" onclick=$("#menu-close").click();>약빵 사용법</a></li>
+			<li><a href="#portfolio" onclick=$("#menu-close").click();>About US</a></li>
 		</ul>
 	</nav>
 
@@ -121,6 +121,7 @@ li, div, a ,button{
 				<div class="col-lg-10 col-lg-offset-1">
 					<h2>Our Services</h2>
 					<hr class="small">
+					<br><br>
 					<div class="row">
 						<div class="col-md-3 col-sm-6">
 							<div class="service-item">
@@ -213,6 +214,30 @@ li, div, a ,button{
 			</div>
 		</div>
 	</aside>-->
+	
+	<!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>About US</h2>
+                    <hr class="small">
+                    <div class="row">
+                    	<img class="img-portfolio img-responsive" src="img/member.jpg">
+                    	<br>
+                    	<img class="img-portfolio img-responsive" src="img/service.jpg">
+                        
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#services" class="btn btn-dark">Learn more</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+	
 
 	<!-- Footer--> 
 	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
