@@ -150,7 +150,7 @@ li, div, a ,button{
 								<p style="font-weight: normal; font-size: 0.8em">
 									사용자의 궁합도 검색이력을<br>조회합니다.
 								</p>
-								<a href="#" class="btn btn-light">START</a>
+								<a href="<c:url value='/searchId.do'/>" class="btn btn-light">START</a>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
