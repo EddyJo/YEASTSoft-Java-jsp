@@ -208,12 +208,12 @@ li, div, a ,button{
 									class="btn btn-light">START</a>
 							</div>
 						</div>
-
 					</div>
 					<!-- /.row (nested) -->
 				</div>
 				<!-- /.col-lg-10 -->
 			</div>
+			<br><br>
 			<!-- /.row -->
 		</div>
 		<!-- /.container -->
