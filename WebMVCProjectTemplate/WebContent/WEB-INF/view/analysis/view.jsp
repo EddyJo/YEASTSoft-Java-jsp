@@ -93,6 +93,8 @@
 
 </head>
 <body>
+<a id="menu-toggle" href="<c:url value="/forward.do?url=/menu/aboutus.jsp"/>" class="btn btn-dark btn-lg toggle"><i class="fa fa-home" ></i></a>
+
 	<div id="top1">Yakstagram</div>
 	<center>
 		<div class="featurette" id="about">
