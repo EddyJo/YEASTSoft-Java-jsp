@@ -9,7 +9,6 @@ response.setStatus(200);
 <html>
 <jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <body>
-<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
 <div class="container">
 <div class="content">
 <h3><fmt:message key="${message}"/></h3>
@@ -19,6 +18,5 @@ out.println(exception.getMessage());
 %>
 </div>
 </div>
-<jsp:include page="/WEB-INF/view/include/footer.jsp"/>
 </body>
 </html>

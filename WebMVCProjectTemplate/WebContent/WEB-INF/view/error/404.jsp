@@ -8,7 +8,6 @@
 <html>
 <jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <body>
-<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp"/>
 <div class="container">
 	<div class="pg-opt">
         <div class="row">
@@ -28,6 +27,5 @@
 	잘못된 페이지 요청입니다. 요청 URL 또는 forward URL을 확인하세요. 
 	</div>
 </div>
-<jsp:include page="/WEB-INF/view/include/footer.jsp"/>
 </body>
 </html>
