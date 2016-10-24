@@ -23,7 +23,7 @@
 
 #top1 {
 	width: 100%;
-	height: 100px;
+	height: 100%;
 	background-color: rgba(255, 0, 102, 0.7);
 	line-height: 100px;
 	font-family: 'Lobster', cursive;
