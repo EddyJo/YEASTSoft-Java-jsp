@@ -66,11 +66,11 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 	}
 
-	
+
 	@Override
 	public Collection<SearchLogVO> selectUserId(String userId) {
 		Connection con = null;
-		
+
 		ArrayList<SearchLogVO> idlist = new ArrayList<SearchLogVO>();
 		String sql = "SELECT MED_NAME, FOOD_NAME, SEARCH_DATE FROM SEARCH_LOG_DB WHERE USERID = ? ORDER BY SEARCH_DATE ASC";
 		try {
@@ -85,20 +85,20 @@ public class SearchLogDAO implements ISearchLogDAO {
 				logListByUserId.setSearchDate(rs.getString("SEARCH_DATE"));
 				System.out.println("123");
 				idlist.add(logListByUserId);
-				
+
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("SearchLogDAO.selectUserId : " + e.getMessage());
 		} finally {
 			closeConnection(con);
 		}
-		
+
 		return idlist;
 	}
 
-	
+
 	@Override
 	public SearchLogVO getSearchLogDetails(String userId){
 		SearchLogVO searchLog = new SearchLogVO();
@@ -122,10 +122,10 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}finally{
 			closeConnection(con);
 		}
-		
+
 		return searchLog;
 	}
-	
+
 	@Override
 	public Collection<SearchMedLogChartVO> getFrequencyGroupingbyMedcine(){
 		ArrayList<SearchMedLogChartVO> list = new ArrayList<SearchMedLogChartVO>();
@@ -152,7 +152,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException("SearchLogDAO.selectAllList : " + e.getMessage());
-			
+
 		}
 		return list;
 	}
@@ -172,7 +172,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
 					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
-			
+
 			while(rs.next()){
 				SearchFoodLogChartVO foodlogchart = new SearchFoodLogChartVO();
 				foodlogchart.setFoodName(rs.getString("food_key"));
@@ -203,7 +203,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
 					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
-			
+
 			while(rs.next()){
 				MemberLocationChartVO locationchart = new MemberLocationChartVO();
 				locationchart.setLocationName(rs.getString("location"));
@@ -213,7 +213,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 				count++;
 			}
 			if(LocationList.size() ==0){
-				
+
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -221,7 +221,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 		return LocationList;
 	}
-	
+
 	@Override
 	public Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName){
 		ArrayList<MedLocationChartVO> LocMedList = new ArrayList<MedLocationChartVO>();
@@ -239,7 +239,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
 					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
-			
+
 			while(rs.next()){
 				MedLocationChartVO locMedchart = new MedLocationChartVO();
 				locMedchart.setLocationName(rs.getString("location"));
@@ -254,7 +254,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 		return LocMedList;
 	}
-	
+
 	@Override
 	public Collection<FoodLocationChartVO> getFoodCountGroupingbyLocation(String foodName){
 		ArrayList<FoodLocationChartVO> LocFoodList = new ArrayList<FoodLocationChartVO>();
@@ -272,7 +272,7 @@ public class SearchLogDAO implements ISearchLogDAO {
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
 					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
 					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
-			
+
 			while(rs.next()){
 				FoodLocationChartVO locFoodchart = new FoodLocationChartVO();
 				locFoodchart.setLocationName(rs.getString("location"));
@@ -295,32 +295,62 @@ public class SearchLogDAO implements ISearchLogDAO {
 		String sql = "select food_key, med_key, count(*) as co from search_log group by food_key, med_key order by co desc";
 		Connection conn = null;
 		try{
-				conn = DBConn.getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-				ResultSet rs = pstmt.executeQuery();
-				int count =0;
-				String colorList[]= new String[]{"#FF0F00","#FF6600","#FF9E01",
-						"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
-						"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
-						"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
-						"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
-				
-				while(rs.next()){
-						FoodMedLogChartVO FoodMedChart = new FoodMedLogChartVO();
-						FoodMedChart.setFoodName(rs.getString("food_key"));
-						FoodMedChart.setMedName(rs.getString("med_key"));
-						FoodMedChart.setMatchName(rs.getString("food_key") + " * " + rs.getString("med_key"));
-						FoodMedChart.setCountFoodMed(rs.getInt("co"));
-						FoodMedChart.setColor(colorList[count]);
-						FoodMedList.add(FoodMedChart);
-						count++;
-				}
-						
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			int count =0;
+			String colorList[]= new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+
+			while(rs.next()){
+				FoodMedLogChartVO FoodMedChart = new FoodMedLogChartVO();
+				FoodMedChart.setFoodName(rs.getString("food_key"));
+				FoodMedChart.setMedName(rs.getString("med_key"));
+				FoodMedChart.setMatchName(rs.getString("food_key") + " * " + rs.getString("med_key"));
+				FoodMedChart.setCountFoodMed(rs.getInt("co"));
+				FoodMedChart.setColor(colorList[count]);
+				FoodMedList.add(FoodMedChart);
+				count++;
+			}
+
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new RuntimeException("SearchLogDAO.getFrequencyGroupingbyLocation : " + e.getMessage());
 		}
 		return FoodMedList;
 	}
-	
+	public Collection<MedTopChartVO> getTop10Medicine(){
+		ArrayList<MedTopChartVO> TopMedList = new ArrayList<MedTopChartVO>();
+		String sql = "select med_name, rank() over(order by co desc) rank, co count from "
+				+ "(select med_name, count(*) co from search_log_db group by med_name order by co desc) "
+				+ "where rownum <=10";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+
+			while(rs.next()){
+				MedTopChartVO TopMedchart = new MedTopChartVO();
+				TopMedchart.setMedName(rs.getString("med_name"));
+				TopMedchart.setCountmed(rs.getInt("count"));
+				TopMedchart.setColor(colorList[count]);
+				TopMedList.add(TopMedchart);
+				count++;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getTop10Medicine : " + e.getMessage());
+		}
+		return TopMedList;
+	}
 }	
