@@ -21,7 +21,7 @@
 	font-weight: bold;
 }
 .analysis{
-	height: 100%;
+	height: 90%;
 }
 #top1 {
 	width: 100%;
