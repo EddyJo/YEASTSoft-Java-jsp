@@ -52,8 +52,7 @@ li, div, a ,button{
 <div class="container">
 	<a href="<c:url value='/forward.do?url=/chart/mcountperlocchart.jsp'/>" class="btn btn-dark btn-lg">지역별 약품 검색통계</a>
 	<a href="<c:url value='/forward.do?url=/chart/fcountperlocchart.jsp'/>" class="btn btn-dark btn-lg">지역별 식품 검색통계</a>
-	<a href="<c:url value='/foodmedlog.do'/>" class="btn btn-dark btn-lg">식품-약품 RANK</a>
-	<a href="<c:url value='/showmedfrequency.do'/>" class="btn btn-dark btn-lg">약품별 검색통계</a>
+	<a href="<c:url value='/#'/>" class="btn btn-dark btn-lg">빈칸</a>
 	<a href="<c:url value='/showtop10.do'/>" class="btn btn-dark btn-lg">약품 TOP 10</a>
 </div>	
 <br><br>
