@@ -17,4 +17,5 @@ public interface ISearchLogDAO {
 	Collection<MedLocationChartVO> getMedCountGroupingbyLocation(String medName);
 	Collection<FoodLocationChartVO> getFoodCountGroupingbyLocation(String foodName);
 	Collection<MedTopChartVO> getTop10Medicine();
+	Collection<GenderVO> getGendertop10(String gender);
 }

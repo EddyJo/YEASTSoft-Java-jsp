@@ -57,10 +57,10 @@ li, div, a ,button{
 </div>	
 <br><br>
 
-<form action="<c:url value='/foodperloc.do'/>" method="post">
+<form action="<c:url value='/showgender.do'/>" method="post">
          <div class="form-group">
-			<input type="text" class="searchname" name="foodName"
-			       style="width: 300px; height: 60px; margin: 10px" placeholder="식품명을 입력하세요">
+			<input type="text" class="searchname" name="gender"
+			       style="width: 300px; height: 60px; margin: 10px" placeholder="성별을 입력하세요(남 or 여)">
             <button type="submit" class="btn btn-dark btn-lg" style="background-color: 660066">검색</button>
          </div>
 </form>
@@ -102,8 +102,8 @@ li, div, a ,button{
 
 <!-- Chart code -->
 <h1>
-	<c:if test="${!empty locfoodData}">
-		<c:if test="${locfoodData eq '[]' }">데이터가 없습니다</c:if>
+	<c:if test="${!empty Fchart}">
+		<c:if test="${Fchart eq '[]' }">데이터가 없습니다</c:if>
 	</c:if>
 </h1>
 
@@ -142,9 +142,9 @@ var chart = AmCharts.makeChart("chartdiv", {
       }
     }]
   },
-  "dataProvider": ${locfoodData},
-  "valueField": "countFoodPerLoc",
-  "titleField": "locationName",
+  "dataProvider": ${gchart},
+  "valueField": "count",
+  "titleField": "med_name",
   "export": {
     "enabled": true
   }
@@ -165,6 +165,7 @@ function handleRollOver(e){
   wedge.parentNode.appendChild(wedge);
 }
 </script>
+
 
 <!-- HTML -->
 <div id="chartdiv"></div>	

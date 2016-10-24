@@ -353,4 +353,39 @@ public class SearchLogDAO implements ISearchLogDAO {
 		}
 		return TopMedList;
 	}
+
+	@Override
+	public Collection<GenderVO> getGendertop10(String gender) {
+		ArrayList<GenderVO> MTopMedList = new ArrayList<GenderVO>();
+		String sql = "select med_name, gender, co from (select med_name, gender, count(*) co from SEARCH_LOG_DB s join member m on s.userid = m.USERID where gender = ? group by med_name ,gender order by co desc)where rownum<=10";
+		Connection conn = null;
+		try{
+			conn = DBConn.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, gender);
+			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
+			String colorList[] = new String[]{"#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74","#FF0F00","#FF6600","#FF9E01",
+					"#FCD202","#F8FF01", "#B0DE09","#04D215", "#0D8ECF", 
+					"#0D52D1", "#2A0CD0","#8A0CCF", "#CD0D74"};
+
+			while(rs.next()){
+				GenderVO TopMedchart = new GenderVO();
+				TopMedchart.setMed_name(rs.getString("med_name"));
+				TopMedchart.setCount(rs.getInt("co"));
+				TopMedchart.setColor(colorList[count]);
+				MTopMedList.add(TopMedchart);
+				count++;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new RuntimeException("SearchLogDAO.getTop10Medicine : " + e.getMessage());
+		}
+		return MTopMedList;
+
+	}
+
+	
 }	
