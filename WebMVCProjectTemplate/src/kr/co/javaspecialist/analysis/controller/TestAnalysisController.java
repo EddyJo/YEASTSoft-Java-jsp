@@ -23,6 +23,6 @@ public class TestAnalysisController implements CommandHandler {
 		result.setBadfoods(recommand.recommandbad(med_name));
 		System.out.println(result);
 		request.setAttribute("result", result);
-		return "/view.jsp";
+		return "/analysis/view.jsp";
 	}
 }
