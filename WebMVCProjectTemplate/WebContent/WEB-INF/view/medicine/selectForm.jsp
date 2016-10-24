@@ -39,32 +39,36 @@ th, td {
 
 			<label class="control-label col-sm-2" for="name"></label>
 			
-				<h1 class="featurette-heading">식품 정보 입력</h1>
+				<h1 class="featurette-heading">약품 정보 입력</h1>
 				<h2>
-					<span class="text-muted">DB에 추가할 식품명과 <br>해당하는 성분명을 입력하세요</span>
+					<span class="text-muted">DB에서 추가할 약품명과 <br>해당하는 정보를 입력하세요</span>
 				</h2>
 				<br> 
-				<input type="text" name="food_name" id="name"
-					class="form-control" placeholder="식품명을 입력하세요"> <br> 
-				<input type="text" name="food_ingredient" id="name" 
+				<input type="text" name="med_name" id="name"
+					class="form-control" placeholder="약품명을 입력하세요"> <br> 
+				<input type="text" name="med_main_ingredient" id="name" 
 					class="form-control" placeholder="성분명을 입력하세요"> <br> 
+				<input type="text" name="med_group" id="name" 
+					class="form-control" placeholder="약품 분류를 입력하세요"> <br>
+				<input type="text" name="med_disease" id="name" 
+					class="form-control" placeholder="질병명을 입력하세요"> <br>	
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">저장</button>
 			</center>
 
 		</form>
-		<form action="<c:url value='fooddelete.do'/>" method="post"
+		<form action="<c:url value='meddelete.do'/>" method="post"
 			class="form-horizontal">
-			<br> <input type="text" name="food_id" id="name"
-				class="form-control" placeholder="삭제할 식품의 번호를 입력하세요"> <br>
+			<br> <input type="text" name="med_id" id="name"
+				class="form-control" placeholder="삭제할 약품의 번호를 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
 			</center>
 		</form>
-		<form action="<c:url value='foodselect.do'/>" method="post"
+		<form action="<c:url value='medselect.do'/>" method="post"
 			class="form-horizontal">
-			<br> <input type="text" name="food_name" id="name"
-				class="form-control" placeholder="조회할 식품의 이름을 입력하세요"> <br>
+			<br> <input type="text" name="med_name" id="name"
+				class="form-control" placeholder="조회할 약품의 이름을 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-primary btn-lg active">조회</button>
 			</center>
@@ -86,16 +90,19 @@ th, td {
 	<div class="content" style="text-align: center;">
 		<table border=1>
 			<tr>
-				<th>food_id</th>
-				<th>food_name</th>
-				<th>food_ingredient</th>
-			
+				<th>med_id</th>
+				<th>med_name</th>
+				<th>med_main_ingredient</th>
+				<th>med_group</th>
+				<th>med_disease</th>
 			</tr>
 			<c:forEach var="alog" items="${list}">
 				<tr>
-					<td>${alog.food_id}</td>
-					<td>${alog.food_name}</td>
-					<td>${alog.food_ingredient}</td>
+					<td>${alog.med_id}</td>
+					<td>${alog.med_name}</td>
+					<td>${alog.med_main_ingredient}</td>
+					<td>${alog.med_group}</td>
+					<td>${alog.med_disease}</td>
 				</tr>
 			</c:forEach>
 		</table>
