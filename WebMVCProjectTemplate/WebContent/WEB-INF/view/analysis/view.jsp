@@ -178,7 +178,7 @@
 							<p id="good">
 								<c:forEach var="good_food" items="${result.getGoodfoods()}">
 									<a
-										href=https://search.naver.com/search.naver?where=nexearch&query=${good_food}&sm=top_hty&fbm=1&ie=utf8>#${good_food}</a>
+										href=http://shopping.naver.com/search/all.nhn?where=all&frm=NVSCTAB&query=${good_food}>#${good_food}</a>
 								</c:forEach>
 							</p>
 
@@ -188,7 +188,7 @@
 							<p id="bad">
 								<c:forEach var="bad_food" items="${result.getBadfoods()}">
 									<a
-										href=https://search.naver.com/search.naver?where=nexearch&query=${bad_food}&sm=top_hty&fbm=1&ie=utf8>#${bad_food}</a>
+										href=http://shopping.naver.com/search/all.nhn?where=all&frm=NVSCTAB&query=${bad_food}>#${bad_food}</a>
 								</c:forEach>
 							</p>
 						</h3>
