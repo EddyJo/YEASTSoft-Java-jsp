@@ -72,6 +72,12 @@ li, div, a ,button{
 			<li><a href="#portfolio1" onclick=$("#menu-close").click();>약빵 소개</a></li>
 			<li><a href="#services" onclick=$("#menu-close").click();>약빵 사용법</a></li>
 			<li><a href="#portfolio2" onclick=$("#menu-close").click();>About US</a></li>
+			
+			<c:if test="${sessionScope.userid eq 'admin'}">
+				<hr>
+				<li><a href="<c:url value='/forward.do?url=/food/insertForm.jsp'/>" onclick=$("#menu-close").click();>식품 DB관리</a></li>
+				<li><a href="<c:url value='/forward.do?url=/medicine/insertform.jsp'/>" onclick=$("#menu-close").click();>약품 DB관리</a></li>
+			</c:if>
 		</ul>
 	</nav>
 

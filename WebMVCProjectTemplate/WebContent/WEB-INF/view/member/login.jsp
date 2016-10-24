@@ -61,8 +61,9 @@ li, div, a ,button{
 
 <c:if test="${empty sessionScope.userid}">
 			<form action="<c:url value='/member/login.do'/>" method="post"	class="form-horizontal">
-				<h2>LOGIN TO 약빵</h2>
+				
 				<div class="form-group" style="margin-top: 100px; margin-left: 100px;">
+					<h2>약빵 로그인</h2><br>
 					<label class="control-label col-sm-2" for="id">Member ID</label> 
 					<input type="text" name="userid" id="id" class="form-control"
 						style="width: 300px;" ><br>

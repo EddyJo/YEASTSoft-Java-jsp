@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,16 +21,37 @@ table, td, th {
 table {
 	border-collapse: collapse;
 	width: 100%;
+	
 }
 
 th, td {
 	padding: 10px;
 }
 </style>
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../css/stylish-portfolio.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
+	rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
-	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
+<a id="menu-toggle" href="<c:url value="/forward.do?url=/menu/intro.jsp"/>" class="btn btn-dark btn-lg toggle"><i class="fa fa-home" ></i></a>
+
 	<div class="content" style="width: 500px; height: 600px; margin: auto;">
 		<form action="<c:url value='insertmedinfo.do'/>" method="post"
 			class="form-horizontal">
@@ -47,7 +69,7 @@ th, td {
 			
 			<br>
 			<center>
-				<button type="submit" class="btn btn-primary btn-lg active">저장</button>
+				<button type="submit" class="btn btn-dark btn-lg">저장</button>
 			</center>
 			</form>
 		<form action="<c:url value='medrevise.do'/>" method="post"
@@ -55,7 +77,7 @@ th, td {
 			<br> <input type="text" name="serialNum" id="name"
 				class="form-control" placeholder="수정할 약품의 번호를 입력하세요"> <br>
 			<center>
-				<button type="submit" class="btn btn-primary btn-lg active">수정</button>
+				<button type="submit"class="btn btn-dark btn-lg">수정</button>
 			</center>
 		</form>
 		</form>
@@ -64,7 +86,7 @@ th, td {
 			<br> <input type="text" name="serialNum" id="name"
 				class="form-control" placeholder="삭제할 약품의 번호를 입력하세요"> <br>
 			<center>
-				<button type="submit" class="btn btn-primary btn-lg active">삭제</button>
+				<button type="submit" class="btn btn-dark btn-lg">삭제</button>
 			</center>
 		</form>
 	</div>
@@ -88,8 +110,6 @@ th, td {
 		</table>
 	</div>
 
-
-	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 
 </html>
