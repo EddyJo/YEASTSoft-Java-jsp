@@ -20,10 +20,12 @@
 	font-family: Helvetica;
 	font-weight: bold;
 }
-
+.analysis{
+	height: 100%;
+}
 #top1 {
 	width: 100%;
-	height: 100%;
+	height: 100px;
 	background-color: rgba(255, 0, 102, 0.7);
 	line-height: 100px;
 	font-family: 'Lobster', cursive;
@@ -94,7 +96,7 @@
 </head>
 <body>
 <a id="menu-toggle" href="<c:url value="/forward.do?url=/menu/aboutus.jsp"/>" class="btn btn-dark btn-lg toggle"><i class="fa fa-home" ></i></a>
-
+<div class="analysis">
 	<div id="top1">Yakstagram</div>
 	<center>
 		<div class="featurette" id="about">
@@ -209,5 +211,6 @@
 
 
 	</center>
+</div>
 </body>
 </html>
