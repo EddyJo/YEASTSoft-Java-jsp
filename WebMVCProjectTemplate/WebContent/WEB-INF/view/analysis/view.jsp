@@ -46,7 +46,7 @@
 	float: left;
 	width: 500px;
 	height: 500px;
-	margin-left: 100px;
+	margin-left: 350px;
 	margin-top: 10px;
 }
 
