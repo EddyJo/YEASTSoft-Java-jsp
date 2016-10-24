@@ -30,6 +30,7 @@ div.form-group {
 	font-family: 'nanumgothic';
 }
 </style>
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -7,6 +7,7 @@
 <html>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
 .featurette {
 	/*margin: 200px 0;*/
@@ -57,6 +58,7 @@
 
 
 </style>
+<jsp:include page="/WEB-INF/view/include/staticFiles.jsp"/>
 <head lang="en">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,10 +68,16 @@
 <title>YEASTsoft - 약빵 template</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="css/one-page-wonder.css" rel="stylesheet">
+<link href="../css/stylish-portfolio.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
+	rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,10 +93,6 @@
 
 </head>
 <body>
-	<jsp:include page="/WEB-INF/view/include/bodyHeader.jsp" />
-
-
-
 	<div id="top1">Yakstagram</div>
 	<center>
 		<div class="featurette" id="about">
@@ -203,8 +207,5 @@
 
 
 	</center>
-
-
-	<jsp:include page="/WEB-INF/view/include/footer.jsp" />
 </body>
 </html>
