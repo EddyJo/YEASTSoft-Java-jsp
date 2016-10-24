@@ -124,6 +124,7 @@ li, div, a ,button{
 	</section>
 	
 	<!-- Portfolio -->
+	<hr>
     <section id="portfolio1" class="portfolio">
         <div class="container">
             <div class="row">
