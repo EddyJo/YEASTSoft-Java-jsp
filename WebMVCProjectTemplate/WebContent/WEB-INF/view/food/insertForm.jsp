@@ -59,15 +59,13 @@ th, td {
 			
 				<h1 class="featurette-heading">식품 정보 입력</h1>
 				<h2>
-					<span class="text-muted">DB에 추가할 식품명과 <br>해당하는 질병명을 입력하세요</span>
+					<span class="text-muted">DB에 추가할 식품명과 <br>해당하는 성분명을 입력하세요</span>
 				</h2>
 				<br> 
-				<input type="text" name="foodName" id="name"
+				<input type="text" name="food_name" id="name"
 					class="form-control" placeholder="식품명을 입력하세요"> <br> 
-				<input type="text" name="goodDisease" id="name" 
-					class="form-control" placeholder="Good Disease"> <br> 
-				<input type="text" name="badDisease" id="name" 
-					class="form-control" placeholder="Bad Disease"> <br>
+				<input type="text" name="food_ingredient" id="name" 
+					class="form-control" placeholder="성분명을 입력하세요"> <br> 
 			<center>
 				<button type="submit" class="btn btn-dark btn-lg">저장</button>
 			</center>
@@ -75,7 +73,7 @@ th, td {
 		</form>
 		<form action="<c:url value='fooddelete.do'/>" method="post"
 			class="form-horizontal">
-			<br> <input type="text" name="serialNum" id="name"
+			<br> <input type="text" name="food_id" id="name"
 				class="form-control" placeholder="삭제할 식품의 번호를 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-dark btn-lg">삭제</button>
@@ -83,7 +81,7 @@ th, td {
 		</form>
 		<form action="<c:url value='foodselect.do'/>" method="post"
 			class="form-horizontal">
-			<br> <input type="text" name="foodName" id="name"
+			<br> <input type="text" name="food_id" id="name"
 				class="form-control" placeholder="조회할 식품의 이름을 입력하세요"> <br>
 			<center>
 				<button type="submit" class="btn btn-dark btn-lg">조회</button>
@@ -99,26 +97,29 @@ th, td {
 	<center>
 		<c:if test="${!empty result}">${result}</c:if>
 	</center>
-	<br><br><br>
+	<center>
+		<c:if test="${empty list}">일치하는 데이터가 존재하지 않습니다.</c:if>
+	</center>
+
 	<div class="content" style="text-align: center;">
 		<table border=1>
 			<tr>
-				<th>Serial Number</th>
-				<th>Food Name</th>
-				<th>Good Effect</th>
-				<th>Bad Effect</th>
+				<th>food_id</th>
+				<th>food_name</th>
+				<th>food_ingredient</th>
+			
 			</tr>
-			<c:forEach var="alog" items="${allList}">
+			<c:forEach var="alog" items="${list}">
 				<tr>
-					<td>${alog.serialNum}</td>
-					<td>${alog.foodName}</td>
-					<td>${alog.goodDisease}</td>
-					<td>${alog.badDisease}</td>
+					<td>${alog.food_id}</td>
+					<td>${alog.food_name}</td>
+					<td>${alog.food_ingredient}</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	<%--주석 --%>
+</body>
 </body>
 
 </html>
